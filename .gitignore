@@ -1,2 +1,5 @@
-	.DS_Store
-	@eaDi
+.DS_Store
+@eaDir
+
+modules/default
+modules/node_modules
