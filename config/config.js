@@ -24,6 +24,7 @@ var config = {
 	language: "sv",
 	timeFormat: 24,
 	units: "metric",
+	customCss: "css/custom.css",
 
 	modules: [
 		{
@@ -38,7 +39,7 @@ var config = {
 			position: "top_right",
 			config: {
 				displaySeconds: false,
-				dateFormat: "dddd D MMMM, [vecka] W",
+				dateFormat: "dddd D MMMM[<br><small>vecka ]W[</small>]",
 			}
 		},
 		{
