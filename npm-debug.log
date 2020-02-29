@@ -1,0 +1,22 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/volume1/@appstore/Node.js_v4/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'config:check' ]
+2 info using npm@2.15.11
+3 info using node@v4.8.7
+4 verbose stack Error: ENOENT: no such file or directory, open '/volume1/apps/magic-mirror/package.json'
+4 verbose stack     at Error (native)
+5 verbose cwd /volume1/apps/magic-mirror
+6 error Linux 3.10.105
+7 error argv "/volume1/@appstore/Node.js_v4/usr/local/bin/node" "/usr/local/bin/npm" "run" "config:check"
+8 error node v4.8.7
+9 error npm  v2.15.11
+10 error path /volume1/apps/magic-mirror/package.json
+11 error code ENOENT
+12 error errno -2
+13 error syscall open
+14 error enoent ENOENT: no such file or directory, open '/volume1/apps/magic-mirror/package.json'
+14 error enoent This is most likely not a problem with npm itself
+14 error enoent and is related to npm not being able to find a file.
+15 verbose exit [ -2, true ]

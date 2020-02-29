@@ -1,10 +1,10 @@
 # Magic Mirror
 
-Configuration and documentation for my Magic Mirro, using the awesome [MagicMirror²](https://github.com/MichMich/MagicMirror) platform.
+Configuration and documentation for my Magic Mirror, using the awesome [MagicMirror²](https://github.com/MichMich/MagicMirror) platform.
 
 ## Features
 
-* Turns on/off based on motion detection from camera and nearby motion detector
+* Turns on/off based on motion/sound detection from camera and nearby motion detector
 * Doubles as an hidden security camera
 * Custom compliments using a remote "compliments server"
 
@@ -28,33 +28,94 @@ Even though it's not too difficult to remove the tablet I would strongly recomme
 
 ## Software
 
-This setup runs MagicMirror hosted on a local server in a fullscreen browser on the tablet.
+This setup runs MagicMirror hosted on a local Synology DS713+ server in a fullscreen browser on the tablet.
 
 ### Android tablet
 
+* Android Settings
 * Tasker
-* AutoRemote
 * Fully Kiosk Browser
 * IP Webcam
 
 Assign a static IP to tablet in router settings
 
+#### Android Settings
+
+* *Sound* - Unless you want it, turn off the sound to avoid nasty surprises
+* *Notifications* - Disable for all apps except _Fully Kiosk Browser_, _IP Webcam Pro_ and _Tasker_
+* *Display* 
+  - Turn up the brightness to max to be able to easily see the screen in well list environments
+  - Set display timeout to 10 minutes of inactivity
+* *Battery* - disable optimization for _Fully Kiosk Browser_, _IP Webcam Pro_ and _Tasker_
+* *Screen lock* - Set screen lock type to _None_ so _Fully Kiosk Browser_ can show Magic Mirror page when display turns on
+* *Developer options* - Enable USB debugging in order to use *scrcpy* for remote management
+
+
 #### Tasker
 
-*Profile 1: Device boot*
-On device boot:
-- Activate AutoRemote WiFi
+```
+Profile: Turn on display on sound and motion (4)
+    Restore: no
+    State: Display State [ Is:Off ]
+    State: IP Webcam Pro [ Configuration:Motion is detected/timed out ]
+    State: IP Webcam Pro [ Configuration:Sound is detected/timed out ]
+Enter: Turn On Screen (15)
+    A1: Turn On [ Block Time (Check Help):500 ] 
+```
+
+```
+Profile: Always show Magic Mirror when display turns on (19)
+    Restore: no
+    Event: Display On
+Enter: Start Magic Mirror (3)
+    A1: Launch App [ Package/App Name:Fully Kiosk Browser Data: Exclude From Recent Apps:Off Always Start New Copy:Off ] 
+```
 
 *Profile 2: On message received*
 On message "on" received in AutoRemote:
 - Turn on screen
+
+#### Fully Kiosk Browser
+
+* *Web Content Settings*
+  - Set the Start URL to point to your Magic Mirror URL
+* *Web Zoom and Scaling*
+  - Enable _View in Dekstop Mode_
+* *Web Auto Relad*
+  - Enable _Auto Reload on Screen On_ in order to fetch the most current Comoliments Server config.
+* *Remote Administration*
+  - Enable remote administration to be able to turn on and off display from external motion sensor
+
 
 ### Server
 
 * MagicMirror in Docker
 * Synology 
 
+## Remote Management
 
+### Bluetooth Mouse
+
+Pair a bluetooth mouse before the tablet is put into the frame to easily control the tablet without touch.
+
+### scrcpy
+
+I use [scrcpy:](https://github.com/Genymobile/scrcpy) to display and control my tablet from my Windows and MacBook computer.
+
+#### Setup
+
+1. Enable USB debugging on the tablet
+2. Connect a USB-cable to the tablet and run
+
+    adb tcp 5555
+
+
+#### Usage
+
+```
+adb connect 192.168.1.100
+scrcpy -b 6M -m 800 -s 192.168.1.100:5555
+```
 
 
 ## Resources 
