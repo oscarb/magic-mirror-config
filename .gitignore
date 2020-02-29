@@ -4,4 +4,4 @@
 modules/default
 modules/node_modules
 
-.backup
+.backup/
