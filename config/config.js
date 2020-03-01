@@ -8,8 +8,12 @@
  *
  */
 
+ /* Secrets from URL params */
+const urlParams = new URLSearchParams(location.search);
+const secrets = Object.fromEntries(urlParams);
+
 var config = {
-	address: "", // Address to listen on, can be:
+	address: "0.0.0.0", // Address to listen on, can be:
 	                      // - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 	                      // - another specific IPv4/6 to listen on a specific interface
 	                      // - "", "0.0.0.0", "::" to listen on any interface
@@ -36,46 +40,30 @@ var config = {
 		},
 		{
 			module: "clock",
-			position: "top_right",
+			position: "top_left",
 			config: {
 				displaySeconds: false,
 				dateFormat: "dddd D MMMM[<br><small>vecka ]W[</small>]",
 			}
 		},
 		{
-			module: "calendar",
-			header: "US Holidays",
-			position: "top_left",
-			config: {
-				calendars: [
-					{
-						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics"
-					}
-				]
-			}
-		},
-		{
 			module: "compliments",
-			position: "lower_third"
-		},
-		{
-			module: "currentweather",
-			position: "top_right",
+			position: "lower_third",
 			config: {
-				location: "New York",
-				locationID: "",  //ID from http://bulk.openweathermap.org/sample/; unzip the gz file and find your city
-				appid: "YOUR_OPENWEATHER_API_KEY"
-			}
-		},
-		{
-			module: "weatherforecast",
-			position: "top_right",
-			header: "Weather Forecast",
-			config: {
-				location: "New York",
-				locationID: "5128581",  //ID from https://openweathermap.org/city
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				compliments: {
+					anytime: [
+						"Hey there " + secrets.apiKey
+					],
+					morning: [
+						"Hej!"
+					],
+					afternoon: [
+						"Hej"
+					],
+					evening: [
+						"Hej"
+					]
+				}
 			}
 		},
 		{
