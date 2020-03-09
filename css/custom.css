@@ -1,27 +1,108 @@
+/*
+    FONTS
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+/*
+    SCREEN
+*/
+body {
+    margin: 0 10px;
+}
+
 
 /* 
     CLOCK
 */
 
-#module_2_clock > div > div {
+.module.clock > div > div {
     display: flex;
     flex-direction: column;
 }
 
 /* Date */
-#module_2_clock > div > div > div.date {
+.module.clock > div > div > div.date {
     order: 2;
+    font-family: "Quicksand", sans-serif;
+    color: #ddd;
+    margin-top: 4px;
+}
+
+.module.clock > div > div > div.date > small{
+    color: #ddd;
 }
 
 /* Time */
-#module_2_clock > div > div > div.time {
+.module.clock > div > div > div.time {
     order: 1;
 
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 90px;
-    line-height: 75px;
-    letter-spacing: -3px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 105px;
+    letter-spacing: 0px;
     color: #fff;    
 }
 
+.region.top.bar {
+    text-align: start;
+}
+
+/*
+    Weather
+*/
+.MMM-DarkSkyForecast .attribution {
+    display: none;
+}
+
+.module.clock {
+    display: inline-table;
+}
+
+.MMM-DarkSkyForecast div.module-content {
+    position: fixed;
+    top: 20px;
+    left: 295px;
+    right: 0;
+    width: 100%;
+}
+
+.MMM-DarkSkyForecast .module-content > div > div.wrapper {
+    display: flex;
+    align-items: flex-end;
+}
+
+.MMM-DarkSkyForecast .module-content > div > div.wrapper > .current-conditions-wrapper,
+.MMM-DarkSkyForecast .module-content > div > div.wrapper > .summary-wrapper {
+    display: inline-flex;
+}
+
+.MMM-DarkSkyForecast .current-conditions-wrapper .icon {
+    vertical-align: bottom;
+    margin: 0;
+    zoom: 100%;
+}
+
+.MMM-DarkSkyForecast .current-conditions-wrapper .current.temperature {
+    line-height: 96px;
+    vertical-align: text-bottom;
+    font-size: 82px;
+    margin: 0 10px;
+}
+
+.MMM-DarkSkyForecast .summary {
+    width: 330px;
+    margin: 13px 0;
+    font-size: 22px;
+    color: #ddd;
+    margin-left: 20px;
+}
+
+.dimmed.light.small {
+    display: none;
+}
+
+.MMM-DarkSkyForecast .current-conditions-wrapper .current.temperature {
+    font-family: "Quicksand";
+}
