@@ -9,6 +9,8 @@
 */
 body {
     margin: 0 10px;
+    height: calc(100%);
+    width: calc(100% - 20px);
 }
 
 
@@ -41,7 +43,7 @@ body {
     font-weight: 400;
     font-size: 120px;
     line-height: 105px;
-    letter-spacing: 0px;
+    letter-spacing: -2px;
     color: #fff;    
 }
 
@@ -63,7 +65,7 @@ body {
 .MMM-DarkSkyForecast div.module-content {
     position: fixed;
     top: 20px;
-    left: 295px;
+    left: 315px;
     right: 0;
     width: 100%;
 }
@@ -97,11 +99,12 @@ body {
     font-size: 22px;
     color: #ddd;
     margin-left: 20px;
+    text-align: left;
 }
 
-.dimmed.light.small {
+.MMM-DarkSkyForecast .dimmed.light.small {
     display: none;
-}
+} 
 
 .MMM-DarkSkyForecast .current-conditions-wrapper .current.temperature {
     font-family: "Quicksand";

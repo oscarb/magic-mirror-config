@@ -9,7 +9,7 @@
  */
 
  /* Secrets from URL params */
- const secrets = (typeof location !== undefined) ? Object.fromEntries(new URLSearchParams(location.search)) : {}; 
+ const secrets = (typeof location !== "undefined") ? Object.fromEntries(new URLSearchParams(location.search)) : {}; 
 
  var config = {
 	 address: "0.0.0.0", // Address to listen on, can be:
@@ -43,7 +43,7 @@
 		 },
 		 {
 			 module: "MMM-DarkSkyForecast",
-			 position: "top_left",
+			 position: "top_right",
 			 config: {
 			   apikey: secrets.darkSky,
 			   latitude: "59.3515632",
