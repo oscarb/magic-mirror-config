@@ -1,5 +1,6 @@
 .DS_Store
 @eaDir
 
+.backup/
 modules/default
 modules/node_modules
