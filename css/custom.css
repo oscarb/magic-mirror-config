@@ -1,27 +1,52 @@
+/*
+    FONTS
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+/*
+    SCREEN
+*/
+body {
+    margin: 0 10px;
+    height: calc(100%);
+    width: calc(100% - 20px);
+}
+
 
 /* 
     CLOCK
 */
 
-#module_2_clock > div > div {
+.module.clock > div > div {
     display: flex;
     flex-direction: column;
 }
 
 /* Date */
-#module_2_clock > div > div > div.date {
+.module.clock > div > div > div.date {
     order: 2;
+    font-family: "Quicksand", sans-serif;
+    color: #ddd;
+    margin-top: 4px;
+}
+
+.module.clock > div > div > div.date > small{
+    color: #ddd;
 }
 
 /* Time */
-#module_2_clock > div > div > div.time {
+.module.clock > div > div > div.time {
     order: 1;
 
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 90px;
-    line-height: 75px;
-    letter-spacing: -3px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 105px;
+    letter-spacing: -2px;
     color: #fff;    
 }
 
+.region.top.bar {
+    text-align: start;
+}
