@@ -42,24 +42,6 @@
 			 }
 		 },
 		 {
-			 module: "MMM-DarkSkyForecast",
-			 position: "top_right",
-			 config: {
-			   apikey: secrets.darkSky,
-			   latitude: "59.3515632",
-			   longitude: "17.807671",
-			   updateInterval: 5, // minutes
-			   units: 'si',
-			   showExtraCurrentConditions: false,
-			   showHourlyForecast: false,
-			   showDailyForecast: false,
-			   showWind: false,
-			   concise: true,
-			   useAnimatedIcons: false,     
-			   iconset: "2c"
-			 }
-		   },
-		 {
 			 module: "compliments",
 			 position: "lower_third",
 			 config: {
