@@ -1,6 +1,7 @@
 .DS_Store
 @eaDir
 
+secrets.env
 .backup/
 modules/default
 modules/node_modules

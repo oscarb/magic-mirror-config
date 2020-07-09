@@ -45,20 +45,7 @@
 			 module: "compliments",
 			 position: "lower_third",
 			 config: {
-				 compliments: {
-					 anytime: [
-						 "Hey there Oscar"
-					 ],
-					 morning: [
-						 "Hej!"
-					 ],
-					 afternoon: [
-						 "Hej"
-					 ],
-					 evening: [
-						 "Hej"
-					 ]
-				 }
+				remoteFile: "$COMPLIMENTS_SERVER"
 			 }
 		 },
 		 {
