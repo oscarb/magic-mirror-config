@@ -42,10 +42,12 @@
 			 }
 		 },
 		 {
-			 module: "compliments",
+			 module: "MMM-Remote-Compliments",
 			 position: "lower_third",
 			 config: {
-				remoteFile: "$COMPLIMENTS_SERVER"
+				remoteFile: "$COMPLIMENTS_SERVER",
+				updateInterval: 20 * 1000,
+				remoteFileUpdateInterval: 60 * 1000
 			 }
 		 },
 		 {
