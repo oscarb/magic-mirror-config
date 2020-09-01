@@ -42,23 +42,12 @@
 			 }
 		 },
 		 {
-			 module: "compliments",
+			 module: "MMM-Remote-Compliments",
 			 position: "lower_third",
 			 config: {
-				 compliments: {
-					 anytime: [
-						 "Hey there Oscar"
-					 ],
-					 morning: [
-						 "Hej!"
-					 ],
-					 afternoon: [
-						 "Hej"
-					 ],
-					 evening: [
-						 "Hej"
-					 ]
-				 }
+				remoteFile: "$COMPLIMENTS_SERVER",
+				updateInterval: 20 * 1000,
+				remoteFileUpdateInterval: 60 * 1000
 			 }
 		 },
 		 {
