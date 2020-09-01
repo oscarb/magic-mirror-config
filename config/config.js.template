@@ -42,6 +42,24 @@
 			 }
 		 },
 		 {
+			 module: "MMM-My-Calendar",
+			 position: "upper_third",
+			 config: {
+				showLocation: true,
+
+				wrapEvents: true,
+				colored: true,
+				calendars: [
+					{
+						url: '$CALENDAR_PERSONAL',
+						symbol: 'calendar',
+						color: '#9fc6f9',
+						maximumNumberOfDays: 5
+					}
+				]
+			 }
+		 },
+		 {
 			 module: "MMM-Remote-Compliments",
 			 position: "lower_third",
 			 config: {
