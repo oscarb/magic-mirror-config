@@ -1,5 +1,9 @@
 .DS_Store
 @eaDir
+*.code-workspace
 
+secrets.env
+.backup/
 modules/default
 modules/node_modules
+
