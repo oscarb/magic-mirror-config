@@ -9,7 +9,7 @@
 */
 body {
     margin: 0 10px;
-    height: calc(100%);
+    height: calc(100% - 10px);
     width: calc(100% - 20px);
 }
 

@@ -327,7 +327,7 @@ var CalendarFetcher = function(url, reloadInterval, excludedEvents, maximumEntri
 				return a.startDate - b.startDate;
 			});
 
-			//console.log(newEvents);
+			console.log(newEvents);
 
 			events = newEvents.slice(0, maximumEntries);
 

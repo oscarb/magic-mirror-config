@@ -1,24 +1,79 @@
-.calendar .symbol {
+.MMM-My-Calendar .symbol {
   padding-left: 0;
   padding-right: 10px;
   font-size: 80%;
   vertical-align: top;
 }
 
-.calendar .symbol span {
+.MMM-My-Calendar .symbol span {
   display: inline-block;
-  -ms-transform: translate(0, 2px); /* IE 9 */
-  -webkit-transform: translate(0, 2px); /* Safari */
+  -ms-transform: translate(0, 2px);
+  /* IE 9 */
+  -webkit-transform: translate(0, 2px);
+  /* Safari */
   transform: translate(0, 2px);
 }
 
-.calendar .title {
+.MMM-My-Calendar .title {
   padding-left: 0;
   padding-right: 0;
 }
 
-.calendar .time {
+.MMM-My-Calendar .time {
   padding-left: 30px;
   text-align: right;
   vertical-align: top;
+}
+
+.MMM-My-Calendar table {
+  table-layout: fixed;
+  color: white;
+  border-spacing: 10px 4px;
+  border-collapse: separate;
+  margin: 0 -10px;
+  width: calc(100% + 2*10px);
+}
+
+.MMM-My-Calendar table tr th {
+  border-bottom: 1px solid #ccc;
+  text-align: start;
+  font-size: 18px;
+  color: #eee;
+}
+
+
+.MMM-My-Calendar table tr th.redDay {
+  border-bottom: 1px solid #ef5350ee;
+  color: #ef5350ee;
+}
+
+.MMM-My-Calendar table tr th.redDay span.dayNumber {
+  color: #ef5350cc;
+}
+
+.MMM-My-Calendar table tr th span.dayNumber {
+  float: right;
+  font-weight: 300;
+  color: #ccc;
+}
+
+.MMM-My-Calendar table td {
+  vertical-align: top;
+  text-align: start;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.2em;
+}
+
+.MMM-My-Calendar table td p {
+  margin: 2px 0 4px 0;
+}
+
+.MMM-My-Calendar table td p.fullDayEvent {
+  margin: 0 0 6px 0;
+  background: #ddd;
+  color: #000;
+  display: block;
+  border-radius: 4px;
+  padding: 2px 4px;
 }

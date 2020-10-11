@@ -37,6 +37,7 @@ Module.register("MMM-My-Calendar", {
 		colored: false,
 		coloredSymbolOnly: false,
 		tableClass: "small",
+		numberOfDays: 7,
 		calendars: [
 			{
 				symbol: "calendar",
@@ -50,7 +51,7 @@ Module.register("MMM-My-Calendar", {
 		broadcastEvents: true,
 		excludedEvents: [],
 		sliceMultiDayEvents: false,
-		broadcastPastEvents: false,
+		broadcastPastEvents: true,
 		nextDaysRelative: false
 	},
 
@@ -79,6 +80,8 @@ Module.register("MMM-My-Calendar", {
 		// Set locale.
 		moment.updateLocale(config.language, this.getLocaleSpecification(config.timeFormat));
 
+		this.fetchSwedishDays();
+
 		for (var c in this.config.calendars) {
 			var calendar = this.config.calendars[c];
 			calendar.url = calendar.url.replace("webcal://", "http://");
@@ -99,7 +102,7 @@ Module.register("MMM-My-Calendar", {
 			}
 
 			// we check user and password here for backwards compatibility with old configs
-			if(calendar.user && calendar.pass) {
+			if (calendar.user && calendar.pass) {
 				Log.warn("Deprecation warning: Please update your calendar authentication configuration.");
 				Log.warn("https://github.com/MichMich/MagicMirror/tree/v2.1.2/modules/default/calendar#calendar-authentication-options");
 				calendar.auth = {
@@ -113,12 +116,13 @@ Module.register("MMM-My-Calendar", {
 			// Trigger ADD_CALENDAR every fetchInterval to make sure there is always a calendar
 			// fetcher running on the server side.
 			var self = this;
-			setInterval(function() {
+			setInterval(function () {
 				self.addCalendar(calendar.url, calendar.auth, calendarConfig);
 			}, self.config.fetchInterval);
 		}
 
 		this.calendarData = {};
+		this.swedishDays = {};
 		this.loaded = false;
 	},
 
@@ -133,6 +137,8 @@ Module.register("MMM-My-Calendar", {
 					this.broadcastEvents();
 				}
 			}
+		} else if (notification === "SWEDISH_DAYS") {
+			this.swedishDays = payload.data
 		} else if (notification === "FETCH_ERROR") {
 			Log.error("Calendar Error. Could not fetch calendar: " + payload.url);
 			this.loaded = true;
@@ -152,263 +158,397 @@ Module.register("MMM-My-Calendar", {
 		var wrapper = document.createElement("table");
 		wrapper.className = this.config.tableClass;
 
+
+		/*
+		COLORS
+		* #ce93d8 - Emelie? 
+		*/
+
+		// TODO
+		/*
+		* Different colors for different calendars
+		* Display start/end time
+		* Swedish flag days
+		* Gray out past events for today?
+		* Red days
+		* Special themes day: https://github.com/Miicroo/ha-swedish_calendar/blob/master/custom_components/swedish_calendar/specialThemes.json
+		* Fix Swedish days
+		* Show calendar even 
+		* Show time of event 
+		* Check commented code
+		* Fix red color
+		* Go through calendar config and loading
+		* Remove "Laddar..."
+		*/
+
+		// Begin WEEKLY TABLE
+
+		var dayHeaderRow = document.createElement("tr");
+
+		let startDay = moment();
+		let lastDay = startDay.clone().add(this.config.numberOfDays, 'days');
+
+		while (!startDay.isSame(lastDay)) {
+			let header = document.createElement("th")
+
+			let dayOfYear = startDay.dayOfYear() - 1;
+
+			if (this.swedishDays.dagar !== undefined && this.swedishDays.dagar[dayOfYear]["röd dag"] === "Ja") {
+				header.className = "redDay"
+			}
+
+			var swedishFlag = '';
+
+			if (this.swedishDays.dagar !== undefined && this.swedishDays.dagar[dayOfYear]["flaggdag"] !== "") {
+				swedishFlag = ' 🇸🇪';
+			}
+			header.innerHTML = "<span>" + this.capFirst(startDay.format("dddd")) + swedishFlag + "</span>";
+			header.innerHTML += "<span class='dayNumber'>" + startDay.format("D") + "</span>";
+			startDay.add(1, 'days')
+			dayHeaderRow.appendChild(header)
+		}
+
+		wrapper.appendChild(dayHeaderRow)
+
+		var eventRow = document.createElement("tr")
+
+		let eventDay = moment();
+		let lastEventDay = eventDay.clone().add(this.config.numberOfDays, 'days');
+
+
+		//var eventsPerDay = [["Event M1", "Event M2"], [], [], ["Event T1"], [], [], ["Party!"]]
+
+		let schedule = { "days": Array.from({ length: this.config.numberOfDays }, () => ({ 'events': [] })) }
+
+		var eventsPerDay = Array(this.config.numberOfDays).fill(Array(0))
+
+
+
+
+		events.forEach(event => {
+
+			for (let index = 0; index < this.config.numberOfDays; index++) {
+				let currentDay = moment().add(index, 'days')
+				let startDate = moment(event.startDate, "x")
+				let endDate = moment(event.endDate, "x").subtract(1, 'second')
+
+				if (startDate.isSameOrBefore(currentDay, 'days') &&
+					endDate.isSameOrAfter(currentDay, 'days')) {
+
+					// if(currentDay.isBetween(startDate, endDate, 'days', '(]')) {
+					schedule.days[index].events.push(event)
+				} else {
+					continue
+				}
+			}
+
+		})
+
+
+		schedule.days.forEach(day => {
+			let events = day.events;
+
+			let cell = document.createElement("td")
+
+			events.forEach(event => {
+				let paragraph = document.createElement("p")
+
+				if (event.fullDayEvent) {
+					paragraph.className = "fullDayEvent"
+					paragraph.style.cssText = "background-color: " + this.colorForUrl(event.url);
+				} else {
+					paragraph.style.cssText = "color: " + this.colorForUrl(event.url);
+				}
+
+				paragraph.innerHTML = event.title
+
+				cell.appendChild(paragraph)
+			});
+
+			eventRow.appendChild(cell)
+		})
+
+
+
+		// while (!eventDay.isSame(lastEventDay)) {
+		// 	let cell = document.createElement("td")
+		// 	cell.innerHTML = "event info"
+
+
+
+
+
+
+		// 	eventRow.appendChild(cell)
+		// 	eventDay.add(1, 'days')
+		// }
+
+		wrapper.appendChild(eventRow)
+
+		// End WEEKLY TABLE
+
+
+
+
+
 		if (events.length === 0) {
 			wrapper.innerHTML = (this.loaded) ? this.translate("EMPTY") : this.translate("LOADING");
 			wrapper.className = this.config.tableClass + " dimmed";
 			return wrapper;
 		}
 
-		if (this.config.fade && this.config.fadePoint < 1) {
-			if (this.config.fadePoint < 0) {
-				this.config.fadePoint = 0;
-			}
-			var startFade = events.length * this.config.fadePoint;
-			var fadeSteps = events.length - startFade;
-		}
+		// // 
+		// if (this.config.fade && this.config.fadePoint < 1) {
+		// 	if (this.config.fadePoint < 0) {
+		// 		this.config.fadePoint = 0;
+		// 	}
+		// 	var startFade = events.length * this.config.fadePoint;
+		// 	var fadeSteps = events.length - startFade;
+		// }
 
-		var currentFadeStep = 0;
-		var lastSeenDate = "";
+		// var currentFadeStep = 0;
+		// var lastSeenDate = "";
 
-		for (var e in events) {
-			var event = events[e];
-			var dateAsString = moment(event.startDate, "x").format(this.config.dateFormat);
-			if(this.config.timeFormat === "dateheaders"){
-				if(lastSeenDate !== dateAsString){
-					var dateRow = document.createElement("tr");
-					dateRow.className = "normal";
-					var dateCell = document.createElement("td");
+		// for (var e in events) {
+		// 	var event = events[e];
+		// 	var dateAsString = moment(event.startDate, "x").format(this.config.dateFormat);
+		// 	if(this.config.timeFormat === "dateheaders"){
+		// 		if(lastSeenDate !== dateAsString){
+		// 			var dateRow = document.createElement("tr");
+		// 			dateRow.className = "normal";
+		// 			var dateCell = document.createElement("td");
 
-					dateCell.colSpan = "3";
-					dateCell.innerHTML = dateAsString;
-					dateRow.appendChild(dateCell);
-					wrapper.appendChild(dateRow);
+		// 			dateCell.colSpan = "3";
+		// 			dateCell.innerHTML = dateAsString;
+		// 			dateRow.appendChild(dateCell);
+		// 			wrapper.appendChild(dateRow);
 
-					if (e >= startFade) {			//fading
-						currentFadeStep = e - startFade;
-						dateRow.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
-					}
+		// 			if (e >= startFade) {			//fading
+		// 				currentFadeStep = e - startFade;
+		// 				dateRow.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
+		// 			}
 
-					lastSeenDate = dateAsString;
-				}
-			}
+		// 			lastSeenDate = dateAsString;
+		// 		}
+		// 	}
 
-			var eventWrapper = document.createElement("tr");
+		// 	var eventWrapper = document.createElement("tr");
 
-			if (this.config.colored && !this.config.coloredSymbolOnly) {
-				eventWrapper.style.cssText = "color:" + this.colorForUrl(event.url);
-			}
+		// 	if (this.config.colored && !this.config.coloredSymbolOnly) {
+		// 		eventWrapper.style.cssText = "color:" + this.colorForUrl(event.url);
+		// 	}
 
-			eventWrapper.className = "normal";
+		// 	eventWrapper.className = "normal";
 
-			if (this.config.displaySymbol) {
-				var symbolWrapper = document.createElement("td");
+		// 	if (this.config.displaySymbol) {
+		// 		var symbolWrapper = document.createElement("td");
 
-				if (this.config.colored && this.config.coloredSymbolOnly) {
-					symbolWrapper.style.cssText = "color:" + this.colorForUrl(event.url);
-				}
+		// 		if (this.config.colored && this.config.coloredSymbolOnly) {
+		// 			symbolWrapper.style.cssText = "color:" + this.colorForUrl(event.url);
+		// 		}
 
-				var symbolClass = this.symbolClassForUrl(event.url);
-				symbolWrapper.className = "symbol align-right " + symbolClass;
+		// 		var symbolClass = this.symbolClassForUrl(event.url);
+		// 		symbolWrapper.className = "symbol align-right " + symbolClass;
 
-				var symbols = this.symbolsForUrl(event.url);
-				if(typeof symbols === "string") {
-					symbols = [symbols];
-				}
+		// 		var symbols = this.symbolsForUrl(event.url);
+		// 		if(typeof symbols === "string") {
+		// 			symbols = [symbols];
+		// 		}
 
-				for(var i = 0; i < symbols.length; i++) {
-					var symbol = document.createElement("span");
-					symbol.className = "fa fa-fw fa-" + symbols[i];
-					if(i > 0){
-						symbol.style.paddingLeft = "5px";
-					}
-					symbolWrapper.appendChild(symbol);
-				}
-				eventWrapper.appendChild(symbolWrapper);
-			} else if(this.config.timeFormat === "dateheaders"){
-				var blankCell = document.createElement("td");
-				blankCell.innerHTML = "&nbsp;&nbsp;&nbsp;";
-				eventWrapper.appendChild(blankCell);
-			}
+		// 		for(var i = 0; i < symbols.length; i++) {
+		// 			var symbol = document.createElement("span");
+		// 			symbol.className = "fa fa-fw fa-" + symbols[i];
+		// 			if(i > 0){
+		// 				symbol.style.paddingLeft = "5px";
+		// 			}
+		// 			symbolWrapper.appendChild(symbol);
+		// 		}
+		// 		eventWrapper.appendChild(symbolWrapper);
+		// 	} else if(this.config.timeFormat === "dateheaders"){
+		// 		var blankCell = document.createElement("td");
+		// 		blankCell.innerHTML = "&nbsp;&nbsp;&nbsp;";
+		// 		eventWrapper.appendChild(blankCell);
+		// 	}
 
-			var titleWrapper = document.createElement("td"),
-				repeatingCountTitle = "";
+		// 	var titleWrapper = document.createElement("td"),
+		// 		repeatingCountTitle = "";
 
-			if (this.config.displayRepeatingCountTitle && event.firstYear !== undefined) {
+		// 	if (this.config.displayRepeatingCountTitle && event.firstYear !== undefined) {
 
-				repeatingCountTitle = this.countTitleForUrl(event.url);
+		// 		repeatingCountTitle = this.countTitleForUrl(event.url);
 
-				if (repeatingCountTitle !== "") {
-					var thisYear = new Date(parseInt(event.startDate)).getFullYear(),
-						yearDiff = thisYear - event.firstYear;
+		// 		if (repeatingCountTitle !== "") {
+		// 			var thisYear = new Date(parseInt(event.startDate)).getFullYear(),
+		// 				yearDiff = thisYear - event.firstYear;
 
-					repeatingCountTitle = ", " + yearDiff + ". " + repeatingCountTitle;
-				}
-			}
+		// 			repeatingCountTitle = ", " + yearDiff + ". " + repeatingCountTitle;
+		// 		}
+		// 	}
 
-			titleWrapper.innerHTML = this.titleTransform(event.title) + repeatingCountTitle;
+		// 	titleWrapper.innerHTML = this.titleTransform(event.title) + repeatingCountTitle;
 
-			var titleClass = this.titleClassForUrl(event.url);
+		// 	var titleClass = this.titleClassForUrl(event.url);
 
-			if (!this.config.colored) {
-				titleWrapper.className = "title bright " + titleClass;
-			} else {
-				titleWrapper.className = "title " + titleClass;
-			}
+		// 	if (!this.config.colored) {
+		// 		titleWrapper.className = "title bright " + titleClass;
+		// 	} else {
+		// 		titleWrapper.className = "title " + titleClass;
+		// 	}
 
-			if(this.config.timeFormat === "dateheaders"){
+		// 	if(this.config.timeFormat === "dateheaders"){
 
-				if (event.fullDayEvent) {
-					titleWrapper.colSpan = "2";
-					titleWrapper.align = "left";
+		// 		if (event.fullDayEvent) {
+		// 			titleWrapper.colSpan = "2";
+		// 			titleWrapper.align = "left";
 
-				} else {
+		// 		} else {
 
-					var timeClass = this.timeClassForUrl(event.url);
-					var timeWrapper = document.createElement("td");
-					timeWrapper.className = "time light " + timeClass;
-					timeWrapper.align = "left";
-					timeWrapper.style.paddingLeft = "2px";
-					timeWrapper.innerHTML = moment(event.startDate, "x").format("LT");
-					eventWrapper.appendChild(timeWrapper);
-					titleWrapper.align = "right";
-				}
+		// 			var timeClass = this.timeClassForUrl(event.url);
+		// 			var timeWrapper = document.createElement("td");
+		// 			timeWrapper.className = "time light " + timeClass;
+		// 			timeWrapper.align = "left";
+		// 			timeWrapper.style.paddingLeft = "2px";
+		// 			timeWrapper.innerHTML = moment(event.startDate, "x").format("LT");
+		// 			eventWrapper.appendChild(timeWrapper);
+		// 			titleWrapper.align = "right";
+		// 		}
 
-				eventWrapper.appendChild(titleWrapper);
-			} else {
-				var timeWrapper = document.createElement("td");
+		// 		eventWrapper.appendChild(titleWrapper);
+		// 	} else {
+		// 		var timeWrapper = document.createElement("td");
 
-				eventWrapper.appendChild(titleWrapper);
-				//console.log(event.today);
-				var now = new Date();
-				// Define second, minute, hour, and day variables
-				var oneSecond = 1000; // 1,000 milliseconds
-				var oneMinute = oneSecond * 60;
-				var oneHour = oneMinute * 60;
-				var oneDay = oneHour * 24;
-				if (event.fullDayEvent) {
-					//subtract one second so that fullDayEvents end at 23:59:59, and not at 0:00:00 one the next day
-					event.endDate -= oneSecond;
-					if (event.today) {
-						timeWrapper.innerHTML = this.capFirst(this.translate("TODAY"));
-					} else if (event.startDate - now < oneDay && event.startDate - now > 0) {
-						timeWrapper.innerHTML = this.capFirst(this.translate("TOMORROW"));
-					} else if (event.startDate - now < 2 * oneDay && event.startDate - now > 0) {
-						if (this.translate("DAYAFTERTOMORROW") !== "DAYAFTERTOMORROW") {
-							timeWrapper.innerHTML = this.capFirst(this.translate("DAYAFTERTOMORROW"));
-						} else {
-							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-						}
-					} else {
-						/* Check to see if the user displays absolute or relative dates with their events
-						* Also check to see if an event is happening within an 'urgency' time frameElement
-						* For example, if the user set an .urgency of 7 days, those events that fall within that
-						* time frame will be displayed with 'in xxx' time format or moment.fromNow()
-						*
-						* Note: this needs to be put in its own function, as the whole thing repeats again verbatim
-						*/
-						if (this.config.timeFormat === "absolute") {
-							if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
-								// This event falls within the config.urgency period that the user has set
-								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").from(moment().format("YYYYMMDD")));
-							} else {
-								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.fullDayEventDateFormat));
-							}
-						} else {
-							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").from(moment().format("YYYYMMDD")));
-						}
-					}
-					if(this.config.showEnd){
-						timeWrapper.innerHTML += "-" ;
-						timeWrapper.innerHTML += this.capFirst(moment(event.endDate  , "x").format(this.config.fullDayEventDateFormat));
-					}
-				} else {
-					if (event.startDate >= new Date()) {
-						if (event.startDate - now < 2 * oneDay) {
-							// This event is within the next 48 hours (2 days)
-							if (event.startDate - now < this.config.getRelative * oneHour) {
-								// If event is within 6 hour, display 'in xxx' time format or moment.fromNow()
-								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-							} else {
-								if(this.config.timeFormat === "absolute" && !this.config.nextDaysRelative) {
-									timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
-								} else {
-									// Otherwise just say 'Today/Tomorrow at such-n-such time'
-									timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").calendar());
-								}
-							}
-						} else {
-							/* Check to see if the user displays absolute or relative dates with their events
-							* Also check to see if an event is happening within an 'urgency' time frameElement
-							* For example, if the user set an .urgency of 7 days, those events that fall within that
-							* time frame will be displayed with 'in xxx' time format or moment.fromNow()
-							*
-							* Note: this needs to be put in its own function, as the whole thing repeats again verbatim
-							*/
-							if (this.config.timeFormat === "absolute") {
-								if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
-									// This event falls within the config.urgency period that the user has set
-									timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-								} else {
-									timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
-								}
-							} else {
-								timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-							}
-						}
-					} else {
-						timeWrapper.innerHTML = this.capFirst(
-							this.translate("RUNNING", {
-								fallback: this.translate("RUNNING") + " {timeUntilEnd}",
-								timeUntilEnd: moment(event.endDate, "x").fromNow(true)
-							})
-						);
-					}
-					if (this.config.showEnd) {
-						timeWrapper.innerHTML += "-";
-						timeWrapper.innerHTML += this.capFirst(moment(event.endDate, "x").format(this.config.dateEndFormat));
+		// 		eventWrapper.appendChild(titleWrapper);
+		// 		//console.log(event.today);
+		// 		var now = new Date();
+		// 		// Define second, minute, hour, and day variables
+		// 		var oneSecond = 1000; // 1,000 milliseconds
+		// 		var oneMinute = oneSecond * 60;
+		// 		var oneHour = oneMinute * 60;
+		// 		var oneDay = oneHour * 24;
+		// 		if (event.fullDayEvent) {
+		// 			//subtract one second so that fullDayEvents end at 23:59:59, and not at 0:00:00 one the next day
+		// 			event.endDate -= oneSecond;
+		// 			if (event.today) {
+		// 				timeWrapper.innerHTML = this.capFirst(this.translate("TODAY"));
+		// 			} else if (event.startDate - now < oneDay && event.startDate - now > 0) {
+		// 				timeWrapper.innerHTML = this.capFirst(this.translate("TOMORROW"));
+		// 			} else if (event.startDate - now < 2 * oneDay && event.startDate - now > 0) {
+		// 				if (this.translate("DAYAFTERTOMORROW") !== "DAYAFTERTOMORROW") {
+		// 					timeWrapper.innerHTML = this.capFirst(this.translate("DAYAFTERTOMORROW"));
+		// 				} else {
+		// 					timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+		// 				}
+		// 			} else {
+		// 				/* Check to see if the user displays absolute or relative dates with their events
+		// 				* Also check to see if an event is happening within an 'urgency' time frameElement
+		// 				* For example, if the user set an .urgency of 7 days, those events that fall within that
+		// 				* time frame will be displayed with 'in xxx' time format or moment.fromNow()
+		// 				*
+		// 				* Note: this needs to be put in its own function, as the whole thing repeats again verbatim
+		// 				*/
+		// 				if (this.config.timeFormat === "absolute") {
+		// 					if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
+		// 						// This event falls within the config.urgency period that the user has set
+		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").from(moment().format("YYYYMMDD")));
+		// 					} else {
+		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.fullDayEventDateFormat));
+		// 					}
+		// 				} else {
+		// 					timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").from(moment().format("YYYYMMDD")));
+		// 				}
+		// 			}
+		// 			if(this.config.showEnd){
+		// 				timeWrapper.innerHTML += "-" ;
+		// 				timeWrapper.innerHTML += this.capFirst(moment(event.endDate  , "x").format(this.config.fullDayEventDateFormat));
+		// 			}
+		// 		} else {
+		// 			if (event.startDate >= new Date()) {
+		// 				if (event.startDate - now < 2 * oneDay) {
+		// 					// This event is within the next 48 hours (2 days)
+		// 					if (event.startDate - now < this.config.getRelative * oneHour) {
+		// 						// If event is within 6 hour, display 'in xxx' time format or moment.fromNow()
+		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+		// 					} else {
+		// 						if(this.config.timeFormat === "absolute" && !this.config.nextDaysRelative) {
+		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
+		// 						} else {
+		// 							// Otherwise just say 'Today/Tomorrow at such-n-such time'
+		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").calendar());
+		// 						}
+		// 					}
+		// 				} else {
+		// 					/* Check to see if the user displays absolute or relative dates with their events
+		// 					* Also check to see if an event is happening within an 'urgency' time frameElement
+		// 					* For example, if the user set an .urgency of 7 days, those events that fall within that
+		// 					* time frame will be displayed with 'in xxx' time format or moment.fromNow()
+		// 					*
+		// 					* Note: this needs to be put in its own function, as the whole thing repeats again verbatim
+		// 					*/
+		// 					if (this.config.timeFormat === "absolute") {
+		// 						if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
+		// 							// This event falls within the config.urgency period that the user has set
+		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+		// 						} else {
+		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
+		// 						}
+		// 					} else {
+		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
+		// 					}
+		// 				}
+		// 			} else {
+		// 				timeWrapper.innerHTML = this.capFirst(
+		// 					this.translate("RUNNING", {
+		// 						fallback: this.translate("RUNNING") + " {timeUntilEnd}",
+		// 						timeUntilEnd: moment(event.endDate, "x").fromNow(true)
+		// 					})
+		// 				);
+		// 			}
+		// 			if (this.config.showEnd) {
+		// 				timeWrapper.innerHTML += "-";
+		// 				timeWrapper.innerHTML += this.capFirst(moment(event.endDate, "x").format(this.config.dateEndFormat));
 
-					}
-				}
-				//timeWrapper.innerHTML += ' - '+ moment(event.startDate,'x').format('lll');
-				//console.log(event);
-				var timeClass = this.timeClassForUrl(event.url);
-				timeWrapper.className = "time light " + timeClass;
-				eventWrapper.appendChild(timeWrapper);
-			}
+		// 			}
+		// 		}
+		// 		//timeWrapper.innerHTML += ' - '+ moment(event.startDate,'x').format('lll');
+		// 		//console.log(event);
+		// 		var timeClass = this.timeClassForUrl(event.url);
+		// 		timeWrapper.className = "time light " + timeClass;
+		// 		eventWrapper.appendChild(timeWrapper);
+		// 	}
 
-			wrapper.appendChild(eventWrapper);
+		// 	wrapper.appendChild(eventWrapper);
 
-			// Create fade effect.
-			if (e >= startFade) {
-				currentFadeStep = e - startFade;
-				eventWrapper.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
-			}
+		// 	// Create fade effect.
+		// 	if (e >= startFade) {
+		// 		currentFadeStep = e - startFade;
+		// 		eventWrapper.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
+		// 	}
 
-			if (this.config.showLocation) {
-				if (event.location !== false) {
-					var locationRow = document.createElement("tr");
-					locationRow.className = "normal xsmall light";
+		// 	if (this.config.showLocation) {
+		// 		if (event.location !== false) {
+		// 			var locationRow = document.createElement("tr");
+		// 			locationRow.className = "normal xsmall light";
 
-					if (this.config.displaySymbol) {
-						var symbolCell = document.createElement("td");
-						locationRow.appendChild(symbolCell);
-					}
+		// 			if (this.config.displaySymbol) {
+		// 				var symbolCell = document.createElement("td");
+		// 				locationRow.appendChild(symbolCell);
+		// 			}
 
-					var descCell = document.createElement("td");
-					descCell.className = "location";
-					descCell.colSpan = "2";
-					descCell.innerHTML = event.location;
-					locationRow.appendChild(descCell);
+		// 			var descCell = document.createElement("td");
+		// 			descCell.className = "location";
+		// 			descCell.colSpan = "2";
+		// 			descCell.innerHTML = event.location;
+		// 			locationRow.appendChild(descCell);
 
-					wrapper.appendChild(locationRow);
+		// 			wrapper.appendChild(locationRow);
 
-					if (e >= startFade) {
-						currentFadeStep = e - startFade;
-						locationRow.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
-					}
-				}
-			}
-		}
+		// 			if (e >= startFade) {
+		// 				currentFadeStep = e - startFade;
+		// 				locationRow.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 		return wrapper;
 	},
@@ -421,20 +561,20 @@ Module.register("MMM-My-Calendar", {
 	 * @param {number} timeFormat Specifies either 12 or 24 hour time format
 	 * @returns {moment.LocaleSpecification}
 	 */
-	getLocaleSpecification: function(timeFormat) {
+	getLocaleSpecification: function (timeFormat) {
 		switch (timeFormat) {
-		case 12: {
-			return { longDateFormat: {LT: "h:mm A"} };
-			break;
-		}
-		case 24: {
-			return { longDateFormat: {LT: "HH:mm"} };
-			break;
-		}
-		default: {
-			return { longDateFormat: {LT: moment.localeData().longDateFormat("LT")} };
-			break;
-		}
+			case 12: {
+				return { longDateFormat: { LT: "h:mm A" } };
+				break;
+			}
+			case 24: {
+				return { longDateFormat: { LT: "HH:mm" } };
+				break;
+			}
+			default: {
+				return { longDateFormat: { LT: moment.localeData().longDateFormat("LT") } };
+				break;
+			}
 		}
 	},
 
@@ -470,21 +610,21 @@ Module.register("MMM-My-Calendar", {
 			var calendar = this.calendarData[c];
 			for (var e in calendar) {
 				var event = JSON.parse(JSON.stringify(calendar[e])); // clone object
-				if(event.endDate < now) {
+				if (moment(event.endDate, 'x').isBefore(now, 'day')) {
 					continue;
 				}
-				if(this.config.hidePrivate) {
-					if(event.class === "PRIVATE") {
-						  // do not add the current event, skip it
-						  continue;
-					}
-				}
-				if(this.config.hideOngoing) {
-					if(event.startDate < now) {
+				if (this.config.hidePrivate) {
+					if (event.class === "PRIVATE") {
+						// do not add the current event, skip it
 						continue;
 					}
 				}
-				if(this.listContainsEvent(events,event)){
+				if (this.config.hideOngoing) {
+					if (event.startDate < now) {
+						continue;
+					}
+				}
+				if (this.listContainsEvent(events, event)) {
 					continue;
 				}
 				event.url = c;
@@ -493,7 +633,7 @@ Module.register("MMM-My-Calendar", {
 				/* if sliceMultiDayEvents is set to true, multiday events (events exceeding at least one midnight) are sliced into days,
 				* otherwise, esp. in dateheaders mode it is not clear how long these events are.
 				*/
-				var maxCount = Math.ceil(((event.endDate - 1) - moment(event.startDate, "x").endOf("day").format("x"))/(1000*60*60*24)) + 1;
+				var maxCount = Math.ceil(((event.endDate - 1) - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
 				if (this.config.sliceMultiDayEvents && maxCount > 1) {
 					var splitEvents = [];
 					var midnight = moment(event.startDate, "x").clone().startOf("day").add(1, "day").format("x");
@@ -510,7 +650,7 @@ Module.register("MMM-My-Calendar", {
 						midnight = moment(midnight, "x").add(1, "day").format("x"); // next day
 					}
 					// Last day
-					event.title += " ("+count+"/"+maxCount+")";
+					event.title += " (" + count + "/" + maxCount + ")";
 					splitEvents.push(event);
 
 					for (event of splitEvents) {
@@ -530,9 +670,9 @@ Module.register("MMM-My-Calendar", {
 		return events.slice(0, this.config.maximumEntries);
 	},
 
-	listContainsEvent: function(eventList, event){
-		for(var evt of eventList){
-			if(evt.title === event.title && parseInt(evt.startDate) === parseInt(event.startDate)){
+	listContainsEvent: function (eventList, event) {
+		for (var evt of eventList) {
+			if (evt.title === event.title && parseInt(evt.startDate) === parseInt(event.startDate)) {
 				return true;
 			}
 		}
@@ -557,6 +697,10 @@ Module.register("MMM-My-Calendar", {
 			auth: auth,
 			broadcastPastEvents: calendarConfig.broadcastPastEvents || this.config.broadcastPastEvents,
 		});
+	},
+
+	fetchSwedishDays: function () {
+		this.sendSocketNotification("ADD_SWEDISH_CALENDAR", {})
 	},
 
 	/**
@@ -735,8 +879,8 @@ Module.register("MMM-My-Calendar", {
 
 			var regParts = needle.match(/^\/(.+)\/([gim]*)$/);
 			if (regParts) {
-			  // the parsed pattern is a regexp.
-			  needle = new RegExp(regParts[1], regParts[2]);
+				// the parsed pattern is a regexp.
+				needle = new RegExp(regParts[1], regParts[2]);
 			}
 
 			title = title.replace(needle, replacement);
@@ -764,7 +908,7 @@ Module.register("MMM-My-Calendar", {
 			}
 		}
 
-		eventList.sort(function(a,b) {
+		eventList.sort(function (a, b) {
 			return a.startDate - b.startDate;
 		});
 

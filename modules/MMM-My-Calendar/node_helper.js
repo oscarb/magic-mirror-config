@@ -9,6 +9,8 @@ var NodeHelper = require("node_helper");
 var validUrl = require("valid-url");
 var CalendarFetcher = require("./calendarfetcher.js");
 
+var swedishDays = require("./2020.json")
+
 module.exports = NodeHelper.create({
 	// Override start method.
 	start: function() {
@@ -18,13 +20,21 @@ module.exports = NodeHelper.create({
 
 		console.log("Starting node helper for: " + this.name);
 
+
+
 	},
 
 	// Override socketNotificationReceived method.
 	socketNotificationReceived: function(notification, payload) {
+		var self = this;
+
 		if (notification === "ADD_CALENDAR") {
 			//console.log('ADD_CALENDAR: ');
 			this.createFetcher(payload.url, payload.fetchInterval, payload.excludedEvents, payload.maximumEntries, payload.maximumNumberOfDays, payload.auth, payload.broadcastPastEvents);
+		} else if (notification === "ADD_SWEDISH_CALENDAR") {
+			self.sendSocketNotification("SWEDISH_DAYS", {
+				data: swedishDays
+			})
 		}
 	},
 
