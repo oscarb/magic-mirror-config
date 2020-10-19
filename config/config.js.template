@@ -53,7 +53,7 @@
 					{
 						url: '$CALENDAR_PERSONAL',
 						symbol: 'calendar',
-						color: '#e8f5e9',
+						color: '#c8e6c9',
 						maximumNumberOfDays: 7
 					},
 					{
@@ -66,6 +66,13 @@
 						url: '$CALENDAR_BIRTHDAYS',
 						symbol: 'calendar',
 						color: '#ffab91',
+						maximumNumberOfDays: 7
+					},
+					,
+					{
+						url: '$CALENDAR_WORK',
+						symbol: 'calendar',
+						color: '#bbdefb',
 						maximumNumberOfDays: 7
 					}
 				]
