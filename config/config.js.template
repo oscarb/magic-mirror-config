@@ -46,34 +46,36 @@
 			 position: "upper_third",
 			 config: {
 				showLocation: true,
-
 				wrapEvents: true,
 				colored: true,
+				maximumEntries: 100,
+				maximumNumberOfDays: 7,
 				calendars: [
 					{
 						url: '$CALENDAR_PERSONAL',
 						symbol: 'calendar',
-						color: '#c8e6c9',
-						maximumNumberOfDays: 7
+						color: '#c8e6c9'
 					},
 					{
 						url: '$CALENDAR_PARTNER',
 						symbol: 'calendar',
-						color: '#f3e5f5',
-						maximumNumberOfDays: 7
+						color: '#f3e5f5'
 					},
 					{
 						url: '$CALENDAR_BIRTHDAYS',
 						symbol: 'calendar',
-						color: '#ffab91',
-						maximumNumberOfDays: 7
+						color: '#ffab91'
 					},
 					,
 					{
 						url: '$CALENDAR_WORK',
 						symbol: 'calendar',
-						color: '#bbdefb',
-						maximumNumberOfDays: 7
+						color: '#bbdefb'
+					},
+					{
+						url: '$CALENDAR_CHILD',
+						symbol: 'calendar',
+						color: '#dcedc8'
 					}
 				]
 			 }

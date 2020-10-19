@@ -14,7 +14,7 @@ Module.register("MMM-My-Calendar", {
 		maximumEntries: 10, // Total Maximum Entries
 		maximumNumberOfDays: 365,
 		displaySymbol: true,
-		defaultSymbol: "calendar", // Fontawesome Symbol see http://fontawesome.io/cheatsheet/
+		defaultSymbol: "calendar", // Fontawesome Symbol see https://fontawesome.com/cheatsheet?from=io
 		showLocation: false,
 		displayRepeatingCountTitle: false,
 		defaultRepeatingCountTitle: "",
@@ -41,8 +41,8 @@ Module.register("MMM-My-Calendar", {
 		calendars: [
 			{
 				symbol: "calendar",
-				url: "http://www.calendarlabs.com/templates/ical/US-Holidays.ics",
-			},
+				url: "https://www.calendarlabs.com/templates/ical/US-Holidays.ics"
+			}
 		],
 		titleReplace: {
 			"De verjaardag van ": "",
@@ -89,7 +89,7 @@ Module.register("MMM-My-Calendar", {
 			var calendarConfig = {
 				maximumEntries: calendar.maximumEntries,
 				maximumNumberOfDays: calendar.maximumNumberOfDays,
-				broadcastPastEvents: calendar.broadcastPastEvents,
+				broadcastPastEvents: calendar.broadcastPastEvents
 			};
 			if (calendar.symbolClass === "undefined" || calendar.symbolClass === null) {
 				calendarConfig.symbolClass = "";
@@ -128,6 +128,10 @@ Module.register("MMM-My-Calendar", {
 
 	// Override socket notification handler.
 	socketNotificationReceived: function (notification, payload) {
+		if (notification !== "SWEDISH_DAYS" && this.identifier !== payload.id) {
+			return;
+		}
+
 		if (notification === "CALENDAR_EVENTS") {
 			if (this.hasCalendarURL(payload.url)) {
 				this.calendarData[payload.url] = payload.events;
@@ -153,7 +157,7 @@ Module.register("MMM-My-Calendar", {
 
 	// Override dom generator.
 	getDom: function () {
-
+		
 		var events = this.createEventList();
 		var wrapper = document.createElement("table");
 		wrapper.className = this.config.tableClass;
@@ -559,31 +563,27 @@ Module.register("MMM-My-Calendar", {
 	 * it will a localeSpecification object with the system locale time format.
 	 *
 	 * @param {number} timeFormat Specifies either 12 or 24 hour time format
-	 * @returns {moment.LocaleSpecification}
+	 * @returns {moment.LocaleSpecification} formatted time	 
 	 */
 	getLocaleSpecification: function (timeFormat) {
 		switch (timeFormat) {
 			case 12: {
 				return { longDateFormat: { LT: "h:mm A" } };
-				break;
 			}
 			case 24: {
 				return { longDateFormat: { LT: "HH:mm" } };
-				break;
 			}
 			default: {
 				return { longDateFormat: { LT: moment.localeData().longDateFormat("LT") } };
-				break;
 			}
 		}
 	},
 
-	/* hasCalendarURL(url)
-	 * Check if this config contains the calendar url.
+	/**
+	 * Checks if this config contains the calendar url.
 	 *
-	 * argument url string - Url to look for.
-	 *
-	 * return bool - Has calendar url
+	 * @param {string} url The calendar url
+	 * @returns {boolean} True if the calendar config contains the url, False otherwise
 	 */
 	hasCalendarURL: function (url) {
 		for (var c in this.config.calendars) {
@@ -596,10 +596,10 @@ Module.register("MMM-My-Calendar", {
 		return false;
 	},
 
-	/* createEventList()
+	/**
 	 * Creates the sorted list of all events.
 	 *
-	 * return array - Array with events.
+	 * @returns {object[]} Array with events.
 	 */
 	createEventList: function () {
 		var events = [];
@@ -628,19 +628,19 @@ Module.register("MMM-My-Calendar", {
 					continue;
 				}
 				event.url = c;
-				event.today = event.startDate >= today && event.startDate < (today + 24 * 60 * 60 * 1000);
+				event.today = event.startDate >= today && event.startDate < today + 24 * 60 * 60 * 1000;
 
 				/* if sliceMultiDayEvents is set to true, multiday events (events exceeding at least one midnight) are sliced into days,
 				* otherwise, esp. in dateheaders mode it is not clear how long these events are.
 				*/
-				var maxCount = Math.ceil(((event.endDate - 1) - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
+				var maxCount = Math.ceil((event.endDate - 1 - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
 				if (this.config.sliceMultiDayEvents && maxCount > 1) {
 					var splitEvents = [];
 					var midnight = moment(event.startDate, "x").clone().startOf("day").add(1, "day").format("x");
 					var count = 1;
 					while (event.endDate > midnight) {
 						var thisEvent = JSON.parse(JSON.stringify(event)); // clone object
-						thisEvent.today = thisEvent.startDate >= today && thisEvent.startDate < (today + 24 * 60 * 60 * 1000);
+						thisEvent.today = thisEvent.startDate >= today && thisEvent.startDate < today + 24 * 60 * 60 * 1000;
 						thisEvent.endDate = midnight;
 						thisEvent.title += " (" + count + "/" + maxCount + ")";
 						splitEvents.push(thisEvent);
@@ -654,7 +654,7 @@ Module.register("MMM-My-Calendar", {
 					splitEvents.push(event);
 
 					for (event of splitEvents) {
-						if ((event.endDate > now) && (event.endDate <= future)) {
+						if (event.endDate > now && event.endDate <= future) {
 							events.push(event);
 						}
 					}
@@ -679,13 +679,16 @@ Module.register("MMM-My-Calendar", {
 		return false;
 	},
 
-	/* createEventList(url)
+	/**
 	 * Requests node helper to add calendar url.
 	 *
-	 * argument url string - Url to add.
+	 * @param {string} url The calendar url to add
+	 * @param {object} auth The authentication method and credentials
+	 * @param {object} calendarConfig The config of the specific calendar
 	 */
 	addCalendar: function (url, auth, calendarConfig) {
 		this.sendSocketNotification("ADD_CALENDAR", {
+			id: this.identifier,
 			url: url,
 			excludedEvents: calendarConfig.excludedEvents || this.config.excludedEvents,
 			maximumEntries: calendarConfig.maximumEntries || this.config.maximumEntries,
@@ -695,7 +698,7 @@ Module.register("MMM-My-Calendar", {
 			titleClass: calendarConfig.titleClass,
 			timeClass: calendarConfig.timeClass,
 			auth: auth,
-			broadcastPastEvents: calendarConfig.broadcastPastEvents || this.config.broadcastPastEvents,
+			broadcastPastEvents: calendarConfig.broadcastPastEvents || this.config.broadcastPastEvents
 		});
 	},
 
@@ -704,94 +707,100 @@ Module.register("MMM-My-Calendar", {
 	},
 
 	/**
-	 * symbolsForUrl(url)
-	 * Retrieves the symbols for a specific url.
+	 * Retrieves the symbols for a specific event.
 	 *
-	 * argument url string - Url to look for.
-	 *
-	 * return string/array - The Symbols
+	 * @param {object} event Event to look for.
+	 * @returns {string[]} The symbols
 	 */
-	symbolsForUrl: function (url) {
-		return this.getCalendarProperty(url, "symbol", this.config.defaultSymbol);
+	symbolsForEvent: function (event) {
+		let symbols = this.getCalendarPropertyAsArray(event.url, "symbol", this.config.defaultSymbol);
+
+		if (event.recurringEvent === true && this.hasCalendarProperty(event.url, "recurringSymbol")) {
+			symbols = this.mergeUnique(this.getCalendarPropertyAsArray(event.url, "recurringSymbol", this.config.defaultSymbol), symbols);
+		}
+
+		if (event.fullDayEvent === true && this.hasCalendarProperty(event.url, "fullDaySymbol")) {
+			symbols = this.mergeUnique(this.getCalendarPropertyAsArray(event.url, "fullDaySymbol", this.config.defaultSymbol), symbols);
+		}
+
+		return symbols;
+	},
+
+	mergeUnique: function (arr1, arr2) {
+		return arr1.concat(
+			arr2.filter(function (item) {
+				return arr1.indexOf(item) === -1;
+			})
+		);
 	},
 
 	/**
-	 * symbolClassForUrl(url)
-	 * Retrieves the symbolClass for a specific url.
+	 * Retrieves the symbolClass for a specific calendar url.
 	 *
-	 * @param url string - Url to look for.
-	 *
-	 * @returns string
+	 * @param {string} url The calendar url
+	 * @returns {string} The class to be used for the symbols of the calendar
 	 */
 	symbolClassForUrl: function (url) {
 		return this.getCalendarProperty(url, "symbolClass", "");
 	},
 
 	/**
-	 * titleClassForUrl(url)
-	 * Retrieves the titleClass for a specific url.
+	 * Retrieves the titleClass for a specific calendar url.
 	 *
-	 * @param url string - Url to look for.
-	 *
-	 * @returns string
+	 * @param {string} url The calendar url
+	 * @returns {string} The class to be used for the title of the calendar
 	 */
 	titleClassForUrl: function (url) {
 		return this.getCalendarProperty(url, "titleClass", "");
 	},
 
 	/**
-	 * timeClassForUrl(url)
-	 * Retrieves the timeClass for a specific url.
+	 * Retrieves the timeClass for a specific calendar url.
 	 *
-	 * @param url string - Url to look for.
-	 *
-	 * @returns string
+	 * @param {string} url The calendar url
+	 * @returns {string} The class to be used for the time of the calendar
 	 */
 	timeClassForUrl: function (url) {
 		return this.getCalendarProperty(url, "timeClass", "");
 	},
 
-	/* calendarNameForUrl(url)
-	 * Retrieves the calendar name for a specific url.
+	/**
+	 * Retrieves the calendar name for a specific calendar url.
 	 *
-	 * argument url string - Url to look for.
-	 *
-	 * return string - The name of the calendar
+	 * @param {string} url The calendar url
+	 * @returns {string} The name of the calendar
 	 */
 	calendarNameForUrl: function (url) {
 		return this.getCalendarProperty(url, "name", "");
 	},
 
-	/* colorForUrl(url)
-	 * Retrieves the color for a specific url.
+	/**
+	 * Retrieves the color for a specific calendar url.
 	 *
-	 * argument url string - Url to look for.
-	 *
-	 * return string - The Color
+	 * @param {string} url The calendar url
+	 * @returns {string} The color
 	 */
 	colorForUrl: function (url) {
 		return this.getCalendarProperty(url, "color", "#fff");
 	},
 
-	/* countTitleForUrl(url)
-	 * Retrieves the name for a specific url.
+	/**
+	 * Retrieves the count title for a specific calendar url.
 	 *
-	 * argument url string - Url to look for.
-	 *
-	 * return string - The Symbol
+	 * @param {string} url The calendar url
+	 * @returns {string} The title
 	 */
 	countTitleForUrl: function (url) {
 		return this.getCalendarProperty(url, "repeatingCountTitle", this.config.defaultRepeatingCountTitle);
 	},
 
-	/* getCalendarProperty(url, property, defaultValue)
-	 * Helper method to retrieve the property for a specific url.
+	/**
+	 * Helper method to retrieve the property for a specific calendar url.
 	 *
-	 * argument url string - Url to look for.
-	 * argument property string - Property to look for.
-	 * argument defaultValue string - Value if property is not found.
-	 *
-	 * return string - The Property
+	 * @param {string} url The calendar url
+	 * @param {string} property The property to look for
+	 * @param {string} defaultValue The value if the property is not found
+	 * @returns {*} The property
 	 */
 	getCalendarProperty: function (url, property, defaultValue) {
 		for (var c in this.config.calendars) {
@@ -802,6 +811,16 @@ Module.register("MMM-My-Calendar", {
 		}
 
 		return defaultValue;
+	},
+
+	getCalendarPropertyAsArray: function (url, property, defaultValue) {
+		let p = this.getCalendarProperty(url, property, defaultValue);
+		if (!(p instanceof Array)) p = [p];
+		return p;
+	},
+
+	hasCalendarProperty: function (url, property) {
+		return !!this.getCalendarProperty(url, property, undefined);
 	},
 
 	/**
@@ -826,8 +845,9 @@ Module.register("MMM-My-Calendar", {
 
 			for (var i = 0; i < words.length; i++) {
 				var word = words[i];
-				if (currentLine.length + word.length < (typeof maxLength === "number" ? maxLength : 25) - 1) { // max - 1 to account for a space
-					currentLine += (word + " ");
+				if (currentLine.length + word.length < (typeof maxLength === "number" ? maxLength : 25) - 1) {
+					// max - 1 to account for a space
+					currentLine += word + " ";				
 				} else {
 					line++;
 					if (line > maxTitleLines - 1) {
@@ -838,9 +858,9 @@ Module.register("MMM-My-Calendar", {
 					}
 
 					if (currentLine.length > 0) {
-						temp += (currentLine + "<br>" + word + " ");
+						temp += currentLine + "<br>" + word + " ";
 					} else {
-						temp += (word + "<br>");
+						temp += word + "<br>";
 					}
 					currentLine = "";
 				}
@@ -856,26 +876,31 @@ Module.register("MMM-My-Calendar", {
 		}
 	},
 
-	/* capFirst(string)
+	/**
 	 * Capitalize the first letter of a string
-	 * Return capitalized string
+	 *
+	 * @param {string} string The string to capitalize
+	 * @returns {string} The capitalized string
 	 */
 	capFirst: function (string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	},
 
-	/* titleTransform(title)
+	/**
 	 * Transforms the title of an event for usage.
 	 * Replaces parts of the text as defined in config.titleReplace.
 	 * Shortens title based on config.maxTitleLength and config.wrapEvents
 	 *
-	 * argument title string - The title to transform.
-	 *
-	 * return string - The transformed title.
+	 * @param {string} title The title to transform.
+	 * @param {object} titleReplace Pairs of strings to be replaced in the title
+	 * @param {boolean} wrapEvents Wrap the text after the line has reached maxLength
+	 * @param {number} maxTitleLength The max length of the string
+	 * @param {number} maxTitleLines The max number of vertical lines before cutting event title
+	 * @returns {string} The transformed title.
 	 */
-	titleTransform: function (title) {
-		for (var needle in this.config.titleReplace) {
-			var replacement = this.config.titleReplace[needle];
+	titleTransform: function (title, titleReplace, wrapEvents, maxTitleLength, maxTitleLines) {
+		for (var needle in titleReplace) {
+			var replacement = titleReplace[needle];
 
 			var regParts = needle.match(/^\/(.+)\/([gim]*)$/);
 			if (regParts) {
@@ -886,11 +911,11 @@ Module.register("MMM-My-Calendar", {
 			title = title.replace(needle, replacement);
 		}
 
-		title = this.shorten(title, this.config.maxTitleLength, this.config.wrapEvents, this.config.maxTitleLines);
+		title = this.shorten(title, maxTitleLength, wrapEvents, maxTitleLines);
 		return title;
 	},
 
-	/* broadcastEvents()
+	/**
 	 * Broadcasts the events to all other modules for reuse.
 	 * The all events available in one array, sorted on startdate.
 	 */
@@ -900,7 +925,7 @@ Module.register("MMM-My-Calendar", {
 			var calendar = this.calendarData[url];
 			for (var e in calendar) {
 				var event = cloneObject(calendar[e]);
-				event.symbol = this.symbolsForUrl(url);
+				event.symbol = this.symbolsForEvent(event);
 				event.calendarName = this.calendarNameForUrl(url);
 				event.color = this.colorForUrl(url);
 				delete event.url;
@@ -913,6 +938,5 @@ Module.register("MMM-My-Calendar", {
 		});
 
 		this.sendNotification("CALENDAR_EVENTS", eventList);
-
 	}
 });
