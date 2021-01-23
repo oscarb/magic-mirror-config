@@ -170,19 +170,13 @@ Module.register("MMM-My-Calendar", {
 
 		// TODO
 		/*
-		* Different colors for different calendars
-		* Display start/end time
-		* Swedish flag days
+		* Display start/end time (10, 10:30, 10:30-15:00, 12-14)
 		* Gray out past events for today?
-		* Red days
 		* Special themes day: https://github.com/Miicroo/ha-swedish_calendar/blob/master/custom_components/swedish_calendar/specialThemes.json
-		* Fix Swedish days
-		* Show calendar even 
-		* Show time of event 
 		* Check commented code
-		* Fix red color
 		* Go through calendar config and loading
 		* Remove "Laddar..."
+		* Improve swedish days loading over new years
 		*/
 
 		// Begin WEEKLY TABLE
@@ -235,6 +229,11 @@ Module.register("MMM-My-Calendar", {
 				let currentDay = moment().add(index, 'days')
 				let startDate = moment(event.startDate, "x")
 				let endDate = moment(event.endDate, "x").subtract(1, 'second')
+				
+				if(endDate.isBefore(startDate, 'days')) {
+					endDate.add(1, 'second')
+				}
+
 
 				if (startDate.isSameOrBefore(currentDay, 'days') &&
 					endDate.isSameOrAfter(currentDay, 'days')) {

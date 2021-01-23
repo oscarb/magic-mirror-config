@@ -53,29 +53,28 @@
 				calendars: [
 					{
 						url: '$CALENDAR_PERSONAL',
-						symbol: 'calendar',
-						color: '#c8e6c9'
+						color: '#81d4fa'
 					},
 					{
 						url: '$CALENDAR_PARTNER',
-						symbol: 'calendar',
 						color: '#f3e5f5'
 					},
 					{
 						url: '$CALENDAR_BIRTHDAYS',
-						symbol: 'calendar',
 						color: '#ffab91'
 					},
 					,
 					{
 						url: '$CALENDAR_WORK',
-						symbol: 'calendar',
 						color: '#bbdefb'
 					},
 					{
 						url: '$CALENDAR_CHILD',
-						symbol: 'calendar',
 						color: '#dcedc8'
+					},
+					{
+						url: 'http://kalender.link/ical/best',
+						color: '#ef5350'
 					}
 				]
 			 }
