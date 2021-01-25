@@ -19,8 +19,11 @@ Module.register("MMM-My-Calendar", {
 		displayRepeatingCountTitle: false,
 		defaultRepeatingCountTitle: "",
 		maxTitleLength: 25,
+		maxLocationTitleLength: 25,
 		wrapEvents: false, // wrap events to multiple lines breaking at maxTitleLength
+		wrapLocationEvents: false,
 		maxTitleLines: 3,
+		maxEventTitleLines: 3,
 		fetchInterval: 5 * 60 * 1000, // Update every 5 minutes.
 		animationSpeed: 2000,
 		fade: true,
@@ -47,6 +50,9 @@ Module.register("MMM-My-Calendar", {
 		titleReplace: {
 			"De verjaardag van ": "",
 			"'s birthday": ""
+		},
+		locationTitleReplace: {
+			"street ": ""
 		},
 		broadcastEvents: true,
 		excludedEvents: [],
@@ -609,6 +615,7 @@ Module.register("MMM-My-Calendar", {
 			var calendar = this.calendarData[c];
 			for (var e in calendar) {
 				var event = JSON.parse(JSON.stringify(calendar[e])); // clone object
+				// Keep events from earlier today around
 				if (moment(event.endDate, 'x').isBefore(now, 'day')) {
 					continue;
 				}
