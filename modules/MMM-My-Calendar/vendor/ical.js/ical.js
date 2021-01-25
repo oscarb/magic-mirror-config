@@ -91,6 +91,12 @@
 
     if (params && p){
       dt.tz = p.TZID
+      if (dt.tz !== undefined)
+      {
+        // Remove surrouding quotes if found at the begining and at the end of the string
+        // (Occurs when parsing Microsoft Exchange events containing TZID with Windows standard format instead IANA)
+        dt.tz = dt.tz.replace(/^"(.*)"$/, "$1")
+      }
     }
 
     return dt
@@ -409,10 +415,24 @@
       return storeParam(name.toLowerCase())(val, params, ctx);
     },
 
+		getLineBreakChar: function (string) {
+			const indexOfLF = string.indexOf('\n', 1);  // No need to check first-character
+
+			if (indexOfLF === -1) {
+				if (string.indexOf('\r') !== -1) return '\r';
+
+				return '\n';
+			}
+
+			if (string[indexOfLF - 1] === '\r') return '\r?\n';
+
+			return '\n';
+		},
 
     parseICS : function(str){
       var self = this
-      var lines = str.split(/\r?\n/)
+			var line_end_type = self.getLineBreakChar(str)
+      var lines = str.split(line_end_type=='\n'?/\n/:/\r?\n/)
       var ctx = {}
       var stack = []
 
@@ -423,7 +443,8 @@
           i += 1
         }
 
-        var kv = l.split(":")
+        // Split on semicolons except if the semicolon is surrounded by quotes
+        var kv = l.split(/:(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/g)
 
         if (kv.length < 2){
           // Invalid line - must have k&v
