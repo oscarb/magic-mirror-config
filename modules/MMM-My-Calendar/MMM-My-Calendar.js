@@ -172,11 +172,11 @@ Module.register("MMM-My-Calendar", {
 		/*
 		* Display start/end time (10, 10:30, 10:30-15:00, 12-14)
 		* Gray out past events for today?
-		* Special themes day: https://github.com/Miicroo/ha-swedish_calendar/blob/master/custom_components/swedish_calendar/specialThemes.json
 		* Check commented code
 		* Go through calendar config and loading
 		* Remove "Laddar..."
 		* Improve swedish days loading over new years
+		* Remove "Du har inga händelser"
 		*/
 
 		// Begin WEEKLY TABLE
