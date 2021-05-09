@@ -63,7 +63,6 @@
 						url: '$CALENDAR_BIRTHDAYS',
 						color: '#ffab91'
 					},
-					,
 					{
 						url: '$CALENDAR_WORK',
 						color: '#bbdefb'
