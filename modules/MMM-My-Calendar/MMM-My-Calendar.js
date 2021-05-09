@@ -168,25 +168,7 @@ Module.register("MMM-My-Calendar", {
 		var wrapper = document.createElement("table");
 		wrapper.className = this.config.tableClass;
 
-
-		/*
-		COLORS
-		* #ce93d8 - Emelie? 
-		*/
-
-		// TODO
-		/*
-		* Display start/end time (10, 10:30, 10:30-15:00, 12-14)
-		* Gray out past events for today?
-		* Check commented code
-		* Go through calendar config and loading
-		* Remove "Laddar..."
-		* Improve swedish days loading over new years
-		* Remove "Du har inga händelser"
-		*/
-
 		// Begin WEEKLY TABLE
-
 		var dayHeaderRow = document.createElement("tr");
 
 		let startDay = moment();
@@ -219,27 +201,22 @@ Module.register("MMM-My-Calendar", {
 		let eventDay = moment();
 		let lastEventDay = eventDay.clone().add(this.config.numberOfDays, 'days');
 
-
-		//var eventsPerDay = [["Event M1", "Event M2"], [], [], ["Event T1"], [], [], ["Party!"]]
-
 		let schedule = { "days": Array.from({ length: this.config.numberOfDays }, () => ({ 'events': [] })) }
 
 		var eventsPerDay = Array(this.config.numberOfDays).fill(Array(0))
-
-
-
 
 		events.forEach(event => {
 
 			for (let index = 0; index < this.config.numberOfDays; index++) {
 				let currentDay = moment().add(index, 'days')
 				let startDate = moment(event.startDate, "x")
+
+				//subtract one second so that fullDayEvents end at 23:59:59, and not at 0:00:00 one the next day
 				let endDate = moment(event.endDate, "x").subtract(1, 'second')
 				
 				if(endDate.isBefore(startDate, 'days')) {
 					endDate.add(1, 'second')
 				}
-
 
 				if (startDate.isSameOrBefore(currentDay, 'days') &&
 					endDate.isSameOrAfter(currentDay, 'days')) {
@@ -277,287 +254,15 @@ Module.register("MMM-My-Calendar", {
 			eventRow.appendChild(cell)
 		})
 
-
-
-		// while (!eventDay.isSame(lastEventDay)) {
-		// 	let cell = document.createElement("td")
-		// 	cell.innerHTML = "event info"
-
-
-
-
-
-
-		// 	eventRow.appendChild(cell)
-		// 	eventDay.add(1, 'days')
-		// }
-
 		wrapper.appendChild(eventRow)
 
 		// End WEEKLY TABLE
-
-
-
-
 
 		if (events.length === 0) {
 			wrapper.innerHTML = (this.loaded) ? this.translate("EMPTY") : this.translate("LOADING");
 			wrapper.className = this.config.tableClass + " dimmed";
 			return wrapper;
 		}
-
-		// // 
-		// if (this.config.fade && this.config.fadePoint < 1) {
-		// 	if (this.config.fadePoint < 0) {
-		// 		this.config.fadePoint = 0;
-		// 	}
-		// 	var startFade = events.length * this.config.fadePoint;
-		// 	var fadeSteps = events.length - startFade;
-		// }
-
-		// var currentFadeStep = 0;
-		// var lastSeenDate = "";
-
-		// for (var e in events) {
-		// 	var event = events[e];
-		// 	var dateAsString = moment(event.startDate, "x").format(this.config.dateFormat);
-		// 	if(this.config.timeFormat === "dateheaders"){
-		// 		if(lastSeenDate !== dateAsString){
-		// 			var dateRow = document.createElement("tr");
-		// 			dateRow.className = "normal";
-		// 			var dateCell = document.createElement("td");
-
-		// 			dateCell.colSpan = "3";
-		// 			dateCell.innerHTML = dateAsString;
-		// 			dateRow.appendChild(dateCell);
-		// 			wrapper.appendChild(dateRow);
-
-		// 			if (e >= startFade) {			//fading
-		// 				currentFadeStep = e - startFade;
-		// 				dateRow.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
-		// 			}
-
-		// 			lastSeenDate = dateAsString;
-		// 		}
-		// 	}
-
-		// 	var eventWrapper = document.createElement("tr");
-
-		// 	if (this.config.colored && !this.config.coloredSymbolOnly) {
-		// 		eventWrapper.style.cssText = "color:" + this.colorForUrl(event.url);
-		// 	}
-
-		// 	eventWrapper.className = "normal";
-
-		// 	if (this.config.displaySymbol) {
-		// 		var symbolWrapper = document.createElement("td");
-
-		// 		if (this.config.colored && this.config.coloredSymbolOnly) {
-		// 			symbolWrapper.style.cssText = "color:" + this.colorForUrl(event.url);
-		// 		}
-
-		// 		var symbolClass = this.symbolClassForUrl(event.url);
-		// 		symbolWrapper.className = "symbol align-right " + symbolClass;
-
-		// 		var symbols = this.symbolsForUrl(event.url);
-		// 		if(typeof symbols === "string") {
-		// 			symbols = [symbols];
-		// 		}
-
-		// 		for(var i = 0; i < symbols.length; i++) {
-		// 			var symbol = document.createElement("span");
-		// 			symbol.className = "fa fa-fw fa-" + symbols[i];
-		// 			if(i > 0){
-		// 				symbol.style.paddingLeft = "5px";
-		// 			}
-		// 			symbolWrapper.appendChild(symbol);
-		// 		}
-		// 		eventWrapper.appendChild(symbolWrapper);
-		// 	} else if(this.config.timeFormat === "dateheaders"){
-		// 		var blankCell = document.createElement("td");
-		// 		blankCell.innerHTML = "&nbsp;&nbsp;&nbsp;";
-		// 		eventWrapper.appendChild(blankCell);
-		// 	}
-
-		// 	var titleWrapper = document.createElement("td"),
-		// 		repeatingCountTitle = "";
-
-		// 	if (this.config.displayRepeatingCountTitle && event.firstYear !== undefined) {
-
-		// 		repeatingCountTitle = this.countTitleForUrl(event.url);
-
-		// 		if (repeatingCountTitle !== "") {
-		// 			var thisYear = new Date(parseInt(event.startDate)).getFullYear(),
-		// 				yearDiff = thisYear - event.firstYear;
-
-		// 			repeatingCountTitle = ", " + yearDiff + ". " + repeatingCountTitle;
-		// 		}
-		// 	}
-
-		// 	titleWrapper.innerHTML = this.titleTransform(event.title) + repeatingCountTitle;
-
-		// 	var titleClass = this.titleClassForUrl(event.url);
-
-		// 	if (!this.config.colored) {
-		// 		titleWrapper.className = "title bright " + titleClass;
-		// 	} else {
-		// 		titleWrapper.className = "title " + titleClass;
-		// 	}
-
-		// 	if(this.config.timeFormat === "dateheaders"){
-
-		// 		if (event.fullDayEvent) {
-		// 			titleWrapper.colSpan = "2";
-		// 			titleWrapper.align = "left";
-
-		// 		} else {
-
-		// 			var timeClass = this.timeClassForUrl(event.url);
-		// 			var timeWrapper = document.createElement("td");
-		// 			timeWrapper.className = "time light " + timeClass;
-		// 			timeWrapper.align = "left";
-		// 			timeWrapper.style.paddingLeft = "2px";
-		// 			timeWrapper.innerHTML = moment(event.startDate, "x").format("LT");
-		// 			eventWrapper.appendChild(timeWrapper);
-		// 			titleWrapper.align = "right";
-		// 		}
-
-		// 		eventWrapper.appendChild(titleWrapper);
-		// 	} else {
-		// 		var timeWrapper = document.createElement("td");
-
-		// 		eventWrapper.appendChild(titleWrapper);
-		// 		//console.log(event.today);
-		// 		var now = new Date();
-		// 		// Define second, minute, hour, and day variables
-		// 		var oneSecond = 1000; // 1,000 milliseconds
-		// 		var oneMinute = oneSecond * 60;
-		// 		var oneHour = oneMinute * 60;
-		// 		var oneDay = oneHour * 24;
-		// 		if (event.fullDayEvent) {
-		// 			//subtract one second so that fullDayEvents end at 23:59:59, and not at 0:00:00 one the next day
-		// 			event.endDate -= oneSecond;
-		// 			if (event.today) {
-		// 				timeWrapper.innerHTML = this.capFirst(this.translate("TODAY"));
-		// 			} else if (event.startDate - now < oneDay && event.startDate - now > 0) {
-		// 				timeWrapper.innerHTML = this.capFirst(this.translate("TOMORROW"));
-		// 			} else if (event.startDate - now < 2 * oneDay && event.startDate - now > 0) {
-		// 				if (this.translate("DAYAFTERTOMORROW") !== "DAYAFTERTOMORROW") {
-		// 					timeWrapper.innerHTML = this.capFirst(this.translate("DAYAFTERTOMORROW"));
-		// 				} else {
-		// 					timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-		// 				}
-		// 			} else {
-		// 				/* Check to see if the user displays absolute or relative dates with their events
-		// 				* Also check to see if an event is happening within an 'urgency' time frameElement
-		// 				* For example, if the user set an .urgency of 7 days, those events that fall within that
-		// 				* time frame will be displayed with 'in xxx' time format or moment.fromNow()
-		// 				*
-		// 				* Note: this needs to be put in its own function, as the whole thing repeats again verbatim
-		// 				*/
-		// 				if (this.config.timeFormat === "absolute") {
-		// 					if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
-		// 						// This event falls within the config.urgency period that the user has set
-		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").from(moment().format("YYYYMMDD")));
-		// 					} else {
-		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.fullDayEventDateFormat));
-		// 					}
-		// 				} else {
-		// 					timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").from(moment().format("YYYYMMDD")));
-		// 				}
-		// 			}
-		// 			if(this.config.showEnd){
-		// 				timeWrapper.innerHTML += "-" ;
-		// 				timeWrapper.innerHTML += this.capFirst(moment(event.endDate  , "x").format(this.config.fullDayEventDateFormat));
-		// 			}
-		// 		} else {
-		// 			if (event.startDate >= new Date()) {
-		// 				if (event.startDate - now < 2 * oneDay) {
-		// 					// This event is within the next 48 hours (2 days)
-		// 					if (event.startDate - now < this.config.getRelative * oneHour) {
-		// 						// If event is within 6 hour, display 'in xxx' time format or moment.fromNow()
-		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-		// 					} else {
-		// 						if(this.config.timeFormat === "absolute" && !this.config.nextDaysRelative) {
-		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
-		// 						} else {
-		// 							// Otherwise just say 'Today/Tomorrow at such-n-such time'
-		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").calendar());
-		// 						}
-		// 					}
-		// 				} else {
-		// 					/* Check to see if the user displays absolute or relative dates with their events
-		// 					* Also check to see if an event is happening within an 'urgency' time frameElement
-		// 					* For example, if the user set an .urgency of 7 days, those events that fall within that
-		// 					* time frame will be displayed with 'in xxx' time format or moment.fromNow()
-		// 					*
-		// 					* Note: this needs to be put in its own function, as the whole thing repeats again verbatim
-		// 					*/
-		// 					if (this.config.timeFormat === "absolute") {
-		// 						if ((this.config.urgency > 1) && (event.startDate - now < (this.config.urgency * oneDay))) {
-		// 							// This event falls within the config.urgency period that the user has set
-		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-		// 						} else {
-		// 							timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").format(this.config.dateFormat));
-		// 						}
-		// 					} else {
-		// 						timeWrapper.innerHTML = this.capFirst(moment(event.startDate, "x").fromNow());
-		// 					}
-		// 				}
-		// 			} else {
-		// 				timeWrapper.innerHTML = this.capFirst(
-		// 					this.translate("RUNNING", {
-		// 						fallback: this.translate("RUNNING") + " {timeUntilEnd}",
-		// 						timeUntilEnd: moment(event.endDate, "x").fromNow(true)
-		// 					})
-		// 				);
-		// 			}
-		// 			if (this.config.showEnd) {
-		// 				timeWrapper.innerHTML += "-";
-		// 				timeWrapper.innerHTML += this.capFirst(moment(event.endDate, "x").format(this.config.dateEndFormat));
-
-		// 			}
-		// 		}
-		// 		//timeWrapper.innerHTML += ' - '+ moment(event.startDate,'x').format('lll');
-		// 		//console.log(event);
-		// 		var timeClass = this.timeClassForUrl(event.url);
-		// 		timeWrapper.className = "time light " + timeClass;
-		// 		eventWrapper.appendChild(timeWrapper);
-		// 	}
-
-		// 	wrapper.appendChild(eventWrapper);
-
-		// 	// Create fade effect.
-		// 	if (e >= startFade) {
-		// 		currentFadeStep = e - startFade;
-		// 		eventWrapper.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
-		// 	}
-
-		// 	if (this.config.showLocation) {
-		// 		if (event.location !== false) {
-		// 			var locationRow = document.createElement("tr");
-		// 			locationRow.className = "normal xsmall light";
-
-		// 			if (this.config.displaySymbol) {
-		// 				var symbolCell = document.createElement("td");
-		// 				locationRow.appendChild(symbolCell);
-		// 			}
-
-		// 			var descCell = document.createElement("td");
-		// 			descCell.className = "location";
-		// 			descCell.colSpan = "2";
-		// 			descCell.innerHTML = event.location;
-		// 			locationRow.appendChild(descCell);
-
-		// 			wrapper.appendChild(locationRow);
-
-		// 			if (e >= startFade) {
-		// 				currentFadeStep = e - startFade;
-		// 				locationRow.style.opacity = 1 - (1 / fadeSteps * currentFadeStep);
-		// 			}
-		// 		}
-		// 	}
-		// }
 
 		return wrapper;
 	},
