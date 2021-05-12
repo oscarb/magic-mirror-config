@@ -42,6 +42,43 @@
 			 }
 		 },
 		 {
+			 module: "MMM-My-Calendar",
+			 position: "upper_third",
+			 config: {
+				showLocation: true,
+				wrapEvents: true,
+				colored: true,
+				maximumEntries: 100,
+				maximumNumberOfDays: 7,
+				calendars: [
+					{
+						url: '$CALENDAR_PERSONAL',
+						color: '#81d4fa'
+					},
+					{
+						url: '$CALENDAR_PARTNER',
+						color: '#f3e5f5'
+					},
+					{
+						url: '$CALENDAR_BIRTHDAYS',
+						color: '#ffab91'
+					},
+					{
+						url: '$CALENDAR_WORK',
+						color: '#bbdefb'
+					},
+					{
+						url: '$CALENDAR_CHILD',
+						color: '#dcedc8'
+					},
+					{
+						url: 'http://kalender.link/ical/best',
+						color: '#ef5350'
+					}
+				]
+			 }
+		 },
+		 {
 			 module: "MMM-Remote-Compliments",
 			 position: "lower_third",
 			 config: {
