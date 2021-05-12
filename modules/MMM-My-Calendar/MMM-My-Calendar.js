@@ -37,6 +37,7 @@ Module.register("MMM-My-Calendar", {
 		fadePoint: 0.25, // Start on 1/4th of the list.
 		hidePrivate: false,
 		hideOngoing: false,
+		hideTime: false,
 		colored: false,
 		coloredSymbolOnly: false,
 		tableClass: "small",
@@ -58,7 +59,8 @@ Module.register("MMM-My-Calendar", {
 		excludedEvents: [],
 		sliceMultiDayEvents: false,
 		broadcastPastEvents: true,
-		nextDaysRelative: false
+		nextDaysRelative: false,
+		selfSignedCert: false
 	},
 
 	// Define required scripts.
@@ -74,7 +76,7 @@ Module.register("MMM-My-Calendar", {
 	// Define required translations.
 	getTranslations: function () {
 		// The translations for the default modules are defined in the core translation files.
-		// Therefor we can just return false. Otherwise we should have returned a dictionary.
+		// Therefore we can just return false. Otherwise we should have returned a dictionary.
 		// If you're trying to build your own module including translations, check out the documentation.
 		return false;
 	},
@@ -88,15 +90,16 @@ Module.register("MMM-My-Calendar", {
 
 		this.fetchSwedishDays();
 
-		for (var c in this.config.calendars) {
-			var calendar = this.config.calendars[c];
+		this.config.calendars.forEach((calendar) => {
 			calendar.url = calendar.url.replace("webcal://", "http://");
 
-			var calendarConfig = {
+			const calendarConfig = {
 				maximumEntries: calendar.maximumEntries,
 				maximumNumberOfDays: calendar.maximumNumberOfDays,
-				broadcastPastEvents: calendar.broadcastPastEvents
+				broadcastPastEvents: calendar.broadcastPastEvents,
+				selfSignedCert: calendar.selfSignedCert
 			};
+
 			if (calendar.symbolClass === "undefined" || calendar.symbolClass === null) {
 				calendarConfig.symbolClass = "";
 			}
@@ -125,7 +128,7 @@ Module.register("MMM-My-Calendar", {
 			setInterval(function () {
 				self.addCalendar(calendar.url, calendar.auth, calendarConfig);
 			}, self.config.fetchInterval);
-		}
+		});
 
 		this.calendarData = {};
 		this.swedishDays = {};
@@ -164,8 +167,8 @@ Module.register("MMM-My-Calendar", {
 	// Override dom generator.
 	getDom: function () {
 		
-		var events = this.createEventList();
-		var wrapper = document.createElement("table");
+		const events = this.createEventList();
+		const wrapper = document.createElement("table");
 		wrapper.className = this.config.tableClass;
 
 		// Begin WEEKLY TABLE
@@ -229,7 +232,6 @@ Module.register("MMM-My-Calendar", {
 			}
 
 		})
-
 
 		schedule.days.forEach(day => {
 			let events = day.events;
@@ -296,8 +298,7 @@ Module.register("MMM-My-Calendar", {
 	 * @returns {boolean} True if the calendar config contains the url, False otherwise
 	 */
 	hasCalendarURL: function (url) {
-		for (var c in this.config.calendars) {
-			var calendar = this.config.calendars[c];
+		for (const calendar of this.config.calendars) {
 			if (calendar.url === url) {
 				return true;
 			}
@@ -312,14 +313,15 @@ Module.register("MMM-My-Calendar", {
 	 * @returns {object[]} Array with events.
 	 */
 	createEventList: function () {
-		var events = [];
-		var today = moment().startOf("day");
-		var now = new Date();
-		var future = moment().startOf("day").add(this.config.maximumNumberOfDays, "days").toDate();
-		for (var c in this.calendarData) {
-			var calendar = this.calendarData[c];
-			for (var e in calendar) {
-				var event = JSON.parse(JSON.stringify(calendar[e])); // clone object
+		const now = new Date();
+		const today = moment().startOf("day");
+		const future = moment().startOf("day").add(this.config.maximumNumberOfDays, "days").toDate();
+		let events = [];
+
+		for (const calendarUrl in this.calendarData) {
+			const calendar = this.calendarData[calendarUrl];
+			for (const e in calendar) {
+				const event = JSON.parse(JSON.stringify(calendar[e])); // clone object
 				// Keep events from earlier today around
 				if (moment(event.endDate, 'x').isBefore(now, 'day')) {
 					continue;
@@ -338,19 +340,19 @@ Module.register("MMM-My-Calendar", {
 				if (this.listContainsEvent(events, event)) {
 					continue;
 				}
-				event.url = c;
+				event.url = calendarUrl;
 				event.today = event.startDate >= today && event.startDate < today + 24 * 60 * 60 * 1000;
 
 				/* if sliceMultiDayEvents is set to true, multiday events (events exceeding at least one midnight) are sliced into days,
 				* otherwise, esp. in dateheaders mode it is not clear how long these events are.
 				*/
-				var maxCount = Math.ceil((event.endDate - 1 - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
+				const maxCount = Math.ceil((event.endDate - 1 - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
 				if (this.config.sliceMultiDayEvents && maxCount > 1) {
-					var splitEvents = [];
-					var midnight = moment(event.startDate, "x").clone().startOf("day").add(1, "day").format("x");
-					var count = 1;
+					const splitEvents = [];
+					let midnight = moment(event.startDate, "x").clone().startOf("day").add(1, "day").format("x");
+					let count = 1;
 					while (event.endDate > midnight) {
-						var thisEvent = JSON.parse(JSON.stringify(event)); // clone object
+						const thisEvent = JSON.parse(JSON.stringify(event)); // clone object
 						thisEvent.today = thisEvent.startDate >= today && thisEvent.startDate < today + 24 * 60 * 60 * 1000;
 						thisEvent.endDate = midnight;
 						thisEvent.title += " (" + count + "/" + maxCount + ")";
@@ -364,9 +366,9 @@ Module.register("MMM-My-Calendar", {
 					event.title += " (" + count + "/" + maxCount + ")";
 					splitEvents.push(event);
 
-					for (event of splitEvents) {
-						if (event.endDate > now && event.endDate <= future) {
-							events.push(event);
+					for (let splitEvent of splitEvents) {
+						if (splitEvent.endDate > now && splitEvent.endDate <= future) {
+							events.push(splitEvent);
 						}
 					}
 				} else {
@@ -382,7 +384,7 @@ Module.register("MMM-My-Calendar", {
 	},
 
 	listContainsEvent: function (eventList, event) {
-		for (var evt of eventList) {
+		for (const evt of eventList) {
 			if (evt.title === event.title && parseInt(evt.startDate) === parseInt(event.startDate)) {
 				return true;
 			}
@@ -409,7 +411,8 @@ Module.register("MMM-My-Calendar", {
 			titleClass: calendarConfig.titleClass,
 			timeClass: calendarConfig.timeClass,
 			auth: auth,
-			broadcastPastEvents: calendarConfig.broadcastPastEvents || this.config.broadcastPastEvents
+			broadcastPastEvents: calendarConfig.broadcastPastEvents || this.config.broadcastPastEvents,
+			selfSignedCert: calendarConfig.selfSignedCert || this.config.selfSignedCert
 		});
 	},
 
@@ -514,8 +517,7 @@ Module.register("MMM-My-Calendar", {
 	 * @returns {*} The property
 	 */
 	getCalendarProperty: function (url, property, defaultValue) {
-		for (var c in this.config.calendars) {
-			var calendar = this.config.calendars[c];
+		for (const calendar of this.config.calendars) {
 			if (calendar.url === url && calendar.hasOwnProperty(property)) {
 				return calendar[property];
 			}
@@ -549,13 +551,13 @@ Module.register("MMM-My-Calendar", {
 		}
 
 		if (wrapEvents === true) {
-			var temp = "";
-			var currentLine = "";
-			var words = string.split(" ");
-			var line = 0;
+			const words = string.split(" ");
+			let temp = "";
+			let currentLine = "";
+			let line = 0;
 
-			for (var i = 0; i < words.length; i++) {
-				var word = words[i];
+			for (let i = 0; i < words.length; i++) {
+				const word = words[i];
 				if (currentLine.length + word.length < (typeof maxLength === "number" ? maxLength : 25) - 1) {
 					// max - 1 to account for a space
 					currentLine += word + " ";				
@@ -610,10 +612,10 @@ Module.register("MMM-My-Calendar", {
 	 * @returns {string} The transformed title.
 	 */
 	titleTransform: function (title, titleReplace, wrapEvents, maxTitleLength, maxTitleLines) {
-		for (var needle in titleReplace) {
-			var replacement = titleReplace[needle];
+		for (let needle in titleReplace) {
+			const replacement = titleReplace[needle];
 
-			var regParts = needle.match(/^\/(.+)\/([gim]*)$/);
+			const regParts = needle.match(/^\/(.+)\/([gim]*)$/);
 			if (regParts) {
 				// the parsed pattern is a regexp.
 				needle = new RegExp(regParts[1], regParts[2]);
@@ -631,11 +633,10 @@ Module.register("MMM-My-Calendar", {
 	 * The all events available in one array, sorted on startdate.
 	 */
 	broadcastEvents: function () {
-		var eventList = [];
-		for (var url in this.calendarData) {
-			var calendar = this.calendarData[url];
-			for (var e in calendar) {
-				var event = cloneObject(calendar[e]);
+		const eventList = [];
+		for (const url in this.calendarData) {
+			for (const ev of this.calendarData[url]) {
+				const event = cloneObject(ev);
 				event.symbol = this.symbolsForEvent(event);
 				event.calendarName = this.calendarNameForUrl(url);
 				event.color = this.colorForUrl(url);
