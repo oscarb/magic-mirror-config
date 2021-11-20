@@ -18,25 +18,29 @@ body {
     CLOCK
 */
 
-.module.clock > div > div {
+.module.clock > .module-content > .clockGrid {
+    gap: 0px;
+}
+
+.module.clock > .module-content > .clockGrid > .digital {
     display: flex;
     flex-direction: column;
 }
 
 /* Date */
-.module.clock > div > div > div.date {
+.module.clock > .module-content > .clockGrid > .digital > div.date {
     order: 2;
     font-family: "Quicksand", sans-serif;
     color: #ddd;
     margin-top: 4px;
 }
 
-.module.clock > div > div > div.date > small{
+.module.clock > .module-content > .clockGrid > .digital > div.date > small{
     color: #ddd;
 }
 
 /* Time */
-.module.clock > div > div > div.time {
+.module.clock > .module-content > .clockGrid > .digital > div.time {
     order: 1;
 
     font-family: "Quicksand", sans-serif;
