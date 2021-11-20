@@ -63,6 +63,7 @@ Module.register("MMM-My-Calendar", {
 		selfSignedCert: false
 	},
 
+	requiresVersion: "2.1.0",
 	// Define required scripts.
 	getStyles: function () {
 		return ["calendar.css", "font-awesome.css"];
@@ -83,10 +84,19 @@ Module.register("MMM-My-Calendar", {
 
 	// Override start method.
 	start: function () {
-		Log.log("Starting module: " + this.name);
+		Log.info("Starting module: " + this.name);
 
 		// Set locale.
 		moment.updateLocale(config.language, this.getLocaleSpecification(config.timeFormat));
+
+		// clear data holder before start
+		this.calendarData = {};
+
+		// indicate no data available yet
+		this.loaded = false;
+
+		this.swedishDays = {};
+
 
 		this.fetchSwedishDays();
 
@@ -120,6 +130,8 @@ Module.register("MMM-My-Calendar", {
 				};
 			}
 
+			// tell helper to start a fetcher for this calendar
+			// fetcher till cycle
 			this.addCalendar(calendar.url, calendar.auth, calendarConfig);
 
 			// Trigger ADD_CALENDAR every fetchInterval to make sure there is always a calendar
@@ -130,9 +142,6 @@ Module.register("MMM-My-Calendar", {
 			}, self.config.fetchInterval);
 		});
 
-		this.calendarData = {};
-		this.swedishDays = {};
-		this.loaded = false;
 	},
 
 	// Override socket notification handler.
@@ -144,6 +153,7 @@ Module.register("MMM-My-Calendar", {
 		if (notification === "CALENDAR_EVENTS") {
 			if (this.hasCalendarURL(payload.url)) {
 				this.calendarData[payload.url] = payload.events;
+				this.error = null;
 				this.loaded = true;
 
 				if (this.config.broadcastEvents) {
@@ -152,13 +162,10 @@ Module.register("MMM-My-Calendar", {
 			}
 		} else if (notification === "SWEDISH_DAYS") {
 			this.swedishDays = payload.data
-		} else if (notification === "FETCH_ERROR") {
-			Log.error("Calendar Error. Could not fetch calendar: " + payload.url);
+		} else if (notification === "CALENDAR_ERROR") {
+			let error_message = this.translate(payload.error_type);
+			this.error = this.translate("MODULE_CONFIG_ERROR", { MODULE_NAME: this.name, ERROR: error_message });
 			this.loaded = true;
-		} else if (notification === "INCORRECT_URL") {
-			Log.error("Calendar Error. Incorrect url: " + payload.url);
-		} else {
-			Log.log("Calendar received an unknown socket notification: " + notification);
 		}
 
 		this.updateDom(this.config.animationSpeed);
@@ -166,10 +173,16 @@ Module.register("MMM-My-Calendar", {
 
 	// Override dom generator.
 	getDom: function () {
-		
+
 		const events = this.createEventList();
 		const wrapper = document.createElement("table");
 		wrapper.className = this.config.tableClass;
+
+		if (this.error) {
+			wrapper.innerHTML = this.error;
+			wrapper.className = this.config.tableClass + " dimmed";
+			return wrapper;
+		}
 
 		// Begin WEEKLY TABLE
 		var dayHeaderRow = document.createElement("tr");
@@ -216,8 +229,8 @@ Module.register("MMM-My-Calendar", {
 
 				//subtract one second so that fullDayEvents end at 23:59:59, and not at 0:00:00 one the next day
 				let endDate = moment(event.endDate, "x").subtract(1, 'second')
-				
-				if(endDate.isBefore(startDate, 'days')) {
+
+				if (endDate.isBefore(startDate, 'days')) {
 					endDate.add(1, 'second')
 				}
 
@@ -275,7 +288,7 @@ Module.register("MMM-My-Calendar", {
 	 * it will a localeSpecification object with the system locale time format.
 	 *
 	 * @param {number} timeFormat Specifies either 12 or 24 hour time format
-	 * @returns {moment.LocaleSpecification} formatted time	 
+	 * @returns {moment.LocaleSpecification} formatted time
 	 */
 	getLocaleSpecification: function (timeFormat) {
 		switch (timeFormat) {
@@ -322,8 +335,9 @@ Module.register("MMM-My-Calendar", {
 			const calendar = this.calendarData[calendarUrl];
 			for (const e in calendar) {
 				const event = JSON.parse(JSON.stringify(calendar[e])); // clone object
-				// Keep events from earlier today around
-				if (moment(event.endDate, 'x').isBefore(now, 'day')) {
+				// Keep events from earlier today around, exlude events ending today 0:00:00 by subtracting 1 sec
+				let endDate = moment(event.endDate, "x").subtract(1, 'second')
+				if (endDate.isBefore(now, 'day')) {
 					continue;
 				}
 				if (this.config.hidePrivate) {
@@ -344,8 +358,8 @@ Module.register("MMM-My-Calendar", {
 				event.today = event.startDate >= today && event.startDate < today + 24 * 60 * 60 * 1000;
 
 				/* if sliceMultiDayEvents is set to true, multiday events (events exceeding at least one midnight) are sliced into days,
-				* otherwise, esp. in dateheaders mode it is not clear how long these events are.
-				*/
+				 * otherwise, esp. in dateheaders mode it is not clear how long these events are.
+				 */
 				const maxCount = Math.ceil((event.endDate - 1 - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
 				if (this.config.sliceMultiDayEvents && maxCount > 1) {
 					const splitEvents = [];
@@ -560,7 +574,7 @@ Module.register("MMM-My-Calendar", {
 				const word = words[i];
 				if (currentLine.length + word.length < (typeof maxLength === "number" ? maxLength : 25) - 1) {
 					// max - 1 to account for a space
-					currentLine += word + " ";				
+					currentLine += word + " ";
 				} else {
 					line++;
 					if (line > maxTitleLines - 1) {
