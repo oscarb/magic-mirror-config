@@ -1,18 +1,17 @@
 /* global Module */
 
 /* Magic Mirror
- * Module: Calendar
+ * Module: My Calendar
  *
- * By Michael Teeuw http://michaelteeuw.nl
+ * Based on Calendar by Michael Teeuw http://michaelteeuw.nl
  * MIT Licensed.
  */
-
 Module.register("MMM-My-Calendar", {
-
 	// Define module defaults
 	defaults: {
 		maximumEntries: 10, // Total Maximum Entries
 		maximumNumberOfDays: 365,
+		numberOfDays: 7,
 		displaySymbol: true,
 		defaultSymbol: "calendar", // Fontawesome Symbol see https://fontawesome.com/cheatsheet?from=io
 		showLocation: false,
@@ -40,8 +39,8 @@ Module.register("MMM-My-Calendar", {
 		hideTime: false,
 		colored: false,
 		coloredSymbolOnly: false,
+		customEvents: [], // Array of {keyword: "", symbol: "", color: ""} where Keyword is a regexp and symbol/color are to be applied for matched
 		tableClass: "small",
-		numberOfDays: 7,
 		calendars: [
 			{
 				symbol: "calendar",
@@ -64,6 +63,7 @@ Module.register("MMM-My-Calendar", {
 	},
 
 	requiresVersion: "2.1.0",
+
 	// Define required scripts.
 	getStyles: function () {
 		return ["calendar.css", "font-awesome.css"];
@@ -96,8 +96,6 @@ Module.register("MMM-My-Calendar", {
 		this.loaded = false;
 
 		this.swedishDays = {};
-
-
 		this.fetchSwedishDays();
 
 		this.config.calendars.forEach((calendar) => {
@@ -133,15 +131,7 @@ Module.register("MMM-My-Calendar", {
 			// tell helper to start a fetcher for this calendar
 			// fetcher till cycle
 			this.addCalendar(calendar.url, calendar.auth, calendarConfig);
-
-			// Trigger ADD_CALENDAR every fetchInterval to make sure there is always a calendar
-			// fetcher running on the server side.
-			var self = this;
-			setInterval(function () {
-				self.addCalendar(calendar.url, calendar.auth, calendarConfig);
-			}, self.config.fetchInterval);
 		});
-
 	},
 
 	// Override socket notification handler.
@@ -273,12 +263,6 @@ Module.register("MMM-My-Calendar", {
 
 		// End WEEKLY TABLE
 
-		if (events.length === 0) {
-			wrapper.innerHTML = (this.loaded) ? this.translate("EMPTY") : this.translate("LOADING");
-			wrapper.className = this.config.tableClass + " dimmed";
-			return wrapper;
-		}
-
 		return wrapper;
 	},
 
@@ -335,7 +319,7 @@ Module.register("MMM-My-Calendar", {
 			const calendar = this.calendarData[calendarUrl];
 			for (const e in calendar) {
 				const event = JSON.parse(JSON.stringify(calendar[e])); // clone object
-				// Keep events from earlier today around, exlude events ending today 0:00:00 by subtracting 1 sec
+				// ME: Keep events from earlier today around, exlude events ending today 0:00:00 by subtracting 1 sec
 				let endDate = moment(event.endDate, "x").subtract(1, 'second')
 				if (endDate.isBefore(now, 'day')) {
 					continue;
@@ -449,6 +433,17 @@ Module.register("MMM-My-Calendar", {
 
 		if (event.fullDayEvent === true && this.hasCalendarProperty(event.url, "fullDaySymbol")) {
 			symbols = this.mergeUnique(this.getCalendarPropertyAsArray(event.url, "fullDaySymbol", this.config.defaultSymbol), symbols);
+		}
+
+		// If custom symbol is set, replace event symbol
+		for (let ev of this.config.customEvents) {
+			if (typeof ev.symbol !== "undefined" && ev.symbol !== "") {
+				let needle = new RegExp(ev.keyword, "gi");
+				if (needle.test(event.title)) {
+					symbols[0] = ev.symbol;
+					break;
+				}
+			}
 		}
 
 		return symbols;
