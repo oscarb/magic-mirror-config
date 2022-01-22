@@ -100,7 +100,7 @@ Pair a bluetooth mouse before the tablet is put into the frame to easily control
 
 ### scrcpy
 
-I use [scrcpy:](https://github.com/Genymobile/scrcpy) to display and control my tablet from my Windows and MacBook computer.
+I use [scrcpy](https://github.com/Genymobile/scrcpy) to display and control my tablet from my Windows and MacBook computer.
 
 #### Setup
 
