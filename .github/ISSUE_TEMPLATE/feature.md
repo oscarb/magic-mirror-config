@@ -2,7 +2,7 @@
 name: Feature
 about: Ideas and suggestions
 title: ''
-labels: enhancement
+labels: feature
 assignees: ''
 
 ---
