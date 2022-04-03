@@ -1,9 +1,9 @@
-/* global Module */
+/* global cloneObject */
 
-/* Magic Mirror
+/* MagicMirror²
  * Module: My Calendar
  *
- * Based on Calendar by Michael Teeuw http://michaelteeuw.nl
+ * Based on Calendar by Michael Teeuw https://michaelteeuw.nl
  * MIT Licensed.
  */
 Module.register("MMM-My-Calendar", {
@@ -11,9 +11,10 @@ Module.register("MMM-My-Calendar", {
 	defaults: {
 		maximumEntries: 10, // Total Maximum Entries
 		maximumNumberOfDays: 365,
+		limitDays: 7, // Limit the number of days shown, 0 = no limit
 		numberOfDays: 7,
 		displaySymbol: true,
-		defaultSymbol: "calendar", // Fontawesome Symbol see https://fontawesome.com/cheatsheet?from=io
+		defaultSymbol: "calendar-alt", // Fontawesome Symbol see https://fontawesome.com/cheatsheet?from=io
 		showLocation: false,
 		displayRepeatingCountTitle: false,
 		defaultRepeatingCountTitle: "",
@@ -43,7 +44,7 @@ Module.register("MMM-My-Calendar", {
 		tableClass: "small",
 		calendars: [
 			{
-				symbol: "calendar",
+				symbol: "calendar-alt",
 				url: "https://www.calendarlabs.com/templates/ical/US-Holidays.ics"
 			}
 		],
@@ -163,13 +164,24 @@ Module.register("MMM-My-Calendar", {
 
 	// Override dom generator.
 	getDom: function () {
+		// Define second, minute, hour, and day constants
+		const oneSecond = 1000; // 1,000 milliseconds
+		const oneMinute = oneSecond * 60;
+		const oneHour = oneMinute * 60;
+		const oneDay = oneHour * 24;
 
-		const events = this.createEventList();
+		const events = this.createEventList(true);
 		const wrapper = document.createElement("table");
 		wrapper.className = this.config.tableClass;
 
 		if (this.error) {
 			wrapper.innerHTML = this.error;
+			wrapper.className = this.config.tableClass + " dimmed";
+			return wrapper;
+		}
+
+		if (events.length === 0) {
+			wrapper.innerHTML = this.loaded ? this.translate("EMPTY") : this.translate("LOADING");
 			wrapper.className = this.config.tableClass + " dimmed";
 			return wrapper;
 		}
@@ -307,9 +319,10 @@ Module.register("MMM-My-Calendar", {
 	/**
 	 * Creates the sorted list of all events.
 	 *
+	 * @param {boolean} limitNumberOfEntries Whether to filter returned events for display.
 	 * @returns {object[]} Array with events.
 	 */
-	createEventList: function () {
+	createEventList: function (limitNumberOfEntries) {
 		const now = new Date();
 		const today = moment().startOf("day");
 		const future = moment().startOf("day").add(this.config.maximumNumberOfDays, "days").toDate();
@@ -321,7 +334,7 @@ Module.register("MMM-My-Calendar", {
 				const event = JSON.parse(JSON.stringify(calendar[e])); // clone object
 				// ME: Keep events from earlier today around, exlude events ending today 0:00:00 by subtracting 1 sec
 				let endDate = moment(event.endDate, "x").subtract(1, 'second')
-				if (endDate.isBefore(now, 'day')) {
+				if (endDate.isBefore(now, 'day') && limitNumberOfEntries) {
 					continue;
 				}
 				if (this.config.hidePrivate) {
@@ -330,7 +343,7 @@ Module.register("MMM-My-Calendar", {
 						continue;
 					}
 				}
-				if (this.config.hideOngoing) {
+				if (this.config.hideOngoing && limitNumberOfEntries) {
 					if (event.startDate < now) {
 						continue;
 					}
@@ -378,6 +391,38 @@ Module.register("MMM-My-Calendar", {
 		events.sort(function (a, b) {
 			return a.startDate - b.startDate;
 		});
+
+		if (!limitNumberOfEntries) {
+			return events;
+		}
+
+		// Limit the number of days displayed
+		// If limitDays is set > 0, limit display to that number of days
+		if (this.config.limitDays > 0) {
+			let newEvents = [];
+			let lastDate = today.clone().subtract(1, "days").format("YYYYMMDD");
+			let days = 0;
+			for (const ev of events) {
+				let eventDate = moment(ev.startDate, "x").format("YYYYMMDD");
+				// if date of event is later than lastdate
+				// check if we already are showing max unique days
+				if (eventDate > lastDate) {
+					// if the only entry in the first day is a full day event that day is not counted as unique
+					if (newEvents.length === 1 && days === 1 && newEvents[0].fullDayEvent) {
+						days--;
+					}
+					days++;
+					if (days > this.config.limitDays) {
+						continue;
+					} else {
+						lastDate = eventDate;
+					}
+				}
+				newEvents.push(ev);
+			}
+			events = newEvents;
+		}
+
 		return events.slice(0, this.config.maximumEntries);
 	},
 
@@ -642,21 +687,13 @@ Module.register("MMM-My-Calendar", {
 	 * The all events available in one array, sorted on startdate.
 	 */
 	broadcastEvents: function () {
-		const eventList = [];
-		for (const url in this.calendarData) {
-			for (const ev of this.calendarData[url]) {
-				const event = cloneObject(ev);
-				event.symbol = this.symbolsForEvent(event);
-				event.calendarName = this.calendarNameForUrl(url);
-				event.color = this.colorForUrl(url);
-				delete event.url;
-				eventList.push(event);
-			}
+		const eventList = this.createEventList(false);
+		for (const event of eventList) {
+			event.symbol = this.symbolsForEvent(event);
+			event.calendarName = this.calendarNameForUrl(event.url);
+			event.color = this.colorForUrl(event.url);
+			delete event.url;
 		}
-
-		eventList.sort(function (a, b) {
-			return a.startDate - b.startDate;
-		});
 
 		this.sendNotification("CALENDAR_EVENTS", eventList);
 	}
