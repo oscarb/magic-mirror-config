@@ -337,19 +337,21 @@ Module.register("MMM-My-Calendar", {
 				if (endDate.isBefore(now, 'day') && limitNumberOfEntries) {
 					continue;
 				}
-				if (this.config.hidePrivate) {
-					if (event.class === "PRIVATE") {
-						// do not add the current event, skip it
-						continue;
-					}
-				}
-				if (this.config.hideOngoing && limitNumberOfEntries) {
-					if (event.startDate < now) {
-						continue;
-					}
-				}
-				if (this.listContainsEvent(events, event)) {
+
+				if (this.config.hidePrivate && event.class === "PRIVATE") {
+					// do not add the current event, skip it
 					continue;
+				}
+				if (limitNumberOfEntries) {
+					if (event.endDate < now) {
+						continue;
+					}
+					if (this.config.hideOngoing && event.startDate < now) {
+						continue;
+					}
+					if (this.listContainsEvent(events, event)) {
+						continue;
+					}
 				}
 				event.url = calendarUrl;
 				event.today = event.startDate >= today && event.startDate < today + 24 * 60 * 60 * 1000;
