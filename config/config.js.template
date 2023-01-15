@@ -42,6 +42,47 @@
 			 }
 		 },
 		 {
+			module: "MMM-AccuWeatherForecast", 
+			position: "top_right",
+			classes: "default everyone",
+			header: "weather",
+			disabled: true, 
+			config: {
+				useACCU: true, 
+				apikey: '$ACCU_WEATHER_API_KEY',
+				locationKey: 1604,
+				latitude: '$LATITUDE',
+				longitude: '$LONGITUDE',
+				iconset: "4m",
+				updateFadeSpeed: 1000, 
+				showDailyForecast: false,
+				showHourlyForecast: false,
+				showExtraCurrentConditions: true,
+				showPrecipitation: true,
+				concise: false
+			
+			}
+		 },
+		 {
+			module: "MMM-OpenWeatherMapForecast", 
+			position: "top_right",
+			classes: "default everyone",
+			disabled: false, 
+			config: {
+				apikey: '$OPEN_WEATHER_API_KEY',
+				iconset: "7c",
+				latitude: '$LATITUDE',
+				longitude: '$LONGITUDE',
+				updateFadeSpeed: 1000, 
+				showDailyForecast: false,
+				showHourlyForecast: false,
+				showExtraCurrentConditions: false,
+				showPrecipitation: false,
+				concise: true,
+				useAnimatedIcons: false
+			}
+		 },
+		 {
 			 module: "MMM-My-Calendar",
 			 position: "upper_third",
 			 config: {
