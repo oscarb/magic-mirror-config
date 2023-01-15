@@ -18,6 +18,12 @@ body {
     CLOCK
 */
 
+.module.clock {
+    display: inline-block;
+    vertical-align: top;
+    width: 325px;
+}
+
 .module.clock > .module-content > .clockGrid {
     gap: 0px;
 }
@@ -54,3 +60,21 @@ body {
 .region.top.bar {
     text-align: start;
 }
+
+/*
+    WEATHER
+*/
+
+.module.MMM-OpenWeatherMapForecast {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.module.MMM-OpenWeatherMapForecast > div > div > div > div.current-conditions-wrapper.icon-set-7c > span > span.current.feelslike.dimmed.light {
+    display: none;
+}
+
+.module.MMM-OpenWeatherMapForecast .summary { 
+    display: none;
+}
+
