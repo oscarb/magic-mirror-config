@@ -111,10 +111,6 @@
 					{
 						url: '$CALENDAR_CHILD',
 						color: '#dcedc8'
-					},
-					{
-						url: 'http://kalender.link/ical/best',
-						color: '#ef5350'
 					}
 				]
 			 }
