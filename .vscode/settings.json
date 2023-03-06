@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.js.template": "javascript",
+        "*.js.sample": "javascript",
+        "*.js-old": "javascript",
+      },
+}
