@@ -111,6 +111,14 @@
 					{
 						url: '$CALENDAR_CHILD',
 						color: '#dcedc8'
+					},
+					{
+						url: 'https://www.webcal.guru/sv-SE/ladda_ner_kalendern?calendar_instance_id=214',
+						color: '#ef5350'
+					},
+					{
+						url: 'https://www.webcal.guru/sv-SE/ladda_ner_kalendern?calendar_instance_id=86',
+						color: '#ef5350'
 					}
 				]
 			 }
