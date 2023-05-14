@@ -49,10 +49,10 @@
 			disabled: true, 
 			config: {
 				useACCU: true, 
-				apikey: '$ACCU_WEATHER_API_KEY',
+				apikey: '${ACCU_WEATHER_API_KEY}',
 				locationKey: 1604,
-				latitude: '$LATITUDE',
-				longitude: '$LONGITUDE',
+				latitude: '${LATITUDE}',
+				longitude: '${LONGITUDE}',
 				iconset: "4m",
 				updateFadeSpeed: 1000, 
 				showDailyForecast: false,
@@ -69,10 +69,10 @@
 			classes: "default everyone",
 			disabled: false, 
 			config: {
-				apikey: '$OPEN_WEATHER_API_KEY',
+				apikey: '${OPEN_WEATHER_API_KEY}',
 				iconset: "7c",
-				latitude: '$LATITUDE',
-				longitude: '$LONGITUDE',
+				latitude: '${LATITUDE}',
+				longitude: '${LONGITUDE}',
 				updateFadeSpeed: 1000, 
 				showDailyForecast: false,
 				showHourlyForecast: false,
@@ -93,23 +93,23 @@
 				maximumNumberOfDays: 7,
 				calendars: [
 					{
-						url: '$CALENDAR_PERSONAL',
+						url: '${CALENDAR_PERSONAL}',
 						color: '#81d4fa'
 					},
 					{
-						url: '$CALENDAR_PARTNER',
+						url: '${CALENDAR_PARTNER}',
 						color: '#f3e5f5'
 					},
 					{
-						url: '$CALENDAR_BIRTHDAYS',
+						url: '${CALENDAR_BIRTHDAYS}',
 						color: '#ffab91'
 					},
 					{
-						url: '$CALENDAR_WORK',
+						url: '${CALENDAR_WORK}',
 						color: '#bbdefb'
 					},
 					{
-						url: '$CALENDAR_CHILD',
+						url: '${CALENDAR_CHILD}',
 						color: '#dcedc8'
 					},
 					{
@@ -127,7 +127,7 @@
 			 module: "MMM-Remote-Compliments",
 			 position: "lower_third",
 			 config: {
-				remoteFile: "$COMPLIMENTS_SERVER",
+				remoteFile: "${COMPLIMENTS_SERVER}",
 				updateInterval: 20 * 1000,
 				remoteFileUpdateInterval: 60 * 1000
 			 }
