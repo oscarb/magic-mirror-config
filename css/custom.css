@@ -24,29 +24,29 @@ body {
     width: 325px;
 }
 
-.module.clock > .module-content > .clockGrid {
+.clockGrid {
     gap: 0px;
 }
 
-.module.clock > .module-content > .clockGrid > .digital {
+.digital {
     display: flex;
     flex-direction: column;
 }
 
 /* Date */
-.module.clock > .module-content > .clockGrid > .digital > div.date {
+div.date {
     order: 2;
     font-family: "Quicksand", sans-serif;
     color: #ddd;
     margin-top: 4px;
 }
 
-.module.clock > .module-content > .clockGrid > .digital > div.date > small{
+div.date > small{
     color: #ddd;
 }
 
 /* Time */
-.module.clock > .module-content > .clockGrid > .digital > div.time {
+div.time {
     order: 1;
 
     font-family: "Quicksand", sans-serif;
@@ -77,4 +77,3 @@ body {
 .module.MMM-OpenWeatherMapForecast .summary { 
     display: none;
 }
-
