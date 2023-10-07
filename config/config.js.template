@@ -138,9 +138,18 @@
 			 config: {
 				 feeds: [
 					 {
-						 title: "New York Times",
-						 url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					 }
+						 title: "DN",
+						 url: "https://www.dn.se/rss/"
+					 },
+					 {
+						 title: "SvD",
+						 url: "https://www.svd.se/feed/articles.rss"
+					 },
+					 {
+						 title: "SVT",
+						 url: "http://www.svt.se/nyheter/rss.xml"
+					 },
+
 				 ],
 				 showSourceTitle: true,
 				 showPublishDate: true
