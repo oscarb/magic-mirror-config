@@ -1,4 +1,4 @@
-/* global cloneObject */
+/* global CalendarUtils, cloneObject */
 
 /* MagicMirror²
  * Module: My Calendar
@@ -13,14 +13,16 @@ Module.register("MMM-My-Calendar", {
 		maximumNumberOfDays: 365,
 		limitDays: 7, // Limit the number of days shown, 0 = no limit
 		numberOfDays: 7,
+		pastDaysCount: 1,
 		displaySymbol: true,
 		defaultSymbol: "calendar-alt", // Fontawesome Symbol see https://fontawesome.com/cheatsheet?from=io
+		defaultSymbolClassName: "fas fa-fw fa-",
 		showLocation: false,
 		displayRepeatingCountTitle: false,
 		defaultRepeatingCountTitle: "",
 		maxTitleLength: 25,
 		maxLocationTitleLength: 25,
-		wrapEvents: false, // wrap events to multiple lines breaking at maxTitleLength
+		wrapEvents: false, // Wrap events to multiple lines breaking at maxTitleLength
 		wrapLocationEvents: false,
 		maxTitleLines: 3,
 		maxEventTitleLines: 3,
@@ -38,9 +40,10 @@ Module.register("MMM-My-Calendar", {
 		hidePrivate: false,
 		hideOngoing: false,
 		hideTime: false,
+		hideDuplicates: true,
+		showTimeToday: false,
 		colored: false,
-		coloredSymbolOnly: false,
-		customEvents: [], // Array of {keyword: "", symbol: "", color: ""} where Keyword is a regexp and symbol/color are to be applied for matched
+		customEvents: [], // Array of {keyword: "", symbol: "", color: "", eventClass: ""} where Keyword is a regexp and symbol/color/eventClass are to be applied for matched
 		tableClass: "small",
 		calendars: [
 			{
@@ -60,7 +63,13 @@ Module.register("MMM-My-Calendar", {
 		sliceMultiDayEvents: false,
 		broadcastPastEvents: true,
 		nextDaysRelative: false,
-		selfSignedCert: false
+		selfSignedCert: false,
+		coloredText: false,
+		coloredBorder: false,
+		coloredSymbol: false,
+		coloredBackground: false,
+		limitDaysNeverSkip: false,
+		flipDateHeaderTitle: false
 	},
 
 	requiresVersion: "2.1.0",
@@ -72,7 +81,7 @@ Module.register("MMM-My-Calendar", {
 
 	// Define required scripts.
 	getScripts: function () {
-		return ["moment.js"];
+		return ["calendarutils.js", "moment.js"];
 	},
 
 	// Define required translations.
@@ -85,10 +94,23 @@ Module.register("MMM-My-Calendar", {
 
 	// Override start method.
 	start: function () {
-		Log.info("Starting module: " + this.name);
+		const ONE_MINUTE = 60 * 1000;
+
+		Log.info(`Starting module: ${this.name}`);
+
+		if (this.config.colored) {
+			Log.warn("Your are using the deprecated config values 'colored'. Please switch to  'coloredSymbol' & 'coloredText'!");
+			this.config.coloredText = true;
+			this.config.coloredSymbol = true;
+		}
+		if (this.config.coloredSymbolOnly) {
+			Log.warn("Your are using the deprecated config values 'coloredSymbolOnly'. Please switch to  'coloredSymbol' & 'coloredText'!");
+			this.config.coloredText = false;
+			this.config.coloredSymbol = true;
+		}
 
 		// Set locale.
-		moment.updateLocale(config.language, this.getLocaleSpecification(config.timeFormat));
+		moment.updateLocale(config.language, CalendarUtils.getLocaleSpecification(config.timeFormat));
 
 		// clear data holder before start
 		this.calendarData = {};
@@ -105,6 +127,7 @@ Module.register("MMM-My-Calendar", {
 			const calendarConfig = {
 				maximumEntries: calendar.maximumEntries,
 				maximumNumberOfDays: calendar.maximumNumberOfDays,
+				pastDaysCount: calendar.pastDaysCount,
 				broadcastPastEvents: calendar.broadcastPastEvents,
 				selfSignedCert: calendar.selfSignedCert
 			};
@@ -133,10 +156,25 @@ Module.register("MMM-My-Calendar", {
 			// fetcher till cycle
 			this.addCalendar(calendar.url, calendar.auth, calendarConfig);
 		});
+
+		// Refresh the DOM every minute if needed: When using relative date format for events that start
+		// or end in less than an hour, the date shows minute granularity and we want to keep that accurate.
+		setTimeout(
+			() => {
+				setInterval(() => {
+					this.updateDom(1);
+				}, ONE_MINUTE);
+			},
+			ONE_MINUTE - (new Date() % ONE_MINUTE)
+		);
 	},
 
 	// Override socket notification handler.
 	socketNotificationReceived: function (notification, payload) {
+		if (notification === "FETCH_CALENDAR") {
+			this.sendSocketNotification(notification, { url: payload.url, id: this.identifier });
+		}
+		
 		if (notification !== "SWEDISH_DAYS" && this.identifier !== payload.id) {
 			return;
 		}
@@ -164,11 +202,10 @@ Module.register("MMM-My-Calendar", {
 
 	// Override dom generator.
 	getDom: function () {
-		// Define second, minute, hour, and day constants
-		const oneSecond = 1000; // 1,000 milliseconds
-		const oneMinute = oneSecond * 60;
-		const oneHour = oneMinute * 60;
-		const oneDay = oneHour * 24;
+		const ONE_SECOND = 1000; // 1,000 milliseconds
+		const ONE_MINUTE = ONE_SECOND * 60;
+		const ONE_HOUR = ONE_MINUTE * 60;
+		const ONE_DAY = ONE_HOUR * 24;
 
 		const events = this.createEventList(true);
 		const wrapper = document.createElement("table");
@@ -176,17 +213,17 @@ Module.register("MMM-My-Calendar", {
 
 		if (this.error) {
 			wrapper.innerHTML = this.error;
-			wrapper.className = this.config.tableClass + " dimmed";
+			wrapper.className = `${this.config.tableClass} dimmed`;
 			return wrapper;
 		}
 
 		if (events.length === 0) {
 			wrapper.innerHTML = this.loaded ? this.translate("EMPTY") : this.translate("LOADING");
-			wrapper.className = this.config.tableClass + " dimmed";
+			wrapper.className = `${this.config.tableClass} dimmed`;
 			return wrapper;
 		}
 
-		// Begin WEEKLY TABLE
+		// Begin WEEKLY TABLE - MMM-My-Calendar modifications!
 		var dayHeaderRow = document.createElement("tr");
 
 		let startDay = moment();
@@ -206,7 +243,7 @@ Module.register("MMM-My-Calendar", {
 			if (this.swedishDays.dagar !== undefined && this.swedishDays.dagar[dayOfYear]["flaggdag"] !== "") {
 				swedishFlag = ' 🇸🇪';
 			}
-			header.innerHTML = "<span>" + this.capFirst(startDay.format("dddd")) + swedishFlag + "</span>";
+			header.innerHTML = "<span>" + CalendarUtils.capFirst(startDay.format("dddd")) + swedishFlag + "</span>";
 			header.innerHTML += "<span class='dayNumber'>" + startDay.format("D") + "</span>";
 			startDay.add(1, 'days')
 			dayHeaderRow.appendChild(header)
@@ -302,7 +339,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Checks if this config contains the calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @returns {boolean} True if the calendar config contains the url, False otherwise
 	 */
@@ -318,11 +354,15 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Creates the sorted list of all events.
-	 *
 	 * @param {boolean} limitNumberOfEntries Whether to filter returned events for display.
 	 * @returns {object[]} Array with events.
 	 */
 	createEventList: function (limitNumberOfEntries) {
+		const ONE_SECOND = 1000; // 1,000 milliseconds
+		const ONE_MINUTE = ONE_SECOND * 60;
+		const ONE_HOUR = ONE_MINUTE * 60;
+		const ONE_DAY = ONE_HOUR * 24;
+
 		const now = new Date();
 		const today = moment().startOf("day");
 		const future = moment().startOf("day").add(this.config.maximumNumberOfDays, "days").toDate();
@@ -330,45 +370,56 @@ Module.register("MMM-My-Calendar", {
 
 		for (const calendarUrl in this.calendarData) {
 			const calendar = this.calendarData[calendarUrl];
+			let remainingEntries = this.maximumEntriesForUrl(calendarUrl);
+			let maxPastDaysCompare = now - this.maximumPastDaysForUrl(calendarUrl) * ONE_DAY;
 			for (const e in calendar) {
 				const event = JSON.parse(JSON.stringify(calendar[e])); // clone object
 				// ME: Keep events from earlier today around, exlude events ending today 0:00:00 by subtracting 1 sec
-				let endDate = moment(event.endDate, "x").subtract(1, 'second')
-				if (endDate.isBefore(now, 'day') && limitNumberOfEntries) {
-					continue;
-				}
+				// let endDate = moment(event.endDate, "x").subtract(1, 'second')
+				// if (endDate.isBefore(now, 'day') && limitNumberOfEntries) {
+				// 	continue;
+				// }
 
 				if (this.config.hidePrivate && event.class === "PRIVATE") {
 					// do not add the current event, skip it
 					continue;
 				}
 				if (limitNumberOfEntries) {
-					if (event.endDate < now) {
+					if (event.endDate < maxPastDaysCompare) {
 						continue;
 					}
 					if (this.config.hideOngoing && event.startDate < now) {
 						continue;
 					}
-					if (this.listContainsEvent(events, event)) {
+					if (this.config.hideDuplicates && this.listContainsEvent(events, event)) {
 						continue;
 					}
+					if (--remainingEntries < 0) {
+						break;
+					}
 				}
+
 				event.url = calendarUrl;
-				event.today = event.startDate >= today && event.startDate < today + 24 * 60 * 60 * 1000;
+				event.today = event.startDate >= today && event.startDate < today + ONE_DAY;
+				event.dayBeforeYesterday = event.startDate >= today - ONE_DAY * 2 && event.startDate < today - ONE_DAY;
+				event.yesterday = event.startDate >= today - ONE_DAY && event.startDate < today;
+				event.tomorrow = !event.today && event.startDate >= today + ONE_DAY && event.startDate < today + 2 * ONE_DAY;
+				event.dayAfterTomorrow = !event.tomorrow && event.startDate >= today + ONE_DAY * 2 && event.startDate < today + 3 * ONE_DAY;
 
 				/* if sliceMultiDayEvents is set to true, multiday events (events exceeding at least one midnight) are sliced into days,
 				 * otherwise, esp. in dateheaders mode it is not clear how long these events are.
 				 */
-				const maxCount = Math.ceil((event.endDate - 1 - moment(event.startDate, "x").endOf("day").format("x")) / (1000 * 60 * 60 * 24)) + 1;
+				const maxCount = Math.ceil((event.endDate - 1 - moment(event.startDate, "x").endOf("day").format("x")) / ONE_DAY) + 1;
 				if (this.config.sliceMultiDayEvents && maxCount > 1) {
 					const splitEvents = [];
 					let midnight = moment(event.startDate, "x").clone().startOf("day").add(1, "day").format("x");
 					let count = 1;
 					while (event.endDate > midnight) {
 						const thisEvent = JSON.parse(JSON.stringify(event)); // clone object
-						thisEvent.today = thisEvent.startDate >= today && thisEvent.startDate < today + 24 * 60 * 60 * 1000;
+						thisEvent.today = thisEvent.startDate >= today && thisEvent.startDate < today + ONE_DAY;
+						thisEvent.tomorrow = !thisEvent.today && thisEvent.startDate >= today + ONE_DAY && thisEvent.startDate < today + 2 * ONE_DAY;
 						thisEvent.endDate = midnight;
-						thisEvent.title += " (" + count + "/" + maxCount + ")";
+						thisEvent.title += ` (${count}/${maxCount})`;
 						splitEvents.push(thisEvent);
 
 						event.startDate = midnight;
@@ -376,7 +427,9 @@ Module.register("MMM-My-Calendar", {
 						midnight = moment(midnight, "x").add(1, "day").format("x"); // next day
 					}
 					// Last day
-					event.title += " (" + count + "/" + maxCount + ")";
+					event.title += ` (${count}/${maxCount})`;
+					event.today += event.startDate >= today && event.startDate < today + ONE_DAY;
+					event.tomorrow = !event.today && event.startDate >= today + ONE_DAY && event.startDate < today + 2 * ONE_DAY;
 					splitEvents.push(event);
 
 					for (let splitEvent of splitEvents) {
@@ -410,7 +463,7 @@ Module.register("MMM-My-Calendar", {
 				// check if we already are showing max unique days
 				if (eventDate > lastDate) {
 					// if the only entry in the first day is a full day event that day is not counted as unique
-					if (newEvents.length === 1 && days === 1 && newEvents[0].fullDayEvent) {
+					if (!this.config.limitDaysNeverSkip && newEvents.length === 1 && days === 1 && newEvents[0].fullDayEvent) {
 						days--;
 					}
 					days++;
@@ -430,7 +483,7 @@ Module.register("MMM-My-Calendar", {
 
 	listContainsEvent: function (eventList, event) {
 		for (const evt of eventList) {
-			if (evt.title === event.title && parseInt(evt.startDate) === parseInt(event.startDate)) {
+			if (evt.title === event.title && parseInt(evt.startDate) === parseInt(event.startDate) && parseInt(evt.endDate) === parseInt(event.endDate)) {
 				return true;
 			}
 		}
@@ -439,7 +492,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Requests node helper to add calendar url.
-	 *
 	 * @param {string} url The calendar url to add
 	 * @param {object} auth The authentication method and credentials
 	 * @param {object} calendarConfig The config of the specific calendar
@@ -451,7 +503,8 @@ Module.register("MMM-My-Calendar", {
 			excludedEvents: calendarConfig.excludedEvents || this.config.excludedEvents,
 			maximumEntries: calendarConfig.maximumEntries || this.config.maximumEntries,
 			maximumNumberOfDays: calendarConfig.maximumNumberOfDays || this.config.maximumNumberOfDays,
-			fetchInterval: this.config.fetchInterval,
+			pastDaysCount: calendarConfig.pastDaysCount || this.config.pastDaysCount,
+			fetchInterval: calendarConfig.fetchInterval || this.config.fetchInterval,
 			symbolClass: calendarConfig.symbolClass,
 			titleClass: calendarConfig.titleClass,
 			timeClass: calendarConfig.timeClass,
@@ -467,7 +520,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Retrieves the symbols for a specific event.
-	 *
 	 * @param {object} event Event to look for.
 	 * @returns {string[]} The symbols
 	 */
@@ -487,7 +539,9 @@ Module.register("MMM-My-Calendar", {
 			if (typeof ev.symbol !== "undefined" && ev.symbol !== "") {
 				let needle = new RegExp(ev.keyword, "gi");
 				if (needle.test(event.title)) {
-					symbols[0] = ev.symbol;
+					// Get the default prefix for this class name and add to the custom symbol provided
+					const className = this.getCalendarProperty(event.url, "symbolClassName", this.config.defaultSymbolClassName);
+					symbols[0] = className + ev.symbol;
 					break;
 				}
 			}
@@ -506,7 +560,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Retrieves the symbolClass for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @returns {string} The class to be used for the symbols of the calendar
 	 */
@@ -516,7 +569,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Retrieves the titleClass for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @returns {string} The class to be used for the title of the calendar
 	 */
@@ -526,7 +578,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Retrieves the timeClass for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @returns {string} The class to be used for the time of the calendar
 	 */
@@ -536,7 +587,6 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Retrieves the calendar name for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @returns {string} The name of the calendar
 	 */
@@ -546,17 +596,16 @@ Module.register("MMM-My-Calendar", {
 
 	/**
 	 * Retrieves the color for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
+	 * @param {boolean} isBg Determines if we fetch the bgColor or not
 	 * @returns {string} The color
 	 */
-	colorForUrl: function (url) {
-		return this.getCalendarProperty(url, "color", "#fff");
+	colorForUrl: function (url, isBg) {
+		return this.getCalendarProperty(url, isBg ? "bgColor" : "color", "#fff");
 	},
 
 	/**
 	 * Retrieves the count title for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @returns {string} The title
 	 */
@@ -565,8 +614,25 @@ Module.register("MMM-My-Calendar", {
 	},
 
 	/**
+	 * Retrieves the maximum entry count for a specific calendar url.
+	 * @param {string} url The calendar url
+	 * @returns {number} The maximum entry count
+	 */
+	maximumEntriesForUrl: function (url) {
+		return this.getCalendarProperty(url, "maximumEntries", this.config.maximumEntries);
+	},
+
+	/**
+	 * Retrieves the maximum count of past days which events of should be displayed for a specific calendar url.
+	 * @param {string} url The calendar url
+	 * @returns {number} The maximum past days count
+	 */
+	maximumPastDaysForUrl: function (url) {
+		return this.getCalendarProperty(url, "pastDaysCount", this.config.pastDaysCount);
+	},
+
+	/**
 	 * Helper method to retrieve the property for a specific calendar url.
-	 *
 	 * @param {string} url The calendar url
 	 * @param {string} property The property to look for
 	 * @param {string} defaultValue The value if the property is not found
@@ -584,104 +650,17 @@ Module.register("MMM-My-Calendar", {
 
 	getCalendarPropertyAsArray: function (url, property, defaultValue) {
 		let p = this.getCalendarProperty(url, property, defaultValue);
+		if (property === "symbol" || property === "recurringSymbol" || property === "fullDaySymbol") {
+			const className = this.getCalendarProperty(url, "symbolClassName", this.config.defaultSymbolClassName);
+			p = className + p;
+		}
+
 		if (!(p instanceof Array)) p = [p];
 		return p;
 	},
 
 	hasCalendarProperty: function (url, property) {
 		return !!this.getCalendarProperty(url, property, undefined);
-	},
-
-	/**
-	 * Shortens a string if it's longer than maxLength and add a ellipsis to the end
-	 *
-	 * @param {string} string Text string to shorten
-	 * @param {number} maxLength The max length of the string
-	 * @param {boolean} wrapEvents Wrap the text after the line has reached maxLength
-	 * @param {number} maxTitleLines The max number of vertical lines before cutting event title
-	 * @returns {string} The shortened string
-	 */
-	shorten: function (string, maxLength, wrapEvents, maxTitleLines) {
-		if (typeof string !== "string") {
-			return "";
-		}
-
-		if (wrapEvents === true) {
-			const words = string.split(" ");
-			let temp = "";
-			let currentLine = "";
-			let line = 0;
-
-			for (let i = 0; i < words.length; i++) {
-				const word = words[i];
-				if (currentLine.length + word.length < (typeof maxLength === "number" ? maxLength : 25) - 1) {
-					// max - 1 to account for a space
-					currentLine += word + " ";
-				} else {
-					line++;
-					if (line > maxTitleLines - 1) {
-						if (i < words.length) {
-							currentLine += "&hellip;";
-						}
-						break;
-					}
-
-					if (currentLine.length > 0) {
-						temp += currentLine + "<br>" + word + " ";
-					} else {
-						temp += word + "<br>";
-					}
-					currentLine = "";
-				}
-			}
-
-			return (temp + currentLine).trim();
-		} else {
-			if (maxLength && typeof maxLength === "number" && string.length > maxLength) {
-				return string.trim().slice(0, maxLength) + "&hellip;";
-			} else {
-				return string.trim();
-			}
-		}
-	},
-
-	/**
-	 * Capitalize the first letter of a string
-	 *
-	 * @param {string} string The string to capitalize
-	 * @returns {string} The capitalized string
-	 */
-	capFirst: function (string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	},
-
-	/**
-	 * Transforms the title of an event for usage.
-	 * Replaces parts of the text as defined in config.titleReplace.
-	 * Shortens title based on config.maxTitleLength and config.wrapEvents
-	 *
-	 * @param {string} title The title to transform.
-	 * @param {object} titleReplace Pairs of strings to be replaced in the title
-	 * @param {boolean} wrapEvents Wrap the text after the line has reached maxLength
-	 * @param {number} maxTitleLength The max length of the string
-	 * @param {number} maxTitleLines The max number of vertical lines before cutting event title
-	 * @returns {string} The transformed title.
-	 */
-	titleTransform: function (title, titleReplace, wrapEvents, maxTitleLength, maxTitleLines) {
-		for (let needle in titleReplace) {
-			const replacement = titleReplace[needle];
-
-			const regParts = needle.match(/^\/(.+)\/([gim]*)$/);
-			if (regParts) {
-				// the parsed pattern is a regexp.
-				needle = new RegExp(regParts[1], regParts[2]);
-			}
-
-			title = title.replace(needle, replacement);
-		}
-
-		title = this.shorten(title, maxTitleLength, wrapEvents, maxTitleLines);
-		return title;
 	},
 
 	/**
@@ -693,7 +672,7 @@ Module.register("MMM-My-Calendar", {
 		for (const event of eventList) {
 			event.symbol = this.symbolsForEvent(event);
 			event.calendarName = this.calendarNameForUrl(event.url);
-			event.color = this.colorForUrl(event.url);
+			event.color = this.colorForUrl(event.url, false);
 			delete event.url;
 		}
 
