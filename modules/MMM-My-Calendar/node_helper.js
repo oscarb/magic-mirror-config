@@ -7,7 +7,7 @@
 const NodeHelper = require("node_helper");
 const Log = require("logger");
 const CalendarFetcher = require("./calendarfetcher");
-var swedishDays = require("./2023.json")
+var swedishDays = require("./swedish_days.json")
 
 module.exports = NodeHelper.create({
 	// Override start method.
