@@ -11,13 +11,13 @@ var swedishDays = require("./swedish_days.json")
 
 module.exports = NodeHelper.create({
 	// Override start method.
-	start: function () {
+	start () {
 		Log.log(`Starting node helper for: ${this.name}`);
 		this.fetchers = [];
 	},
 
 	// Override socketNotificationReceived method.
-	socketNotificationReceived: function (notification, payload) {
+	socketNotificationReceived (notification, payload) {
 		if (notification === "ADD_CALENDAR") {
 			this.createFetcher(payload.url, payload.fetchInterval, payload.excludedEvents, payload.maximumEntries, payload.maximumNumberOfDays, payload.auth, payload.broadcastPastEvents, payload.selfSignedCert, payload.id);
 		} else if (notification === "FETCH_CALENDAR") {
@@ -49,7 +49,7 @@ module.exports = NodeHelper.create({
 	 * @param {boolean} selfSignedCert If true, the server certificate is not verified against the list of supplied CAs.
 	 * @param {string} identifier ID of the module
 	 */
-	createFetcher: function (url, fetchInterval, excludedEvents, maximumEntries, maximumNumberOfDays, auth, broadcastPastEvents, selfSignedCert, identifier) {
+	createFetcher (url, fetchInterval, excludedEvents, maximumEntries, maximumNumberOfDays, auth, broadcastPastEvents, selfSignedCert, identifier) {
 		try {
 			new URL(url);
 		} catch (error) {
@@ -91,7 +91,7 @@ module.exports = NodeHelper.create({
 	 * @param {object} fetcher the fetcher associated with the calendar
 	 * @param {string} identifier the identifier of the calendar
 	 */
-	broadcastEvents: function (fetcher, identifier) {
+	broadcastEvents (fetcher, identifier) {
 		this.sendSocketNotification("CALENDAR_EVENTS", {
 			id: identifier,
 			url: fetcher.url(),
