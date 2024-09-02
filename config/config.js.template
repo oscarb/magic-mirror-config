@@ -133,6 +133,14 @@
 			 }
 		 },
 		 {
+			module: 'MMM-Skolmaten',
+			header: '',
+			position: 'bottom_bar',
+			config: {
+			 url: '${SCHOOL_LUNCH}'
+			}
+		 },
+		 {
 			 module: "newsfeed",
 			 position: "bottom_bar",
 			 config: {

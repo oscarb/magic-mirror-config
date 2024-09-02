@@ -77,3 +77,21 @@ div.time {
 .module.MMM-OpenWeatherMapForecast .summary { 
     display: none;
 }
+
+/*
+    SKOLMATEN
+*/
+
+.MMM-Skolmaten .itemtitle { 
+    font-weight: 300;
+    font-size: var(--font-size-small);
+    line-height: 1.25;
+    color: var(--color-text-dimmed);
+}
+
+.MMM-Skolmaten .itemdescription {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 120%;
+}
