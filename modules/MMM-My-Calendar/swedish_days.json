@@ -1,40 +1,41 @@
 {
-  "cachetid": "2024-01-28 21:56:14",
+  "cachetid": "2026-01-01 06:30:10",
   "version": "2.1",
-  "uri": "/dagar/v2.1/2024",
-  "startdatum": "2024-01-01",
-  "slutdatum": "2024-12-31",
+  "uri": "/dagar/v2.1/2026",
+  "startdatum": "2026-01-01",
+  "slutdatum": "2026-12-31",
   "dagar": [
     {
-      "datum": "2024-01-01",
-      "veckodag": "Måndag",
+      "datum": "2026-01-01",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "01",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "helgdag": "Nyårsdagen",
       "namnsdag": [],
       "flaggdag": "Nyårsdagen"
     },
     {
-      "datum": "2024-01-02",
-      "veckodag": "Tisdag",
+      "datum": "2026-01-02",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "01",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
+      "klämdag": "Ja",
       "namnsdag": [
         "Svea"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-03",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-01-03",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "01",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Alfred",
         "Alfrida"
@@ -42,26 +43,27 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-04",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-01-04",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "01",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Rut"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-05",
-      "veckodag": "Fredag",
+      "datum": "2026-01-05",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "01",
-      "dag i vecka": "5",
+      "vecka": "02",
+      "dag i vecka": "1",
       "helgdagsafton": "Trettondagsafton",
       "dag före arbetsfri helgdag": "Ja",
+      "klämdag": "Ja",
       "namnsdag": [
         "Hanna",
         "Hannele"
@@ -69,12 +71,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-06",
-      "veckodag": "Lördag",
+      "datum": "2026-01-06",
+      "veckodag": "Tisdag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
-      "vecka": "01",
-      "dag i vecka": "6",
+      "vecka": "02",
+      "dag i vecka": "2",
       "helgdag": "Trettondedag jul",
       "namnsdag": [
         "Kasper",
@@ -84,12 +86,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-07",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "01",
-      "dag i vecka": "7",
+      "datum": "2026-01-07",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "02",
+      "dag i vecka": "3",
       "namnsdag": [
         "August",
         "Augusta"
@@ -97,24 +99,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-08",
-      "veckodag": "Måndag",
+      "datum": "2026-01-08",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "02",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Erland"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-09",
-      "veckodag": "Tisdag",
+      "datum": "2026-01-09",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "02",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Gunnar",
         "Gunder"
@@ -122,12 +124,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-10",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-01-10",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "02",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Sigurd",
         "Sigbritt"
@@ -135,12 +137,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-11",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-01-11",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "02",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Jan",
         "Jannike"
@@ -148,12 +150,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-12",
-      "veckodag": "Fredag",
+      "datum": "2026-01-12",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "02",
-      "dag i vecka": "5",
+      "vecka": "03",
+      "dag i vecka": "1",
       "namnsdag": [
         "Frideborg",
         "Fridolf"
@@ -161,24 +163,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-13",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-01-13",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "02",
-      "dag i vecka": "6",
+      "vecka": "03",
+      "dag i vecka": "2",
       "namnsdag": [
         "Knut"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-14",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "02",
-      "dag i vecka": "7",
+      "datum": "2026-01-14",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "03",
+      "dag i vecka": "3",
       "namnsdag": [
         "Felix",
         "Felicia"
@@ -186,12 +188,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-15",
-      "veckodag": "Måndag",
+      "datum": "2026-01-15",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "03",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Laura",
         "Lorentz"
@@ -199,12 +201,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-16",
-      "veckodag": "Tisdag",
+      "datum": "2026-01-16",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "03",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Hjalmar",
         "Helmer"
@@ -212,12 +214,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-17",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-01-17",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "03",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Anton",
         "Tony"
@@ -225,12 +227,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-18",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-01-18",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "03",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Hilda",
         "Hildur"
@@ -238,24 +240,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-19",
-      "veckodag": "Fredag",
+      "datum": "2026-01-19",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "03",
-      "dag i vecka": "5",
+      "vecka": "04",
+      "dag i vecka": "1",
       "namnsdag": [
         "Henrik"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-20",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-01-20",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "03",
-      "dag i vecka": "6",
+      "vecka": "04",
+      "dag i vecka": "2",
       "namnsdag": [
         "Fabian",
         "Sebastian"
@@ -263,12 +265,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-21",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "03",
-      "dag i vecka": "7",
+      "datum": "2026-01-21",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "04",
+      "dag i vecka": "3",
       "namnsdag": [
         "Agnes",
         "Agneta"
@@ -276,12 +278,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-22",
-      "veckodag": "Måndag",
+      "datum": "2026-01-22",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "04",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Vincent",
         "Viktor"
@@ -289,12 +291,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-23",
-      "veckodag": "Tisdag",
+      "datum": "2026-01-23",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "04",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Frej",
         "Freja"
@@ -302,24 +304,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-24",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-01-24",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "04",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Erika"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-25",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-01-25",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "04",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Paul",
         "Pål"
@@ -327,12 +329,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-26",
-      "veckodag": "Fredag",
+      "datum": "2026-01-26",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "04",
-      "dag i vecka": "5",
+      "vecka": "05",
+      "dag i vecka": "1",
       "namnsdag": [
         "Bodil",
         "Boel"
@@ -340,12 +342,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-27",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-01-27",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "04",
-      "dag i vecka": "6",
+      "vecka": "05",
+      "dag i vecka": "2",
       "namnsdag": [
         "Göte",
         "Göta"
@@ -353,12 +355,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-28",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "04",
-      "dag i vecka": "7",
+      "datum": "2026-01-28",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "05",
+      "dag i vecka": "3",
       "namnsdag": [
         "Karl",
         "Karla"
@@ -366,24 +368,24 @@
       "flaggdag": "Kung Carl XVI Gustafs namnsdag"
     },
     {
-      "datum": "2024-01-29",
-      "veckodag": "Måndag",
+      "datum": "2026-01-29",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "05",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Diana"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-30",
-      "veckodag": "Tisdag",
+      "datum": "2026-01-30",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "05",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Gunilla",
         "Gunhild"
@@ -391,12 +393,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-01-31",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-01-31",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "05",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Ivar",
         "Joar"
@@ -404,12 +406,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-01",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-02-01",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "05",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Max",
         "Maximilian"
@@ -417,22 +419,22 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-02",
-      "veckodag": "Fredag",
+      "datum": "2026-02-02",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "05",
-      "dag i vecka": "5",
+      "vecka": "06",
+      "dag i vecka": "1",
       "namnsdag": [],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-03",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-02-03",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "05",
-      "dag i vecka": "6",
+      "vecka": "06",
+      "dag i vecka": "2",
       "namnsdag": [
         "Disa",
         "Hjördis"
@@ -440,12 +442,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-04",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "05",
-      "dag i vecka": "7",
+      "datum": "2026-02-04",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "06",
+      "dag i vecka": "3",
       "namnsdag": [
         "Ansgar",
         "Anselm"
@@ -453,12 +455,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-05",
-      "veckodag": "Måndag",
+      "datum": "2026-02-05",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "06",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Agata",
         "Agda"
@@ -466,12 +468,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-06",
-      "veckodag": "Tisdag",
+      "datum": "2026-02-06",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "06",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Dorotea",
         "Doris"
@@ -479,12 +481,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-07",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-02-07",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "06",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Rikard",
         "Dick"
@@ -492,12 +494,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-08",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-02-08",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "06",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Berta",
         "Bert"
@@ -505,12 +507,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-09",
-      "veckodag": "Fredag",
+      "datum": "2026-02-09",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "06",
-      "dag i vecka": "5",
+      "vecka": "07",
+      "dag i vecka": "1",
       "namnsdag": [
         "Fanny",
         "Franciska"
@@ -518,24 +520,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-10",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-02-10",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "06",
-      "dag i vecka": "6",
+      "vecka": "07",
+      "dag i vecka": "2",
       "namnsdag": [
         "Iris"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-11",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "06",
-      "dag i vecka": "7",
+      "datum": "2026-02-11",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "07",
+      "dag i vecka": "3",
       "namnsdag": [
         "Yngve",
         "Inge"
@@ -543,12 +545,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-12",
-      "veckodag": "Måndag",
+      "datum": "2026-02-12",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "07",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Evelina",
         "Evy"
@@ -556,12 +558,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-13",
-      "veckodag": "Tisdag",
+      "datum": "2026-02-13",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "07",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Agne",
         "Ove"
@@ -569,36 +571,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-14",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-02-14",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "07",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Valentin"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-15",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-02-15",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "07",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Sigfrid"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-16",
-      "veckodag": "Fredag",
+      "datum": "2026-02-16",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "07",
-      "dag i vecka": "5",
+      "vecka": "08",
+      "dag i vecka": "1",
       "namnsdag": [
         "Julia",
         "Julius"
@@ -606,12 +608,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-17",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-02-17",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "07",
-      "dag i vecka": "6",
+      "vecka": "08",
+      "dag i vecka": "2",
       "namnsdag": [
         "Alexandra",
         "Sandra"
@@ -619,12 +621,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-18",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "07",
-      "dag i vecka": "7",
+      "datum": "2026-02-18",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "08",
+      "dag i vecka": "3",
       "namnsdag": [
         "Frida",
         "Fritiof"
@@ -632,12 +634,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-19",
-      "veckodag": "Måndag",
+      "datum": "2026-02-19",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "08",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Gabriella",
         "Ella"
@@ -645,48 +647,48 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-20",
-      "veckodag": "Tisdag",
+      "datum": "2026-02-20",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "08",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Vivianne"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-21",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-02-21",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "08",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Hilding"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-22",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-02-22",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "08",
-      "dag i vecka": "4",
+      "dag i vecka": "7",
       "namnsdag": [
         "Pia"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-23",
-      "veckodag": "Fredag",
+      "datum": "2026-02-23",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "08",
-      "dag i vecka": "5",
+      "vecka": "09",
+      "dag i vecka": "1",
       "namnsdag": [
         "Torsten",
         "Torun"
@@ -694,12 +696,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-24",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-02-24",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "08",
-      "dag i vecka": "6",
+      "vecka": "09",
+      "dag i vecka": "2",
       "namnsdag": [
         "Mattias",
         "Mats"
@@ -707,12 +709,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-25",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "08",
-      "dag i vecka": "7",
+      "datum": "2026-02-25",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "09",
+      "dag i vecka": "3",
       "namnsdag": [
         "Sigvard",
         "Sivert"
@@ -720,12 +722,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-26",
-      "veckodag": "Måndag",
+      "datum": "2026-02-26",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "09",
-      "dag i vecka": "1",
+      "dag i vecka": "4",
       "namnsdag": [
         "Torgny",
         "Torkel"
@@ -733,46 +735,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-27",
-      "veckodag": "Tisdag",
+      "datum": "2026-02-27",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "09",
-      "dag i vecka": "2",
+      "dag i vecka": "5",
       "namnsdag": [
         "Lage"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-28",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-02-28",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "09",
-      "dag i vecka": "3",
+      "dag i vecka": "6",
       "namnsdag": [
         "Maria"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-02-29",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-03-01",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "09",
-      "dag i vecka": "4",
-      "namnsdag": [],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-03-01",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "09",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Albin",
         "Elvira"
@@ -780,12 +772,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-02",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-03-02",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "09",
-      "dag i vecka": "6",
+      "vecka": "10",
+      "dag i vecka": "1",
       "namnsdag": [
         "Ernst",
         "Erna"
@@ -793,12 +785,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-03",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "09",
-      "dag i vecka": "7",
+      "datum": "2026-03-03",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "10",
+      "dag i vecka": "2",
       "namnsdag": [
         "Gunborg",
         "Gunvor"
@@ -806,12 +798,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-04",
-      "veckodag": "Måndag",
+      "datum": "2026-03-04",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "10",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Adrian",
         "Adriana"
@@ -819,12 +811,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-05",
-      "veckodag": "Tisdag",
+      "datum": "2026-03-05",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "10",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Tora",
         "Tove"
@@ -832,12 +824,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-06",
-      "veckodag": "Onsdag",
+      "datum": "2026-03-06",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "10",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Ebba",
         "Ebbe"
@@ -845,24 +837,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-07",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-03-07",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "10",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Camilla"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-08",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-03-08",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "10",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Siv",
         "Saga"
@@ -870,12 +862,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-09",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-03-09",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "10",
-      "dag i vecka": "6",
+      "vecka": "11",
+      "dag i vecka": "1",
       "namnsdag": [
         "Torbjörn",
         "Torleif"
@@ -883,12 +875,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-10",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "10",
-      "dag i vecka": "7",
+      "datum": "2026-03-10",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "11",
+      "dag i vecka": "2",
       "namnsdag": [
         "Edla",
         "Ada"
@@ -896,12 +888,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-11",
-      "veckodag": "Måndag",
+      "datum": "2026-03-11",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "11",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Edvin",
         "Egon"
@@ -909,36 +901,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-12",
-      "veckodag": "Tisdag",
+      "datum": "2026-03-12",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "11",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Viktoria"
       ],
       "flaggdag": "Kronprinsessan Victorias namnsdag"
     },
     {
-      "datum": "2024-03-13",
-      "veckodag": "Onsdag",
+      "datum": "2026-03-13",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "11",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Greger"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-14",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-03-14",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "11",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Matilda",
         "Maud"
@@ -946,12 +938,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-15",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-03-15",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "11",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Kristoffer",
         "Christel"
@@ -959,12 +951,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-16",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-03-16",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "11",
-      "dag i vecka": "6",
+      "vecka": "12",
+      "dag i vecka": "1",
       "namnsdag": [
         "Herbert",
         "Gilbert"
@@ -972,24 +964,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-17",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "11",
-      "dag i vecka": "7",
+      "datum": "2026-03-17",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "12",
+      "dag i vecka": "2",
       "namnsdag": [
         "Gertrud"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-18",
-      "veckodag": "Måndag",
+      "datum": "2026-03-18",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "12",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Edvard",
         "Edmund"
@@ -997,12 +989,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-19",
-      "veckodag": "Tisdag",
+      "datum": "2026-03-19",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "12",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Josef",
         "Josefina"
@@ -1010,12 +1002,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-20",
-      "veckodag": "Onsdag",
+      "datum": "2026-03-20",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "12",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Joakim",
         "Kim"
@@ -1023,24 +1015,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-21",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-03-21",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "12",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Bengt"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-22",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-03-22",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "12",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Kennet",
         "Kent"
@@ -1048,12 +1040,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-23",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-03-23",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "12",
-      "dag i vecka": "6",
+      "vecka": "13",
+      "dag i vecka": "1",
       "namnsdag": [
         "Gerda",
         "Gerd"
@@ -1061,12 +1053,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-24",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "12",
-      "dag i vecka": "7",
+      "datum": "2026-03-24",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "13",
+      "dag i vecka": "2",
       "namnsdag": [
         "Gabriel",
         "Rafael"
@@ -1074,34 +1066,34 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-25",
-      "veckodag": "Måndag",
+      "datum": "2026-03-25",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "13",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [],
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-26",
-      "veckodag": "Tisdag",
+      "datum": "2026-03-26",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "13",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Emanuel"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-27",
-      "veckodag": "Onsdag",
+      "datum": "2026-03-27",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "13",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Rudolf",
         "Ralf"
@@ -1109,14 +1101,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-28",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-03-28",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "13",
-      "dag i vecka": "4",
-      "helgdagsafton": "Skärtorsdagen",
-      "dag före arbetsfri helgdag": "Ja",
+      "dag i vecka": "6",
       "namnsdag": [
         "Malkolm",
         "Morgan"
@@ -1124,13 +1114,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-29",
-      "veckodag": "Fredag",
+      "datum": "2026-03-29",
+      "veckodag": "Söndag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "13",
-      "dag i vecka": "5",
-      "helgdag": "Långfredagen",
+      "dag i vecka": "7",
       "namnsdag": [
         "Jonas",
         "Jens"
@@ -1138,13 +1127,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-30",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-03-30",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "13",
-      "dag i vecka": "6",
-      "helgdag": "Påskafton",
+      "vecka": "14",
+      "dag i vecka": "1",
       "namnsdag": [
         "Holger",
         "Holmfrid"
@@ -1152,26 +1140,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-03-31",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "13",
-      "dag i vecka": "7",
-      "helgdag": "Påskdagen",
+      "datum": "2026-03-31",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "14",
+      "dag i vecka": "2",
       "namnsdag": [
         "Ester"
       ],
-      "flaggdag": "Påskdagen"
+      "flaggdag": ""
     },
     {
-      "datum": "2024-04-01",
-      "veckodag": "Måndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
+      "datum": "2026-04-01",
+      "veckodag": "Onsdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
       "vecka": "14",
-      "dag i vecka": "1",
-      "helgdag": "Annandag påsk",
+      "dag i vecka": "3",
       "namnsdag": [
         "Harald",
         "Hervor"
@@ -1179,12 +1165,14 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-02",
-      "veckodag": "Tisdag",
+      "datum": "2026-04-02",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "14",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
+      "helgdagsafton": "Skärtorsdagen",
+      "dag före arbetsfri helgdag": "Ja",
       "namnsdag": [
         "Gudmund",
         "Ingemund"
@@ -1192,12 +1180,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-03",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-04-03",
+      "veckodag": "Fredag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "14",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
+      "helgdag": "Långfredagen",
       "namnsdag": [
         "Ferdinand",
         "Nanna"
@@ -1205,12 +1194,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-04",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-04-04",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "14",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
+      "helgdag": "Påskafton",
       "namnsdag": [
         "Marianne",
         "Marlene"
@@ -1218,25 +1208,27 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-05",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-04-05",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "14",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
+      "helgdag": "Påskdagen",
       "namnsdag": [
         "Irene",
         "Irja"
       ],
-      "flaggdag": ""
+      "flaggdag": "Påskdagen"
     },
     {
-      "datum": "2024-04-06",
-      "veckodag": "Lördag",
+      "datum": "2026-04-06",
+      "veckodag": "Måndag",
       "arbetsfri dag": "Ja",
-      "röd dag": "Nej",
-      "vecka": "14",
-      "dag i vecka": "6",
+      "röd dag": "Ja",
+      "vecka": "15",
+      "dag i vecka": "1",
+      "helgdag": "Annandag påsk",
       "namnsdag": [
         "Vilhelm",
         "William"
@@ -1244,12 +1236,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-07",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "14",
-      "dag i vecka": "7",
+      "datum": "2026-04-07",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "15",
+      "dag i vecka": "2",
       "namnsdag": [
         "Irma",
         "Irmelin"
@@ -1257,12 +1249,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-08",
-      "veckodag": "Måndag",
+      "datum": "2026-04-08",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "15",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Nadja",
         "Tanja"
@@ -1270,12 +1262,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-09",
-      "veckodag": "Tisdag",
+      "datum": "2026-04-09",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "15",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Otto",
         "Ottilia"
@@ -1283,12 +1275,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-10",
-      "veckodag": "Onsdag",
+      "datum": "2026-04-10",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "15",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Ingvar",
         "Ingvor"
@@ -1296,12 +1288,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-11",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-04-11",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "15",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Ulf",
         "Ylva"
@@ -1309,24 +1301,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-12",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-04-12",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "15",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Liv"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-13",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-04-13",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "15",
-      "dag i vecka": "6",
+      "vecka": "16",
+      "dag i vecka": "1",
       "namnsdag": [
         "Artur",
         "Douglas"
@@ -1334,24 +1326,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-14",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "15",
-      "dag i vecka": "7",
+      "datum": "2026-04-14",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "16",
+      "dag i vecka": "2",
       "namnsdag": [
         "Tiburtius"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-15",
-      "veckodag": "Måndag",
+      "datum": "2026-04-15",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "16",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Olivia",
         "Oliver"
@@ -1359,12 +1351,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-16",
-      "veckodag": "Tisdag",
+      "datum": "2026-04-16",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "16",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Patrik",
         "Patricia"
@@ -1372,12 +1364,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-17",
-      "veckodag": "Onsdag",
+      "datum": "2026-04-17",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "16",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Elias",
         "Elis"
@@ -1385,12 +1377,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-18",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-04-18",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "16",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Valdemar",
         "Volmar"
@@ -1398,12 +1390,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-19",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-04-19",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "16",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Olaus",
         "Ola"
@@ -1411,12 +1403,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-20",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-04-20",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "16",
-      "dag i vecka": "6",
+      "vecka": "17",
+      "dag i vecka": "1",
       "namnsdag": [
         "Amalia",
         "Amelie"
@@ -1424,12 +1416,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-21",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "16",
-      "dag i vecka": "7",
+      "datum": "2026-04-21",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "17",
+      "dag i vecka": "2",
       "namnsdag": [
         "Anneli",
         "Annika"
@@ -1437,12 +1429,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-22",
-      "veckodag": "Måndag",
+      "datum": "2026-04-22",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "17",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Allan",
         "Glenn"
@@ -1450,12 +1442,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-23",
-      "veckodag": "Tisdag",
+      "datum": "2026-04-23",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "17",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Georg",
         "Göran"
@@ -1463,36 +1455,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-24",
-      "veckodag": "Onsdag",
+      "datum": "2026-04-24",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "17",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Vega"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-25",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-04-25",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "17",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Markus"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-26",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-04-26",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "17",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Teresia",
         "Terese"
@@ -1500,24 +1492,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-27",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-04-27",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "17",
-      "dag i vecka": "6",
+      "vecka": "18",
+      "dag i vecka": "1",
       "namnsdag": [
         "Engelbrekt"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-28",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "17",
-      "dag i vecka": "7",
+      "datum": "2026-04-28",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "18",
+      "dag i vecka": "2",
       "namnsdag": [
         "Ture",
         "Tyra"
@@ -1525,24 +1517,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-29",
-      "veckodag": "Måndag",
+      "datum": "2026-04-29",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "18",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Tyko"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-04-30",
-      "veckodag": "Tisdag",
+      "datum": "2026-04-30",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "18",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "helgdagsafton": "Valborgsmässoafton",
       "dag före arbetsfri helgdag": "Ja",
       "namnsdag": [
@@ -1551,12 +1543,12 @@
       "flaggdag": "Kung Carl XVI Gustafs födelsedag"
     },
     {
-      "datum": "2024-05-01",
-      "veckodag": "Onsdag",
+      "datum": "2026-05-01",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "18",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "helgdag": "Första Maj",
       "namnsdag": [
         "Valborg"
@@ -1564,12 +1556,12 @@
       "flaggdag": "Första maj"
     },
     {
-      "datum": "2024-05-02",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-05-02",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "18",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Filip",
         "Filippa"
@@ -1577,12 +1569,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-03",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-05-03",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "18",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "John",
         "Jane"
@@ -1590,12 +1582,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-04",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-05-04",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "18",
-      "dag i vecka": "6",
+      "vecka": "19",
+      "dag i vecka": "1",
       "namnsdag": [
         "Monika",
         "Mona"
@@ -1603,12 +1595,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-05",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "18",
-      "dag i vecka": "7",
+      "datum": "2026-05-05",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "19",
+      "dag i vecka": "2",
       "namnsdag": [
         "Gotthard",
         "Erhard"
@@ -1616,12 +1608,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-06",
-      "veckodag": "Måndag",
+      "datum": "2026-05-06",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "19",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Marit",
         "Rita"
@@ -1629,12 +1621,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-07",
-      "veckodag": "Tisdag",
+      "datum": "2026-05-07",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "19",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Carina",
         "Carita"
@@ -1642,26 +1634,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-08",
-      "veckodag": "Onsdag",
+      "datum": "2026-05-08",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "19",
-      "dag i vecka": "3",
-      "dag före arbetsfri helgdag": "Ja",
+      "dag i vecka": "5",
       "namnsdag": [
         "Åke"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-09",
-      "veckodag": "Torsdag",
+      "datum": "2026-05-09",
+      "veckodag": "Lördag",
       "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
+      "röd dag": "Nej",
       "vecka": "19",
-      "dag i vecka": "4",
-      "helgdag": "Kristi himmelsfärdsdag",
+      "dag i vecka": "6",
       "namnsdag": [
         "Reidar",
         "Reidun"
@@ -1669,13 +1659,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-10",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-05-10",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "19",
-      "dag i vecka": "5",
-      "klämdag": "Ja",
+      "dag i vecka": "7",
       "namnsdag": [
         "Esbjörn",
         "Styrbjörn"
@@ -1683,12 +1672,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-11",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-05-11",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "19",
-      "dag i vecka": "6",
+      "vecka": "20",
+      "dag i vecka": "1",
       "namnsdag": [
         "Märta",
         "Märit"
@@ -1696,12 +1685,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-12",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "19",
-      "dag i vecka": "7",
+      "datum": "2026-05-12",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "20",
+      "dag i vecka": "2",
       "namnsdag": [
         "Charlotta",
         "Lotta"
@@ -1709,12 +1698,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-13",
-      "veckodag": "Måndag",
+      "datum": "2026-05-13",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "20",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
+      "dag före arbetsfri helgdag": "Ja",
       "namnsdag": [
         "Linnea",
         "Linn"
@@ -1722,12 +1712,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-14",
-      "veckodag": "Tisdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-05-14",
+      "veckodag": "Torsdag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "20",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
+      "helgdag": "Kristi himmelsfärdsdag",
       "namnsdag": [
         "Halvard",
         "Halvar"
@@ -1735,12 +1726,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-15",
-      "veckodag": "Onsdag",
+      "datum": "2026-05-15",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "20",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
+      "klämdag": "Ja",
       "namnsdag": [
         "Sofia",
         "Sonja"
@@ -1748,12 +1740,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-16",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-05-16",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "20",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Ronald",
         "Ronny"
@@ -1761,12 +1753,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-17",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-05-17",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "20",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Rebecka",
         "Ruben"
@@ -1774,40 +1766,37 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-18",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-05-18",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "20",
-      "dag i vecka": "6",
-      "helgdagsafton": "Pingstafton",
+      "vecka": "21",
+      "dag i vecka": "1",
       "namnsdag": [
         "Erik"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-19",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "20",
-      "dag i vecka": "7",
-      "helgdag": "Pingstdagen",
+      "datum": "2026-05-19",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "21",
+      "dag i vecka": "2",
       "namnsdag": [
         "Maj",
         "Majken"
       ],
-      "flaggdag": "Pingstdagen"
+      "flaggdag": ""
     },
     {
-      "datum": "2024-05-20",
-      "veckodag": "Måndag",
+      "datum": "2026-05-20",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "21",
-      "dag i vecka": "1",
-      "helgdag": "Annandag pingst",
+      "dag i vecka": "3",
       "namnsdag": [
         "Karolina",
         "Carola"
@@ -1815,12 +1804,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-21",
-      "veckodag": "Tisdag",
+      "datum": "2026-05-21",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "21",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Konstantin",
         "Conny"
@@ -1828,12 +1817,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-22",
-      "veckodag": "Onsdag",
+      "datum": "2026-05-22",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "21",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Hemming",
         "Henning"
@@ -1841,12 +1830,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-23",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-05-23",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "21",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
+      "helgdagsafton": "Pingstafton",
       "namnsdag": [
         "Desideria",
         "Desirée"
@@ -1854,37 +1844,39 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-24",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-05-24",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "21",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
+      "helgdag": "Pingstdagen",
       "namnsdag": [
         "Ivan",
         "Vanja"
       ],
-      "flaggdag": ""
+      "flaggdag": "Pingstdagen"
     },
     {
-      "datum": "2024-05-25",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-05-25",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "21",
-      "dag i vecka": "6",
+      "vecka": "22",
+      "dag i vecka": "1",
+      "helgdag": "Annandag pingst",
       "namnsdag": [
         "Urban"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-26",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "21",
-      "dag i vecka": "7",
+      "datum": "2026-05-26",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "22",
+      "dag i vecka": "2",
       "namnsdag": [
         "Vilhelmina",
         "Vilma"
@@ -1892,12 +1884,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-27",
-      "veckodag": "Måndag",
+      "datum": "2026-05-27",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "22",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Beda",
         "Blenda"
@@ -1905,12 +1897,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-28",
-      "veckodag": "Tisdag",
+      "datum": "2026-05-28",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "22",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Ingeborg",
         "Borghild"
@@ -1918,12 +1910,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-29",
-      "veckodag": "Onsdag",
+      "datum": "2026-05-29",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "22",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Yvonne",
         "Jeanette"
@@ -1931,12 +1923,12 @@
       "flaggdag": "Veterandagen"
     },
     {
-      "datum": "2024-05-30",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-05-30",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "22",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Vera",
         "Veronika"
@@ -1944,12 +1936,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-05-31",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-05-31",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "22",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Petronella",
         "Pernilla"
@@ -1957,12 +1949,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-01",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-06-01",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "22",
-      "dag i vecka": "6",
+      "vecka": "23",
+      "dag i vecka": "1",
       "namnsdag": [
         "Gun",
         "Gunnel"
@@ -1970,12 +1962,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-02",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "22",
-      "dag i vecka": "7",
+      "datum": "2026-06-02",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "23",
+      "dag i vecka": "2",
       "namnsdag": [
         "Rutger",
         "Roger"
@@ -1983,12 +1975,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-03",
-      "veckodag": "Måndag",
+      "datum": "2026-06-03",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "23",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Ingemar",
         "Gudmar"
@@ -1996,12 +1988,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-04",
-      "veckodag": "Tisdag",
+      "datum": "2026-06-04",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "23",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Solbritt",
         "Solveig"
@@ -2009,12 +2001,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-05",
-      "veckodag": "Onsdag",
+      "datum": "2026-06-05",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "23",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "dag före arbetsfri helgdag": "Ja",
       "namnsdag": [
         "Bo"
@@ -2022,12 +2014,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-06",
-      "veckodag": "Torsdag",
+      "datum": "2026-06-06",
+      "veckodag": "Lördag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "23",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "helgdag": "Sveriges nationaldag",
       "namnsdag": [
         "Gustav",
@@ -2036,13 +2028,12 @@
       "flaggdag": "Sveriges nationaldag och svenska flaggans dag"
     },
     {
-      "datum": "2024-06-07",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-06-07",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "23",
-      "dag i vecka": "5",
-      "klämdag": "Ja",
+      "dag i vecka": "7",
       "namnsdag": [
         "Robert",
         "Robin"
@@ -2050,12 +2041,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-08",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-06-08",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "23",
-      "dag i vecka": "6",
+      "vecka": "24",
+      "dag i vecka": "1",
       "namnsdag": [
         "Eivor",
         "Majvor"
@@ -2063,12 +2054,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-09",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "23",
-      "dag i vecka": "7",
+      "datum": "2026-06-09",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "24",
+      "dag i vecka": "2",
       "namnsdag": [
         "Börje",
         "Birger"
@@ -2076,12 +2067,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-10",
-      "veckodag": "Måndag",
+      "datum": "2026-06-10",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "24",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Svante",
         "Boris"
@@ -2089,12 +2080,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-11",
-      "veckodag": "Tisdag",
+      "datum": "2026-06-11",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "24",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Bertil",
         "Berthold"
@@ -2102,24 +2093,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-12",
-      "veckodag": "Onsdag",
+      "datum": "2026-06-12",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "24",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Eskil"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-13",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-06-13",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "24",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Aina",
         "Aino"
@@ -2127,12 +2118,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-14",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-06-14",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "24",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Håkan",
         "Hakon"
@@ -2140,12 +2131,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-15",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-06-15",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "24",
-      "dag i vecka": "6",
+      "vecka": "25",
+      "dag i vecka": "1",
       "namnsdag": [
         "Margit",
         "Margot"
@@ -2153,12 +2144,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-16",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "24",
-      "dag i vecka": "7",
+      "datum": "2026-06-16",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "25",
+      "dag i vecka": "2",
       "namnsdag": [
         "Axel",
         "Axelina"
@@ -2166,12 +2157,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-17",
-      "veckodag": "Måndag",
+      "datum": "2026-06-17",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "25",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Torborg",
         "Torvald"
@@ -2179,12 +2170,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-18",
-      "veckodag": "Tisdag",
+      "datum": "2026-06-18",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "25",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
+      "dag före arbetsfri helgdag": "Ja",
       "namnsdag": [
         "Björn",
         "Bjarne"
@@ -2192,33 +2184,7 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-19",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "25",
-      "dag i vecka": "3",
-      "namnsdag": [
-        "Germund",
-        "Görel"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-06-20",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "25",
-      "dag i vecka": "4",
-      "dag före arbetsfri helgdag": "Ja",
-      "namnsdag": [
-        "Linda"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-06-21",
+      "datum": "2026-06-19",
       "veckodag": "Fredag",
       "arbetsfri dag": "Ja",
       "röd dag": "Nej",
@@ -2226,13 +2192,13 @@
       "dag i vecka": "5",
       "helgdag": "Midsommarafton",
       "namnsdag": [
-        "Alf",
-        "Alvar"
+        "Germund",
+        "Görel"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-22",
+      "datum": "2026-06-20",
       "veckodag": "Lördag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
@@ -2240,18 +2206,43 @@
       "dag i vecka": "6",
       "helgdag": "Midsommardagen",
       "namnsdag": [
-        "Paulina",
-        "Paula"
+        "Linda"
       ],
       "flaggdag": "Midsommardagen"
     },
     {
-      "datum": "2024-06-23",
+      "datum": "2026-06-21",
       "veckodag": "Söndag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "25",
       "dag i vecka": "7",
+      "namnsdag": [
+        "Alf",
+        "Alvar"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-06-22",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "26",
+      "dag i vecka": "1",
+      "namnsdag": [
+        "Paulina",
+        "Paula"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-06-23",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "26",
+      "dag i vecka": "2",
       "namnsdag": [
         "Adolf",
         "Alice"
@@ -2259,22 +2250,22 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-24",
-      "veckodag": "Måndag",
+      "datum": "2026-06-24",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "26",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [],
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-25",
-      "veckodag": "Tisdag",
+      "datum": "2026-06-25",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "26",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "David",
         "Salomon"
@@ -2282,12 +2273,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-26",
-      "veckodag": "Onsdag",
+      "datum": "2026-06-26",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "26",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Rakel",
         "Lea"
@@ -2295,12 +2286,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-27",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-06-27",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "26",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Selma",
         "Fingal"
@@ -2308,24 +2299,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-28",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-06-28",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "26",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Leo"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-29",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-06-29",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "26",
-      "dag i vecka": "6",
+      "vecka": "27",
+      "dag i vecka": "1",
       "namnsdag": [
         "Peter",
         "Petra"
@@ -2333,12 +2324,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-06-30",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "26",
-      "dag i vecka": "7",
+      "datum": "2026-06-30",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "27",
+      "dag i vecka": "2",
       "namnsdag": [
         "Elof",
         "Leif"
@@ -2346,12 +2337,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-01",
-      "veckodag": "Måndag",
+      "datum": "2026-07-01",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "27",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Aron",
         "Mirjam"
@@ -2359,12 +2350,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-02",
-      "veckodag": "Tisdag",
+      "datum": "2026-07-02",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "27",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Rosa",
         "Rosita"
@@ -2372,24 +2363,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-03",
-      "veckodag": "Onsdag",
+      "datum": "2026-07-03",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "27",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Aurora"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-04",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-07-04",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "27",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Ulrika",
         "Ulla"
@@ -2397,12 +2388,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-05",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-07-05",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "27",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Laila",
         "Ritva"
@@ -2410,12 +2401,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-06",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-07-06",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "27",
-      "dag i vecka": "6",
+      "vecka": "28",
+      "dag i vecka": "1",
       "namnsdag": [
         "Esaias",
         "Jessika"
@@ -2423,36 +2414,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-07",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "27",
-      "dag i vecka": "7",
+      "datum": "2026-07-07",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "28",
+      "dag i vecka": "2",
       "namnsdag": [
         "Klas"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-08",
-      "veckodag": "Måndag",
+      "datum": "2026-07-08",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "28",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Kjell"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-09",
-      "veckodag": "Tisdag",
+      "datum": "2026-07-09",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "28",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Jörgen",
         "Örjan"
@@ -2460,12 +2451,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-10",
-      "veckodag": "Onsdag",
+      "datum": "2026-07-10",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "28",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "André",
         "Andrea"
@@ -2473,12 +2464,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-11",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-07-11",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "28",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Eleonora",
         "Ellinor"
@@ -2486,12 +2477,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-12",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-07-12",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "28",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Herman",
         "Hermine"
@@ -2499,12 +2490,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-13",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-07-13",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "28",
-      "dag i vecka": "6",
+      "vecka": "29",
+      "dag i vecka": "1",
       "namnsdag": [
         "Joel",
         "Judit"
@@ -2512,24 +2503,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-14",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "28",
-      "dag i vecka": "7",
+      "datum": "2026-07-14",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "29",
+      "dag i vecka": "2",
       "namnsdag": [
         "Folke"
       ],
       "flaggdag": "Kronprinsessan Victorias födelsedag"
     },
     {
-      "datum": "2024-07-15",
-      "veckodag": "Måndag",
+      "datum": "2026-07-15",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "29",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Ragnhild",
         "Ragnvald"
@@ -2537,12 +2528,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-16",
-      "veckodag": "Tisdag",
+      "datum": "2026-07-16",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "29",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Reinhold",
         "Reine"
@@ -2550,24 +2541,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-17",
-      "veckodag": "Onsdag",
+      "datum": "2026-07-17",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "29",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Bruno"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-18",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-07-18",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "29",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Fredrik",
         "Fritz"
@@ -2575,24 +2566,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-19",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-07-19",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "29",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Sara"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-20",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-07-20",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "29",
-      "dag i vecka": "6",
+      "vecka": "30",
+      "dag i vecka": "1",
       "namnsdag": [
         "Margareta",
         "Greta"
@@ -2600,24 +2591,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-21",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "29",
-      "dag i vecka": "7",
+      "datum": "2026-07-21",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "30",
+      "dag i vecka": "2",
       "namnsdag": [
         "Johanna"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-22",
-      "veckodag": "Måndag",
+      "datum": "2026-07-22",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "30",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Magdalena",
         "Madeleine"
@@ -2625,12 +2616,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-23",
-      "veckodag": "Tisdag",
+      "datum": "2026-07-23",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "30",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Emma",
         "Emmy"
@@ -2638,12 +2629,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-24",
-      "veckodag": "Onsdag",
+      "datum": "2026-07-24",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "30",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Kristina",
         "Kerstin"
@@ -2651,24 +2642,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-25",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-07-25",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "30",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Jakob"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-26",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-07-26",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "30",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Jesper",
         "Jasmine"
@@ -2676,24 +2667,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-27",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-07-27",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "30",
-      "dag i vecka": "6",
+      "vecka": "31",
+      "dag i vecka": "1",
       "namnsdag": [
         "Marta"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-28",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "30",
-      "dag i vecka": "7",
+      "datum": "2026-07-28",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "31",
+      "dag i vecka": "2",
       "namnsdag": [
         "Botvid",
         "Seved"
@@ -2701,36 +2692,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-29",
-      "veckodag": "Måndag",
+      "datum": "2026-07-29",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "31",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Olof"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-30",
-      "veckodag": "Tisdag",
+      "datum": "2026-07-30",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "31",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Algot"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-07-31",
-      "veckodag": "Onsdag",
+      "datum": "2026-07-31",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "31",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Helena",
         "Elin"
@@ -2738,24 +2729,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-01",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-08-01",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "31",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Per"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-02",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-08-02",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "31",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Karin",
         "Kajsa"
@@ -2763,24 +2754,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-03",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-08-03",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "31",
-      "dag i vecka": "6",
+      "vecka": "32",
+      "dag i vecka": "1",
       "namnsdag": [
         "Tage"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-04",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "31",
-      "dag i vecka": "7",
+      "datum": "2026-08-04",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "32",
+      "dag i vecka": "2",
       "namnsdag": [
         "Arne",
         "Arnold"
@@ -2788,12 +2779,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-05",
-      "veckodag": "Måndag",
+      "datum": "2026-08-05",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "32",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Ulrik",
         "Alrik"
@@ -2801,12 +2792,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-06",
-      "veckodag": "Tisdag",
+      "datum": "2026-08-06",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "32",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Alfons",
         "Inez"
@@ -2814,12 +2805,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-07",
-      "veckodag": "Onsdag",
+      "datum": "2026-08-07",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "32",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Dennis",
         "Denise"
@@ -2827,12 +2818,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-08",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-08-08",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "32",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Silvia",
         "Sylvia"
@@ -2840,84 +2831,84 @@
       "flaggdag": "Drottning Silvias namnsdag"
     },
     {
-      "datum": "2024-08-09",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "32",
-      "dag i vecka": "5",
-      "namnsdag": [
-        "Roland"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-08-10",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Nej",
-      "vecka": "32",
-      "dag i vecka": "6",
-      "namnsdag": [
-        "Lars"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-08-11",
+      "datum": "2026-08-09",
       "veckodag": "Söndag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "32",
       "dag i vecka": "7",
       "namnsdag": [
-        "Susanna"
+        "Roland"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-12",
+      "datum": "2026-08-10",
       "veckodag": "Måndag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "33",
       "dag i vecka": "1",
       "namnsdag": [
-        "Klara"
+        "Lars"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-13",
+      "datum": "2026-08-11",
       "veckodag": "Tisdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "33",
       "dag i vecka": "2",
       "namnsdag": [
-        "Kaj"
+        "Susanna"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-14",
+      "datum": "2026-08-12",
       "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "33",
       "dag i vecka": "3",
       "namnsdag": [
-        "Uno"
+        "Klara"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-15",
+      "datum": "2026-08-13",
       "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "33",
       "dag i vecka": "4",
+      "namnsdag": [
+        "Kaj"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-08-14",
+      "veckodag": "Fredag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "33",
+      "dag i vecka": "5",
+      "namnsdag": [
+        "Uno"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-08-15",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Nej",
+      "vecka": "33",
+      "dag i vecka": "6",
       "namnsdag": [
         "Stella",
         "Estelle"
@@ -2925,24 +2916,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-16",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-08-16",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "33",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Brynolf"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-17",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-08-17",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "33",
-      "dag i vecka": "6",
+      "vecka": "34",
+      "dag i vecka": "1",
       "namnsdag": [
         "Verner",
         "Valter"
@@ -2950,12 +2941,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-18",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "33",
-      "dag i vecka": "7",
+      "datum": "2026-08-18",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "34",
+      "dag i vecka": "2",
       "namnsdag": [
         "Ellen",
         "Lena"
@@ -2963,12 +2954,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-19",
-      "veckodag": "Måndag",
+      "datum": "2026-08-19",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "34",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Magnus",
         "Måns"
@@ -2976,12 +2967,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-20",
-      "veckodag": "Tisdag",
+      "datum": "2026-08-20",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "34",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Bernhard",
         "Bernt"
@@ -2989,12 +2980,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-21",
-      "veckodag": "Onsdag",
+      "datum": "2026-08-21",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "34",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Jon",
         "Jonna"
@@ -3002,12 +2993,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-22",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-08-22",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "34",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Henrietta",
         "Henrika"
@@ -3015,12 +3006,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-23",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-08-23",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "34",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Signe",
         "Signhild"
@@ -3028,24 +3019,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-24",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-08-24",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "34",
-      "dag i vecka": "6",
+      "vecka": "35",
+      "dag i vecka": "1",
       "namnsdag": [
         "Bartolomeus"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-25",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "34",
-      "dag i vecka": "7",
+      "datum": "2026-08-25",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "35",
+      "dag i vecka": "2",
       "namnsdag": [
         "Lovisa",
         "Louise"
@@ -3053,24 +3044,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-26",
-      "veckodag": "Måndag",
+      "datum": "2026-08-26",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "35",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Östen"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-27",
-      "veckodag": "Tisdag",
+      "datum": "2026-08-27",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "35",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Rolf",
         "Raoul"
@@ -3078,12 +3069,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-28",
-      "veckodag": "Onsdag",
+      "datum": "2026-08-28",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "35",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Fatima",
         "Leila"
@@ -3091,12 +3082,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-29",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-08-29",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "35",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Hans",
         "Hampus"
@@ -3104,12 +3095,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-30",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-08-30",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "35",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Albert",
         "Albertina"
@@ -3117,12 +3108,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-08-31",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-08-31",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "35",
-      "dag i vecka": "6",
+      "vecka": "36",
+      "dag i vecka": "1",
       "namnsdag": [
         "Arvid",
         "Vidar"
@@ -3130,12 +3121,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-01",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "35",
-      "dag i vecka": "7",
+      "datum": "2026-09-01",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "36",
+      "dag i vecka": "2",
       "namnsdag": [
         "Sam",
         "Samuel"
@@ -3143,12 +3134,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-02",
-      "veckodag": "Måndag",
+      "datum": "2026-09-02",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "36",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Justus",
         "Justina"
@@ -3156,12 +3147,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-03",
-      "veckodag": "Tisdag",
+      "datum": "2026-09-03",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "36",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Alfhild",
         "Alva"
@@ -3169,24 +3160,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-04",
-      "veckodag": "Onsdag",
+      "datum": "2026-09-04",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "36",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Gisela"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-05",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-09-05",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "36",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Adela",
         "Heidi"
@@ -3194,12 +3185,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-06",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-09-06",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "36",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Lilian",
         "Lilly"
@@ -3207,12 +3198,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-07",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-09-07",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "36",
-      "dag i vecka": "6",
+      "vecka": "37",
+      "dag i vecka": "1",
       "namnsdag": [
         "Kevin",
         "Roy"
@@ -3220,12 +3211,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-08",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "36",
-      "dag i vecka": "7",
+      "datum": "2026-09-08",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "37",
+      "dag i vecka": "2",
       "namnsdag": [
         "Alma",
         "Hulda"
@@ -3233,12 +3224,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-09",
-      "veckodag": "Måndag",
+      "datum": "2026-09-09",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "37",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Anita",
         "Annette"
@@ -3246,12 +3237,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-10",
-      "veckodag": "Tisdag",
+      "datum": "2026-09-10",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "37",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Tord",
         "Turid"
@@ -3259,12 +3250,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-11",
-      "veckodag": "Onsdag",
+      "datum": "2026-09-11",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "37",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Dagny",
         "Helny"
@@ -3272,12 +3263,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-12",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-09-12",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "37",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Åsa",
         "Åslög"
@@ -3285,36 +3276,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-13",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-09-13",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "37",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Sture"
       ],
-      "flaggdag": ""
+      "flaggdag": "Val till Sveriges riksdag"
     },
     {
-      "datum": "2024-09-14",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-09-14",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "37",
-      "dag i vecka": "6",
+      "vecka": "38",
+      "dag i vecka": "1",
       "namnsdag": [
         "Ida"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-15",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "37",
-      "dag i vecka": "7",
+      "datum": "2026-09-15",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "38",
+      "dag i vecka": "2",
       "namnsdag": [
         "Sigrid",
         "Siri"
@@ -3322,12 +3313,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-16",
-      "veckodag": "Måndag",
+      "datum": "2026-09-16",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "38",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Dag",
         "Daga"
@@ -3335,12 +3326,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-17",
-      "veckodag": "Tisdag",
+      "datum": "2026-09-17",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "38",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Hildegard",
         "Magnhild"
@@ -3348,36 +3339,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-18",
-      "veckodag": "Onsdag",
+      "datum": "2026-09-18",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "38",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Orvar"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-19",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-09-19",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "38",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Fredrika"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-20",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-09-20",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "38",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Elise",
         "Lisa"
@@ -3385,24 +3376,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-21",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-09-21",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "38",
-      "dag i vecka": "6",
+      "vecka": "39",
+      "dag i vecka": "1",
       "namnsdag": [
         "Matteus"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-22",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "38",
-      "dag i vecka": "7",
+      "datum": "2026-09-22",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "39",
+      "dag i vecka": "2",
       "namnsdag": [
         "Maurits",
         "Moritz"
@@ -3410,12 +3401,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-23",
-      "veckodag": "Måndag",
+      "datum": "2026-09-23",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "39",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Tekla",
         "Tea"
@@ -3423,12 +3414,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-24",
-      "veckodag": "Tisdag",
+      "datum": "2026-09-24",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "39",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Gerhard",
         "Gert"
@@ -3436,24 +3427,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-25",
-      "veckodag": "Onsdag",
+      "datum": "2026-09-25",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "39",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Tryggve"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-26",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-09-26",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "39",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Enar",
         "Einar"
@@ -3461,12 +3452,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-27",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-09-27",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "39",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Dagmar",
         "Rigmor"
@@ -3474,12 +3465,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-28",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-09-28",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "39",
-      "dag i vecka": "6",
+      "vecka": "40",
+      "dag i vecka": "1",
       "namnsdag": [
         "Lennart",
         "Leonard"
@@ -3487,12 +3478,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-29",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "39",
-      "dag i vecka": "7",
+      "datum": "2026-09-29",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "40",
+      "dag i vecka": "2",
       "namnsdag": [
         "Mikael",
         "Mikaela"
@@ -3500,24 +3491,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-09-30",
-      "veckodag": "Måndag",
+      "datum": "2026-09-30",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "40",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Helge"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-01",
-      "veckodag": "Tisdag",
+      "datum": "2026-10-01",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "40",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Ragnar",
         "Ragna"
@@ -3525,12 +3516,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-02",
-      "veckodag": "Onsdag",
+      "datum": "2026-10-02",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "40",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Ludvig",
         "Love"
@@ -3538,12 +3529,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-03",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-10-03",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "40",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Evald",
         "Osvald"
@@ -3551,12 +3542,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-04",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-10-04",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "40",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Frans",
         "Frank"
@@ -3564,24 +3555,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-05",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-10-05",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "40",
-      "dag i vecka": "6",
+      "vecka": "41",
+      "dag i vecka": "1",
       "namnsdag": [
         "Bror"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-06",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "40",
-      "dag i vecka": "7",
+      "datum": "2026-10-06",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "41",
+      "dag i vecka": "2",
       "namnsdag": [
         "Jenny",
         "Jennifer"
@@ -3589,12 +3580,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-07",
-      "veckodag": "Måndag",
+      "datum": "2026-10-07",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "41",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Birgitta",
         "Britta"
@@ -3602,24 +3593,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-08",
-      "veckodag": "Tisdag",
+      "datum": "2026-10-08",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "41",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Nils"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-09",
-      "veckodag": "Onsdag",
+      "datum": "2026-10-09",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "41",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Ingrid",
         "Inger"
@@ -3627,12 +3618,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-10",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-10-10",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "41",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Harry",
         "Harriet"
@@ -3640,12 +3631,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-11",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-10-11",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "41",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Erling",
         "Jarl"
@@ -3653,12 +3644,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-12",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-10-12",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "41",
-      "dag i vecka": "6",
+      "vecka": "42",
+      "dag i vecka": "1",
       "namnsdag": [
         "Valfrid",
         "Manfred"
@@ -3666,12 +3657,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-13",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "41",
-      "dag i vecka": "7",
+      "datum": "2026-10-13",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "42",
+      "dag i vecka": "2",
       "namnsdag": [
         "Berit",
         "Birgit"
@@ -3679,24 +3670,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-14",
-      "veckodag": "Måndag",
+      "datum": "2026-10-14",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "42",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Stellan"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-15",
-      "veckodag": "Tisdag",
+      "datum": "2026-10-15",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "42",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Hedvig",
         "Hillevi"
@@ -3704,24 +3695,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-16",
-      "veckodag": "Onsdag",
+      "datum": "2026-10-16",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "42",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Finn"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-17",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-10-17",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "42",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Antonia",
         "Toini"
@@ -3729,24 +3720,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-18",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-10-18",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "42",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Lukas"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-19",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-10-19",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "42",
-      "dag i vecka": "6",
+      "vecka": "43",
+      "dag i vecka": "1",
       "namnsdag": [
         "Tore",
         "Tor"
@@ -3754,24 +3745,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-20",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "42",
-      "dag i vecka": "7",
+      "datum": "2026-10-20",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "43",
+      "dag i vecka": "2",
       "namnsdag": [
         "Sibylla"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-21",
-      "veckodag": "Måndag",
+      "datum": "2026-10-21",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "43",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Ursula",
         "Yrsa"
@@ -3779,12 +3770,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-22",
-      "veckodag": "Tisdag",
+      "datum": "2026-10-22",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "43",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Marika",
         "Marita"
@@ -3792,12 +3783,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-23",
-      "veckodag": "Onsdag",
+      "datum": "2026-10-23",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "43",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Severin",
         "Sören"
@@ -3805,12 +3796,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-24",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-10-24",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "43",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Evert",
         "Eilert"
@@ -3818,12 +3809,12 @@
       "flaggdag": "FN-dagen"
     },
     {
-      "datum": "2024-10-25",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-10-25",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "43",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Inga",
         "Ingalill"
@@ -3831,12 +3822,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-26",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-10-26",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "43",
-      "dag i vecka": "6",
+      "vecka": "44",
+      "dag i vecka": "1",
       "namnsdag": [
         "Amanda",
         "Rasmus"
@@ -3844,24 +3835,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-27",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "43",
-      "dag i vecka": "7",
+      "datum": "2026-10-27",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "44",
+      "dag i vecka": "2",
       "namnsdag": [
         "Sabina"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-28",
-      "veckodag": "Måndag",
+      "datum": "2026-10-28",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "44",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Simon",
         "Simone"
@@ -3869,45 +3860,19 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-10-29",
-      "veckodag": "Tisdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "44",
-      "dag i vecka": "2",
-      "namnsdag": [
-        "Viola"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-10-30",
-      "veckodag": "Onsdag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "44",
-      "dag i vecka": "3",
-      "namnsdag": [
-        "Elsa",
-        "Isabella"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-10-31",
+      "datum": "2026-10-29",
       "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "44",
       "dag i vecka": "4",
       "namnsdag": [
-        "Edit",
-        "Edgar"
+        "Viola"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-01",
+      "datum": "2026-10-30",
       "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
@@ -3915,11 +3880,14 @@
       "dag i vecka": "5",
       "helgdagsafton": "Allhelgonaafton",
       "dag före arbetsfri helgdag": "Ja",
-      "namnsdag": [],
+      "namnsdag": [
+        "Elsa",
+        "Isabella"
+      ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-02",
+      "datum": "2026-10-31",
       "veckodag": "Lördag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
@@ -3927,17 +3895,40 @@
       "dag i vecka": "6",
       "helgdag": "Alla helgons dag",
       "namnsdag": [
-        "Tobias"
+        "Edit",
+        "Edgar"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-03",
+      "datum": "2026-11-01",
       "veckodag": "Söndag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "44",
       "dag i vecka": "7",
+      "namnsdag": [],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-11-02",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "45",
+      "dag i vecka": "1",
+      "namnsdag": [
+        "Tobias"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-11-03",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "45",
+      "dag i vecka": "2",
       "namnsdag": [
         "Hubert",
         "Hugo"
@@ -3945,24 +3936,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-04",
-      "veckodag": "Måndag",
+      "datum": "2026-11-04",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "45",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Sverker"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-05",
-      "veckodag": "Tisdag",
+      "datum": "2026-11-05",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "45",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Eugen",
         "Eugenia"
@@ -3970,24 +3961,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-06",
-      "veckodag": "Onsdag",
+      "datum": "2026-11-06",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "45",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Gustav Adolf"
       ],
       "flaggdag": "Gustav Adolfsdagen"
     },
     {
-      "datum": "2024-11-07",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-11-07",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "45",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Ingegerd",
         "Ingela"
@@ -3995,24 +3986,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-08",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-11-08",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "45",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Vendela"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-09",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-11-09",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "45",
-      "dag i vecka": "6",
+      "vecka": "46",
+      "dag i vecka": "1",
       "namnsdag": [
         "Teodor",
         "Teodora"
@@ -4020,12 +4011,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-10",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "45",
-      "dag i vecka": "7",
+      "datum": "2026-11-10",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "46",
+      "dag i vecka": "2",
       "namnsdag": [
         "Martin",
         "Martina"
@@ -4033,24 +4024,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-11",
-      "veckodag": "Måndag",
+      "datum": "2026-11-11",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "46",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Mårten"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-12",
-      "veckodag": "Tisdag",
+      "datum": "2026-11-12",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "46",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Konrad",
         "Kurt"
@@ -4058,12 +4049,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-13",
-      "veckodag": "Onsdag",
+      "datum": "2026-11-13",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "46",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Kristian",
         "Krister"
@@ -4071,12 +4062,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-14",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-11-14",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "46",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Emil",
         "Emilia"
@@ -4084,24 +4075,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-15",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-11-15",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "46",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Leopold"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-16",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-11-16",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "46",
-      "dag i vecka": "6",
+      "vecka": "47",
+      "dag i vecka": "1",
       "namnsdag": [
         "Vibeke",
         "Viveka"
@@ -4109,12 +4100,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-17",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "46",
-      "dag i vecka": "7",
+      "datum": "2026-11-17",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "47",
+      "dag i vecka": "2",
       "namnsdag": [
         "Naemi",
         "Naima"
@@ -4122,12 +4113,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-18",
-      "veckodag": "Måndag",
+      "datum": "2026-11-18",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "47",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Lillemor",
         "Moa"
@@ -4135,12 +4126,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-19",
-      "veckodag": "Tisdag",
+      "datum": "2026-11-19",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "47",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Elisabet",
         "Lisbet"
@@ -4148,12 +4139,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-20",
-      "veckodag": "Onsdag",
+      "datum": "2026-11-20",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "47",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Pontus",
         "Marina"
@@ -4161,12 +4152,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-21",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-11-21",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "47",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Helga",
         "Olga"
@@ -4174,12 +4165,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-22",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-11-22",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "47",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Cecilia",
         "Sissela"
@@ -4187,24 +4178,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-23",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-11-23",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "47",
-      "dag i vecka": "6",
+      "vecka": "48",
+      "dag i vecka": "1",
       "namnsdag": [
         "Klemens"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-24",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "47",
-      "dag i vecka": "7",
+      "datum": "2026-11-24",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "48",
+      "dag i vecka": "2",
       "namnsdag": [
         "Gudrun",
         "Rune"
@@ -4212,12 +4203,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-25",
-      "veckodag": "Måndag",
+      "datum": "2026-11-25",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "48",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Katarina",
         "Katja"
@@ -4225,24 +4216,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-26",
-      "veckodag": "Tisdag",
+      "datum": "2026-11-26",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "48",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Linus"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-27",
-      "veckodag": "Onsdag",
+      "datum": "2026-11-27",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "48",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Astrid",
         "Asta"
@@ -4250,36 +4241,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-28",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-11-28",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "48",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Malte"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-29",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-11-29",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "48",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Sune"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-11-30",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-11-30",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "48",
-      "dag i vecka": "6",
+      "vecka": "49",
+      "dag i vecka": "1",
       "namnsdag": [
         "Andreas",
         "Anders"
@@ -4287,12 +4278,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-01",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "48",
-      "dag i vecka": "7",
+      "datum": "2026-12-01",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "49",
+      "dag i vecka": "2",
       "namnsdag": [
         "Oskar",
         "Ossian"
@@ -4300,12 +4291,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-02",
-      "veckodag": "Måndag",
+      "datum": "2026-12-02",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "49",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Beata",
         "Beatrice"
@@ -4313,24 +4304,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-03",
-      "veckodag": "Tisdag",
+      "datum": "2026-12-03",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "49",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Lydia"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-04",
-      "veckodag": "Onsdag",
+      "datum": "2026-12-04",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "49",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Barbara",
         "Barbro"
@@ -4338,24 +4329,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-05",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-12-05",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "49",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Sven"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-06",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-12-06",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "49",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Nikolaus",
         "Niklas"
@@ -4363,12 +4354,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-07",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-12-07",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "49",
-      "dag i vecka": "6",
+      "vecka": "50",
+      "dag i vecka": "1",
       "namnsdag": [
         "Angela",
         "Angelika"
@@ -4376,36 +4367,36 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-08",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "49",
-      "dag i vecka": "7",
+      "datum": "2026-12-08",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "50",
+      "dag i vecka": "2",
       "namnsdag": [
         "Virginia"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-09",
-      "veckodag": "Måndag",
+      "datum": "2026-12-09",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "50",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "namnsdag": [
         "Anna"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-10",
-      "veckodag": "Tisdag",
+      "datum": "2026-12-10",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "50",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "namnsdag": [
         "Malin",
         "Malena"
@@ -4413,12 +4404,12 @@
       "flaggdag": "Nobeldagen"
     },
     {
-      "datum": "2024-12-11",
-      "veckodag": "Onsdag",
+      "datum": "2026-12-11",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "50",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "namnsdag": [
         "Daniel",
         "Daniela"
@@ -4426,12 +4417,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-12",
-      "veckodag": "Torsdag",
-      "arbetsfri dag": "Nej",
+      "datum": "2026-12-12",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "50",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "namnsdag": [
         "Alexander",
         "Alexis"
@@ -4439,24 +4430,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-13",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-12-13",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "50",
-      "dag i vecka": "5",
+      "dag i vecka": "7",
       "namnsdag": [
         "Lucia"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-14",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-12-14",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "50",
-      "dag i vecka": "6",
+      "vecka": "51",
+      "dag i vecka": "1",
       "namnsdag": [
         "Sten",
         "Sixten"
@@ -4464,72 +4455,72 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-15",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "50",
-      "dag i vecka": "7",
-      "namnsdag": [
-        "Gottfrid"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-12-16",
-      "veckodag": "Måndag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
-      "vecka": "51",
-      "dag i vecka": "1",
-      "namnsdag": [
-        "Assar"
-      ],
-      "flaggdag": ""
-    },
-    {
-      "datum": "2024-12-17",
+      "datum": "2026-12-15",
       "veckodag": "Tisdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "51",
       "dag i vecka": "2",
       "namnsdag": [
-        "Stig"
+        "Gottfrid"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-18",
+      "datum": "2026-12-16",
       "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "51",
       "dag i vecka": "3",
       "namnsdag": [
-        "Abraham"
+        "Assar"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-19",
+      "datum": "2026-12-17",
       "veckodag": "Torsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "51",
       "dag i vecka": "4",
       "namnsdag": [
-        "Isak"
+        "Stig"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-20",
+      "datum": "2026-12-18",
       "veckodag": "Fredag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "51",
       "dag i vecka": "5",
+      "namnsdag": [
+        "Abraham"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-12-19",
+      "veckodag": "Lördag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Nej",
+      "vecka": "51",
+      "dag i vecka": "6",
+      "namnsdag": [
+        "Isak"
+      ],
+      "flaggdag": ""
+    },
+    {
+      "datum": "2026-12-20",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
+      "vecka": "51",
+      "dag i vecka": "7",
       "namnsdag": [
         "Israel",
         "Moses"
@@ -4537,24 +4528,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-21",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-12-21",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "51",
-      "dag i vecka": "6",
+      "vecka": "52",
+      "dag i vecka": "1",
       "namnsdag": [
         "Tomas"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-22",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "51",
-      "dag i vecka": "7",
+      "datum": "2026-12-22",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "52",
+      "dag i vecka": "2",
       "namnsdag": [
         "Natanael",
         "Jonatan"
@@ -4562,26 +4553,25 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-23",
-      "veckodag": "Måndag",
+      "datum": "2026-12-23",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
       "vecka": "52",
-      "dag i vecka": "1",
+      "dag i vecka": "3",
       "dag före arbetsfri helgdag": "Ja",
-      "klämdag": "Ja",
       "namnsdag": [
         "Adam"
       ],
       "flaggdag": "Drottning Silvias födelsedag"
     },
     {
-      "datum": "2024-12-24",
-      "veckodag": "Tisdag",
+      "datum": "2026-12-24",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Ja",
       "röd dag": "Nej",
       "vecka": "52",
-      "dag i vecka": "2",
+      "dag i vecka": "4",
       "helgdag": "Julafton",
       "namnsdag": [
         "Eva"
@@ -4589,23 +4579,23 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-25",
-      "veckodag": "Onsdag",
+      "datum": "2026-12-25",
+      "veckodag": "Fredag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "52",
-      "dag i vecka": "3",
+      "dag i vecka": "5",
       "helgdag": "Juldagen",
       "namnsdag": [],
       "flaggdag": "Juldagen"
     },
     {
-      "datum": "2024-12-26",
-      "veckodag": "Torsdag",
+      "datum": "2026-12-26",
+      "veckodag": "Lördag",
       "arbetsfri dag": "Ja",
       "röd dag": "Ja",
       "vecka": "52",
-      "dag i vecka": "4",
+      "dag i vecka": "6",
       "helgdag": "Annandag jul",
       "namnsdag": [
         "Stefan",
@@ -4614,13 +4604,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-27",
-      "veckodag": "Fredag",
-      "arbetsfri dag": "Nej",
-      "röd dag": "Nej",
+      "datum": "2026-12-27",
+      "veckodag": "Söndag",
+      "arbetsfri dag": "Ja",
+      "röd dag": "Ja",
       "vecka": "52",
-      "dag i vecka": "5",
-      "klämdag": "Ja",
+      "dag i vecka": "7",
       "namnsdag": [
         "Johannes",
         "Johan"
@@ -4628,24 +4617,24 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-28",
-      "veckodag": "Lördag",
-      "arbetsfri dag": "Ja",
+      "datum": "2026-12-28",
+      "veckodag": "Måndag",
+      "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "52",
-      "dag i vecka": "6",
+      "vecka": "53",
+      "dag i vecka": "1",
       "namnsdag": [
         "Benjamin"
       ],
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-29",
-      "veckodag": "Söndag",
-      "arbetsfri dag": "Ja",
-      "röd dag": "Ja",
-      "vecka": "52",
-      "dag i vecka": "7",
+      "datum": "2026-12-29",
+      "veckodag": "Tisdag",
+      "arbetsfri dag": "Nej",
+      "röd dag": "Nej",
+      "vecka": "53",
+      "dag i vecka": "2",
       "namnsdag": [
         "Natalia",
         "Natalie"
@@ -4653,14 +4642,13 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-30",
-      "veckodag": "Måndag",
+      "datum": "2026-12-30",
+      "veckodag": "Onsdag",
       "arbetsfri dag": "Nej",
       "röd dag": "Nej",
-      "vecka": "01",
-      "dag i vecka": "1",
+      "vecka": "53",
+      "dag i vecka": "3",
       "dag före arbetsfri helgdag": "Ja",
-      "klämdag": "Ja",
       "namnsdag": [
         "Abel",
         "Set"
@@ -4668,12 +4656,12 @@
       "flaggdag": ""
     },
     {
-      "datum": "2024-12-31",
-      "veckodag": "Tisdag",
+      "datum": "2026-12-31",
+      "veckodag": "Torsdag",
       "arbetsfri dag": "Ja",
       "röd dag": "Nej",
-      "vecka": "01",
-      "dag i vecka": "2",
+      "vecka": "53",
+      "dag i vecka": "4",
       "helgdag": "Nyårsafton",
       "namnsdag": [
         "Sylvester"
