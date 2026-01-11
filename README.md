@@ -117,6 +117,13 @@ adb connect 192.168.1.100
 scrcpy -b 6M -m 800 -s 192.168.1.100:5555
 ```
 
+## Updating
+
+```
+docker-compose pull magic-mirror
+docker-compose down
+docker-compose up -d
+```
 
 ## Resources 
 
