@@ -8,9 +8,6 @@
  *
  */
 
- /* Secrets from URL params */
- const secrets = (typeof location !== "undefined") ? Object.fromEntries(new URLSearchParams(location.search)) : {}; 
-
  var config = {
 	 address: "0.0.0.0", // Address to listen on, can be:
 						   // - "localhost", "127.0.0.1", "::1" to listen on loopback interface
